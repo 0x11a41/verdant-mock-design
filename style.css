@@ -1385,3 +1385,224 @@ em {
     gap: 12px;
   }
 }
+
+
+/* =====================================================
+   MOBILE / TABLET OPTIMISATION (desktop untouched)
+   ===================================================== */
+html, body { overflow-x: hidden; }
+img { max-width: 100%; }
+.nav__toggle,
+.nav__links-cta { display: none; }
+
+/* ---------- Tablet & below ---------- */
+@media (max-width: 1050px) {
+  /* Hamburger */
+  .nav__cta { margin-left: auto; }
+  .nav__toggle {
+    align-items: stretch;
+    background: none;
+    border: 1px solid rgba(255,255,255,.35);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 44px;
+    justify-content: center;
+    margin-left: 14px;
+    padding: 0 11px;
+    width: 44px;
+  }
+  .nav__toggle span {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    transition: transform .3s, opacity .3s;
+    width: 100%;
+  }
+  .nav.menu-open .nav__toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav.menu-open .nav__toggle span:nth-child(2) { opacity: 0; }
+  .nav.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav.menu-open {
+    background-color: var(--ink);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  /* Dropdown drawer (absolute to the fixed nav, so it works with backdrop-filter) */
+  .nav__links {
+    align-items: stretch;
+    background: var(--ink);
+    border-top: 1px solid var(--line-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-inline: clamp(22px, 5vw, 80px);
+    position: absolute;
+    top: 100%;
+    transition: max-height .4s ease, opacity .3s ease, visibility .3s;
+    visibility: hidden;
+    width: 100%;
+  }
+  .nav.menu-open .nav__links {
+    max-height: calc(100svh - 82px);
+    opacity: 1;
+    overflow-y: auto;
+    visibility: visible;
+  }
+  .nav__links a {
+    border-bottom: 1px solid var(--line-light);
+    color: var(--white);
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 18px 0;
+  }
+
+  /* Trust bar */
+  .trust__logos {
+    flex-wrap: wrap;
+    gap: 28px 44px;
+    justify-content: flex-start;
+    padding: 28px 0;
+  }
+
+  .section-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 45px; }
+  .section-heading__copy { max-width: 560px; }
+
+  .advantage__grid { grid-template-columns: 1fr; }
+  .advantage__visual { order: 2; }
+  .advantage__stat { right: 0; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 760px) {
+  /* Nav: CTA moves into the drawer */
+  .nav__cta { display: none; }
+  .nav__toggle { margin-left: auto; }
+  .nav.menu-open .nav__links { max-height: calc(100svh - 70px); }
+  .nav__links .nav__links-cta {
+    align-items: center;
+    background: var(--lime);
+    border: 0;
+    color: var(--ink);
+    display: flex;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: space-between;
+    letter-spacing: .07em;
+    margin: 24px 0 32px;
+    padding: 18px 20px;
+    text-transform: uppercase;
+  }
+  .brand-logo { height: 36px; }
+
+  /* Hero */
+  .hero { padding-top: 82px; }
+  .hero__veil {
+    background: linear-gradient(180deg, rgba(3,18,17,.72) 0%, rgba(3,18,17,.55) 45%, rgba(3,18,17,.88) 100%);
+  }
+  .hero__title {
+    font-size: clamp(34px, 10.5vw, 52px);
+    letter-spacing: -.045em;
+    margin-block: 22px 26px;
+    overflow-wrap: break-word;
+  }
+  .eyebrow { font-size: 9px; gap: 10px; }
+  .eyebrow > span { width: 24px; }
+  .hero__lower .button,
+  .contact__copy .button,
+  .button--outline { width: 100%; }
+
+  /* Trust bar */
+  .trust__inner { padding-block: 32px; }
+  .trust__intro { font-size: 11px; max-width: none; margin-bottom: 20px; }
+  .trust__logos {
+    display: grid;
+    gap: 28px 16px;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 28px;
+  }
+  .customer-logo { height: 32px; }
+  .partner-top { gap: 10px; }
+  .partner-top strong { font-size: 20px; }
+  .partner-desc { font-size: 9px; }
+  .cert-badge { justify-content: flex-start; padding-top: 24px; }
+  .cert-logo { height: 60px; }
+
+  /* Headings */
+  .section { padding-block: 72px; }
+  .section-title { font-size: clamp(34px, 10vw, 46px); margin-top: 22px; }
+  .section-heading__copy { font-size: 15px; }
+
+  /* Capabilities */
+  .capability-card__media { height: 240px; }
+  .capability-card__content { padding: 24px 22px 26px; }
+  .capability-card p { font-size: 14px; min-height: 0; }
+  .text-link { font-size: 10px; }
+
+  /* Advantage */
+  .advantage__media { height: 340px; }
+  .advantage__coordinate { bottom: 22px; left: 20px; }
+  .advantage__coordinate strong { font-size: 34px; }
+  .advantage__stat { gap: 14px; padding: 18px 20px; width: 210px; }
+  .advantage__stat strong { font-size: 30px; }
+  .advantage__lead { font-size: 17px; margin-top: 28px; }
+  .advantage__body { font-size: 14px; }
+  .advantage::before { height: 420px; right: -200px; top: -120px; width: 420px; }
+  .timeline { gap: 8px 16px; margin-top: 56px; padding-bottom: 60px; }
+  .timeline__item { min-height: 0; padding-bottom: 24px; }
+  .timeline__marker { font-size: 10px; margin-bottom: 18px; }
+  .timeline__item > strong { font-size: 12px; }
+  .timeline__item h3 { font-size: 16px; }
+  .timeline__item p { font-size: 12px; max-width: none; }
+
+  /* Mission */
+  .mission__title { font-size: clamp(32px, 9vw, 46px); margin-block: 22px; }
+  .mission__inner > p { font-size: 15px; }
+  .mission__metrics { margin-top: 48px; }
+  .mission__metrics div { padding: 22px 16px; }
+  .mission__metrics span { font-size: 10px; }
+
+  /* Latest */
+  .latest__grid { gap: 24px; }
+  .latest__featured-media { height: 220px; }
+  .latest__featured-content { padding: 24px; }
+  .latest__featured-content h3 { font-size: 19px; }
+  .latest__featured-content p { font-size: 14px; }
+  .latest__meta { flex-wrap: wrap; font-size: 10px; }
+  .latest__item { padding: 20px; }
+  .latest__item h4 { font-size: 15px; padding-right: 36px; }
+  .latest__link-arrow { right: 18px; }
+
+  /* Contact */
+  .contact__panel { min-height: 0; }
+  .contact__copy { padding: 40px 24px; }
+  .contact__title { font-size: clamp(32px, 9vw, 44px); margin-block: 22px; }
+  .contact__copy p { font-size: 14px; }
+  .contact__map { min-height: 320px; }
+
+  /* Footer */
+  .footer { padding-top: 56px; }
+  .footer__top { gap: 36px 20px; padding-bottom: 48px; }
+  .footer__brand p { font-size: 13px; max-width: none; }
+  .footer__social { grid-column: span 2; }
+  .footer__column { gap: 4px; }
+  .footer__column > strong { font-size: 10px; margin-bottom: 8px; }
+  .footer__column a,
+  .footer__column p { font-size: 13px; padding-block: 4px; }
+  .footer__bottom { font-size: 10px; line-height: 1.6; }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 480px) {
+  .timeline { grid-template-columns: 1fr; }
+  .advantage__stat { width: 190px; }
+  .footer__top { grid-template-columns: 1fr 1fr; }
+}
