@@ -1606,3 +1606,32 @@ img { max-width: 100%; }
   .advantage__stat { width: 190px; }
   .footer__top { grid-template-columns: 1fr 1fr; }
 }
+
+
+/* ---------- Mission: signal animation ---------- */
+@keyframes signal-wave {
+  0%   { opacity: .25; border-color: rgba(0,95,76,.3); }
+  15%  { opacity: 1;   border-color: var(--green-bright); }
+  45%, 100% { opacity: .25; border-color: rgba(0,95,76,.3); }
+}
+
+@keyframes signal-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(0,167,121,.55); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(0,167,121,0); }
+}
+
+.mission__signal span {
+  animation: signal-wave 2.4s ease-out infinite;
+}
+.mission__signal span:nth-child(1) { animation-delay: .1s; }
+.mission__signal span:nth-child(2) { animation-delay: .35s; }
+.mission__signal span:nth-child(3) { animation-delay: .6s; }
+
+.mission__signal i {
+  animation: signal-dot 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission__signal span,
+  .mission__signal i { animation: none; }
+}
