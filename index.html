@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Verdant Telemetry</title>
+		<!-- Assuming Tailwind CLI is used to process styles, otherwise you can add a Tailwind CDN here -->
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<main class="site-shell">
+			<section class="hero" id="top">
+				<div class="hero__slideshow">
+					<div class="hero__slide active" style="background-image: url('assets/hero/jet.webp');"></div>
+					<div class="hero__slide" style="background-image: url('assets/hero/navy.webp');"></div>
+					<div class="hero__slide" style="background-image: url('assets/hero/space.webp');"></div>
+					<div class="hero__slide" style="background-image: url('assets/hero/antina.webp');"></div>
+					<div class="hero__slide" style="background-image: url('assets/hero/rf-engineering.webp');"></div>
+
+				</div>
+        
+        <div class="hero__veil"></div>
+				<header class="nav" id="navbar">
+                    <div class="nav__inner page-width">
+                        <a href="#top" aria-label="Verdant Telemetry home">
+                            <img src="assets/logo-white.webp" alt="Verdant Telemetry" class="brand-logo" />
+                        </a>
+                        <nav class="nav__links" aria-label="Primary navigation">
+                            <a href="#products">Products</a>
+                            <a href="#about">About Us</a>
+                            <a href="#capabilities">Capabilities</a>
+                            <a href="">Career</a>
+                            <a href="#latest">Latest</a>
+                        </nav>
+                        <a class="nav__cta" href="#contact">
+                            Partner with us <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </header>
+
+				<div class="hero__content page-width">
+					<div class="eyebrow eyebrow--light">
+						<span></span>
+						Aerospace systems · Since 1997
+					</div>
+					<h1 class="hero__title">
+						Precision engineered for <em>mission-critical performance.</em>
+					</h1>
+					<div class="hero__lower">
+						<p class="hero__description">
+							Verdant Telemetry & Antenna Systems Pvt. Ltd.
+						</p>
+						<a class="button button--primary" href="#capabilities">
+							Explore our capabilities <span aria-hidden="true">↓</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="trust" id="quality" aria-label="Trusted partners and certification">
+				<div class="page-width trust__inner">
+				<p class="trust__intro">
+					Trusted to deliver for India’s most critical programs
+				</p>
+				
+				<div class="trust__logos" aria-label="Partner logos">
+					
+					<div class="partner-logo">
+					<div class="partner-top">
+						<img src="assets/trusted/hal.png" alt="HAL Logo" class="customer-logo" />
+						<strong>HAL</strong>
+					</div>
+					<span class="partner-desc">Hindustan Aeronautics</span>
+					</div>
+
+					<div class="partner-logo">
+					<div class="partner-top">
+						<img src="assets/trusted/isro.png" alt="ISRO Logo" class="customer-logo" />
+						<strong>ISRO</strong>
+					</div>
+					<span class="partner-desc">Space Research Organisation</span>
+					</div>
+
+					<div class="partner-logo">
+					<div class="partner-top">
+						<img src="assets/trusted/drdo.png" alt="DRDO Logo" class="customer-logo" />
+						<strong>DRDO</strong>
+					</div>
+					<span class="partner-desc">Defence R&amp;D Organisation</span>
+					</div>
+
+				</div>
+				
+				<div class="cert-badge">
+					<img src="assets/as9100d-certified-logo.png" alt="AS9100 Rev D Certified" class="cert-logo" />
+				</div>
+				
+				</div>
+      		</section>
+
+			<section class="capabilities section" id="capabilities">
+				<div class="page-width">
+					<div class="section-heading">
+						<div>
+							<div class="eyebrow">
+								<span></span>
+								What we do
+							</div>
+							<h2 class="section-title">
+								Excellence built into <em>every flight.</em>
+							</h2>
+						</div>
+						<p class="section-heading__copy">
+							From first principles to final validation, our multidisciplinary
+							teams solve the RF challenges that stand between a platform and
+							its mission.
+						</p>
+					</div>
+
+					<div class="capabilities__grid">
+						<!-- Capability Card 1 -->
+						<article class="capability-card capability-card--air">
+							<div class="capability-card__media">
+								<img src="assets/collage.png" alt="Airborne Antennas" class="capability-image" />
+								<span class="capability-card__number">01</span>
+							</div>
+							<div class="capability-card__content">
+								<h3>Airborne Antennas &amp; Radomes</h3>
+								<p>Aerodynamically refined, frequency-precise systems engineered for dependable performance across demanding flight profiles.</p>
+								<a href="#contact" class="text-link">
+								Discover capability <span aria-hidden="true">↗</span>
+								</a>
+							</div>
+						</article>
+
+						<!-- Capability Card 2 -->
+						<article class="capability-card capability-card--engineering">
+							<div class="capability-card__media">
+								<img src="assets/002.png" alt="Engineering Solutions" class="capability-image" />
+								<span class="capability-card__number">02</span>
+							</div>
+							<div class="capability-card__content">
+								<h3>Custom-Engineered Solutions</h3>
+								<p>Bespoke RF and composite solutions created around unique platform, envelope, weight, and mission constraints.</p>
+								<a href="#contact" class="text-link">
+								Discover capability <span aria-hidden="true">↗</span>
+								</a>
+							</div>
+           				</article>
+
+						<!-- Capability Card 3 -->
+						<article class="capability-card capability-card--testing">
+							<div class="capability-card__media">
+								<img src="assets/003.png" alt="Anechoic Testing Chamber" class="capability-image" />
+								<span class="capability-card__number">03</span>
+							</div>
+							<div class="capability-card__content">
+								<h3>Advanced Testing &amp; Manufacturing</h3>
+								<p>End-to-end quality control with an in-house anechoic chamber up to 20 GHz and dedicated ground plane facilities.</p>
+								<a href="#contact" class="text-link">
+								Discover capability <span aria-hidden="true">↗</span>
+								</a>
+							</div>
+            			</article>
+					</div>
+				</div>
+			</section>
+
+			<section class="advantage section" id="advantage">
+				<div class="page-width advantage__grid">
+					<div class="advantage__visual">
+						<div class="advantage__media">
+						<!-- NEW IMAGE -->
+						<img src="assets/001.png" alt="Aerospace Engineering Facility" class="advantage__image" />
+						
+						<!-- Keeping the coordinate overlay -->
+						<div class="advantage__coordinate">
+							<small>Signal integrity</small>
+							<strong>20 GHz</strong>
+							<span>In-house test capability</span>
+						</div>
+						</div>
+						
+						<!-- Keeping the stat block -->
+						<div class="advantage__stat">
+						<strong>29+</strong> <!-- Updated to 29+ since it's 2026! -->
+						<span>Years of specialist aerospace engineering</span>
+						</div>
+          			</div>
+
+					<div class="advantage__content">
+						<div class="eyebrow eyebrow--light">
+							<span></span>
+							The Verdant advantage
+						</div>
+						<h2 class="section-title section-title--light">
+							Decades of RF and <em>composite expertise.</em>
+						</h2>
+						<p class="advantage__lead">
+							In an industry where every gram and gigahertz matters, our
+							commitment to innovation and quality keeps our partners ahead of
+							the curve.
+						</p>
+						<p class="advantage__body">
+							We unite deep domain knowledge with tightly controlled design,
+							manufacturing, and testing—giving aerospace teams a single,
+							accountable partner from concept to deployment.
+						</p>
+						<a class="button button--outline" href="#contact">
+							Meet Verdant Telemetry <span aria-hidden="true">↗</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="page-width timeline">
+					<!-- Timeline Item 1 -->
+					<article class="timeline__item">
+						<div class="timeline__marker">
+							<span>01</span>
+						</div>
+						<strong>1997</strong>
+						<h3>Founded in Cochin</h3>
+						<p>A specialist antenna company built on RF engineering rigor.</p>
+					</article>
+
+					<!-- Timeline Item 2 -->
+					<article class="timeline__item">
+						<div class="timeline__marker">
+							<span>02</span>
+						</div>
+						<strong>2016</strong>
+						<h3>National recognition</h3>
+						<p>SIATI Award for Excellence in Aerospace Indigenization.</p>
+					</article>
+
+					<!-- Timeline Item 3 -->
+					<article class="timeline__item">
+						<div class="timeline__marker">
+							<span>03</span>
+						</div>
+						<strong>2023</strong>
+						<h3>New flight envelopes</h3>
+						<p>Development programs for ultra-supersonic platforms.</p>
+					</article>
+
+					<!-- Timeline Item 4 -->
+					<article class="timeline__item">
+						<div class="timeline__marker">
+							<span>04</span>
+						</div>
+						<strong>2025</strong>
+						<h3>Global readiness</h3>
+						<p>Expanded capability for the next generation of aerospace.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="mission section">
+				<div class="page-width mission__inner">
+					<div class="mission__signal" aria-hidden="true">
+						<span></span>
+						<span></span>
+						<span></span>
+						<i></i>
+					</div>
+					<div class="eyebrow">
+						<span></span>
+						Engineered for certainty
+					</div>
+					<h2 class="mission__title">
+						When communication is critical, <em>confidence is everything.</em>
+					</h2>
+					<p>
+						Our antenna systems help aircraft, vessels, and tactical platforms
+						remain connected in environments where failure is not an option.
+					</p>
+					<div class="mission__metrics">
+						<div>
+							<strong>20 GHz</strong>
+							<span>Anechoic chamber capability</span>
+						</div>
+						<div>
+							<strong>AS9100 D</strong>
+							<span>Aerospace quality standard</span>
+						</div>
+						<div>
+							<strong>CEMILAC</strong>
+							<span>Approved facility</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="latest section" id="latest">
+                <div class="page-width">
+                    <div class="section-heading">
+                        <div>
+                            <div class="eyebrow">
+                                <span></span>
+                                Dispatch &amp; updates
+                            </div>
+                            <h2 class="section-title">
+                                What's <em>Happening.</em>
+                            </h2>
+                        </div>
+                        <p class="section-heading__copy">
+                            Milestones, media coverage, and technical milestones from our R&amp;D labs and national test programs.
+                        </p>
+                    </div>
+
+                    <div class="latest__grid">
+                        <!-- Featured Main News Item -->
+                        <article class="latest__featured">
+                            <div class="latest__featured-media">
+                                <img src="assets/award.jpeg" alt="SIATI Award Ceremony" class="latest__featured-image" />
+                                <span class="latest__badge">News &amp; Media</span>
+                            </div>
+                            <div class="latest__featured-content">
+                                <div class="latest__meta">
+                                    <span>January 17, 2016</span>
+                                    <span>•</span>
+                                    <span>By VT-Manager</span>
+                                </div>
+                                <h3>SIATI Award For Excellence in Aerospace Indigenisation.</h3>
+                                <p>Verdant received the SIATI award for excellence in aerospace indigenisation on the 2nd of December, 2016. Verdant was the sole recipient of the award in this category...</p>
+                                <a href="#contact" class="text-link">
+                                    Read more <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Secondary List Items -->
+                        <div class="latest__list">
+                            <article class="latest__item">
+                                <div class="latest__meta">
+                                    <span>January 14, 2012</span>
+                                    <span>•</span>
+                                    <span>News &amp; Media</span>
+                                </div>
+                                <h4>Verdant-Manorama Channel Frontpage Article</h4>
+                                <a href="#contact" class="latest__link-arrow" aria-label="Read article">→</a>
+                            </article>
+
+                            <article class="latest__item">
+                                <div class="latest__meta">
+                                    <span>February 17, 2011</span>
+                                    <span>•</span>
+                                    <span>News &amp; Media</span>
+                                </div>
+                                <h4>Verdant - CNBC Channel Feature &amp; Broadcast</h4>
+                                <a href="#contact" class="latest__link-arrow" aria-label="Read article">→</a>
+                            </article>
+
+                            <article class="latest__item">
+                                <div class="latest__meta">
+                                    <span>December 16, 2010</span>
+                                    <span>•</span>
+                                    <span>Certification</span>
+                                </div>
+                                <h4>AS 9100 Revision C Quality Certification Achieved</h4>
+                                <a href="#contact" class="latest__link-arrow" aria-label="Read article">→</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+			<section class="contact section" id="contact">
+				<div class="page-width">
+					<div class="contact__panel">
+						<div class="contact__copy">
+							<div class="eyebrow eyebrow--light">
+								<span></span>
+								Start a conversation
+							</div>
+							<h2 class="contact__title">
+								Let’s engineer what comes next.
+							</h2>
+							<p>
+								Bring us your platform constraints, mission requirements, and
+								most complex RF challenges.
+							</p>
+							<a class="button button--lime" href="mailto:info@verdanttelemetry.com">
+								Partner with us <span aria-hidden="true">↗</span>
+							</a>
+						</div>
+						<div class="contact__map">
+							<iframe 
+								src="https://maps.google.com/maps?q=9.942526473849975,76.3017860826473&z=3&output=embed"
+								width="100%" 
+								height="100%" 
+								style="border:0;" 
+								allowfullscreen="" 
+								loading="lazy" 
+								referrerpolicy="no-referrer-when-downgrade">
+							</iframe>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<footer class="footer">
+				<div class="page-width">
+					<div class="footer__top">
+						<div class="footer__brand">
+							<div class="wordmark wordmark--light">
+								<img src="assets/logo-teal.png" alt="Verdant Telemetry" class="brand-logo" />
+							</div>
+							<p>
+								Advanced antenna and radome systems for aerospace, defense, and
+								mission-critical platforms.
+							</p>
+						</div>
+
+						<div class="footer__column footer__social">
+                            <strong>Connect With Us</strong>
+                            <p>Follow our engineering updates across channels.</p>
+                            <div class="social-icons">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                                </a>
+                            </div>
+                        </div>
+
+						<div class="footer__column">
+							<strong>Solutions</strong>
+							<a href="#top">Airborne Antennas</a>
+							<a href="#top">Radomes</a>
+							<a href="#top">Custom Engineering</a>
+							<a href="#top">RF Testing</a>
+						</div>
+
+						<div class="footer__column">
+							<strong>Company</strong>
+							<a href="#top">About Verdant</a>
+							<a href="#top">Leadership</a>
+							<a href="#top">Quality</a>
+							<a href="#top">Careers</a>
+						</div>
+
+						<div class="footer__column">
+							<strong>Certifications</strong>
+							<a href="#top">AS9100 Rev D</a>
+							<a href="#top">CEMILAC Approved</a>
+							<a href="#top">Quality Policy</a>
+						</div>
+
+						<div class="footer__column footer__hq">
+							<strong>Global Headquarters</strong>
+							<p>
+								26/411 A, Konthuruthy<br>
+								Cochin 682 013, India
+							</p>
+							<a href="mailto:info@verdanttelemetry.com">info@verdanttelemetry.com</a>
+							<a href="tel:+914842681614">+91 484 268 1614</a>
+						</div>
+					</div>
+
+					<div class="footer__bottom">
+						<span>
+							© <span id="current-year"></span>
+							Verdant Telemetry &amp; Antenna Systems
+						</span>
+						<span>Precision without compromise.</span>
+						<a href="#top">Back to top ↑</a>
+					</div>
+				</div>
+			</footer>
+		</main>
+
+		<script src="./script.js"></script>
+	</body>
+</html>
