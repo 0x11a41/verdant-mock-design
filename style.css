@@ -6,7 +6,7 @@
   --ink-soft: #17312f;
   --green: #005f4c;
   --green-bright: #00a779;
-  --lime: #28e2c6;
+  --lime: #05d7b4;
   --cream: #f2f0e8;
   --paper: #fbfaf6;
   --white: #ffffff;
@@ -276,7 +276,7 @@ a {
 }
 
 .eyebrow--light {
-  color: var(--lime);
+  color: var(--cream);
 }
 
 .eyebrow > span {
