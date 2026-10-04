@@ -1635,3 +1635,52 @@ img { max-width: 100%; }
   .mission__signal span,
   .mission__signal i { animation: none; }
 }
+
+/* ---------- Trust bar: same single-line layout on mobile, horizontally scrollable ---------- */
+@media (max-width: 1050px) {
+  .trust__inner {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    min-height: 0;
+    overflow-x: auto;
+    padding-block: 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .trust__inner::-webkit-scrollbar { display: none; }
+  .trust__inner > * { flex: 0 0 auto; }
+
+  .trust__intro {
+    font-size: 9px;
+    margin: 0 24px 0 0;
+    max-width: 150px;
+    width: 150px;
+  }
+  .trust__logos {
+    align-items: center;
+    border: 0;
+    border-inline: 1px solid var(--line);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 32px;
+    justify-content: flex-start;
+    min-height: 90px;
+    padding: 0 28px;
+  }
+  .partner-logo,
+  .partner-desc { white-space: nowrap; }
+  .customer-logo { height: 26px; }
+  .partner-top { gap: 8px; }
+  .partner-top strong { font-size: 17px; }
+  .partner-desc { font-size: 7.5px; }
+
+  .cert-badge {
+    height: auto;
+    justify-content: flex-start;
+    padding: 0 24px 0 28px;
+  }
+  .cert-logo { height: 48px; }
+}
