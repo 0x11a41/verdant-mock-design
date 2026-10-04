@@ -1684,3 +1684,25 @@ img { max-width: 100%; }
   }
   .cert-logo { height: 48px; }
 }
+
+
+/* ---------- Timeline: vertical line on phones, horizontal on desktop ---------- */
+@media (max-width: 760px) {
+  .timeline {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+  .timeline__item {
+    border-left: 1px solid var(--line-light);
+    border-top: 0;
+    min-height: 0;
+    padding: 0 0 40px 28px;
+  }
+  .timeline__item:last-child { padding-bottom: 0; }
+  .timeline__item::before {
+    left: -3px;
+    top: 2px;
+  }
+  .timeline__marker { margin-bottom: 14px; }
+  .timeline__item p { max-width: none; }
+}
