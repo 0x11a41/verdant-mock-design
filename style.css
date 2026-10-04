@@ -1706,3 +1706,27 @@ img { max-width: 100%; }
   .timeline__marker { margin-bottom: 14px; }
   .timeline__item p { max-width: none; }
 }
+
+
+/* ---------- Mission metrics: stay in 3 columns on phones ---------- */
+@media (max-width: 760px) {
+  .mission__metrics {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+  }
+  .mission__metrics div { padding: 20px 6px; }
+  .mission__metrics div + div {
+    border-left: 1px solid var(--line);
+    border-top: 0;
+  }
+  .mission__metrics strong {
+    font-size: clamp(14px, 4.4vw, 20px);
+    white-space: nowrap;
+  }
+  .mission__metrics span {
+    font-size: 8px;
+    letter-spacing: .02em;
+    line-height: 1.4;
+    margin-top: 6px;
+  }
+}
