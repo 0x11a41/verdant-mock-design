@@ -20,13 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- NEW: PREMIUM NAVBAR SCROLL LOGIC ---
   const navbar = document.getElementById("navbar");
+  const navbarLogo = document.getElementById("navbar-logo");
+  const logoTeal = "assets/logo-teal.webp";
+  const logoWhite = "assets/logo-white.webp";
+
   if (navbar) {
     window.addEventListener("scroll", () => {
       // If user scrolls down more than 50px, activate the frosted glass mode
       if (window.scrollY > 50) {
         navbar.classList.add("scrolled");
+        navbarLogo.src = logoWhite;
       } else {
         navbar.classList.remove("scrolled");
+        navbarLogo.src = logoTeal;
       }
     });
   }
