@@ -1,0 +1,6 @@
+{
+  "name": "Verdant Telemetry & Antenna Systems",
+  "description": "Aerospace and defence antennas and radomes. Precision RF engineering from Kerala to the world. AS9100 Rev D, ISO 9001:2015, CEMILAC approved.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

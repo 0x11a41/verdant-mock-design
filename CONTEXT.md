@@ -1,309 +1,106 @@
-Verdant Telemetry has a strong technical foundation but is currently struggling to translate that expertise into a modern, globally appealing brand identity.
-
-## about
-Verdant Telemetry is a privately held company in the Aviation and Aerospace Component Manufacturing sector. They specialize in designing and manufacturing airborne, terrestrial, shipborne, tactical, and conformal antennas, as well as radomes. Founded in 1997 and headquartered in Cochin, Kerala, they are a trusted partner for major Indian entities like Hindustan Aeronautics Ltd. (HAL), the Indian Space Research Organization (ISRO), and the Defense Research & Development Organization (DRDO). They maintain a strict Quality Management System compliant with the AS9100 standard (referenced as both Rev B and Rev D) and operate an advanced testing and manufacturing facility approved by CEMILAC (Ministry of Defence, India). The management team brings significant experience, led by CEO Louis George, CTO Kuruvilla George, and Chief Mentor Tony G. Thomas.
-
-To elevate Verdant to a multinational level, the new page design needs to pivot from a purely transactional, feature-heavy layout to an immersive brand experience. A core step to becoming a more recognizable brand is to focus on storytelling rather than just product features. By emphasizing the critical role their antennas play in global aerospace safety and communication, you can give value and build "brand love" without trying to make the company seem like something it isn't.
-
-# A. Elevating their page
-## 1. The Hero Section: Establishing Global Authority
-
-The current "Innovation In Technology" headline over an image feels generic and dated. The new hero needs to immediately establish what they do and who they do it for, using the strong copywriting already buried in their "About Us" page.
-
-- **Primary Headline:** _Precision Engineering Meets Mission-Critical Performance._
-- **Sub-headline:** _Designing and manufacturing advanced airborne antennas and radomes for global aerospace and defense since 1997._
-- **Visual Direction:** A sleek, edge-to-edge cinematic background video or high-quality image of an aircraft in flight or a naval vessel, **emphasizing the _environment_ where the antennas operate**, rather than just the grey metal parts.
-- **Primary Call-to-Action (CTA):** "Explore Our Capabilities" or "Partner With Us" (shifting away from standard e-commerce phrasing).
-
-## 2. The Trust Bar: Social Proof
-
-Multinational defense contractors lead with their credentials. Verdant currently buries their impressive client list in a paragraph.
-- **Design:** A clean, monochromatic strip immediately below the hero section featuring the logos of their primary partners: Hindustan Aeronautics Ltd. (HAL), Indian Space Research Organization (ISRO), and Defense Research & Development Organization (DRDO).
-- **Badge:** Include a prominent badge for their AS9100 Rev D certification to immediately signal compliance with international aerospace standards.
-## 3. Capabilities Over Catalog (The "What We Do" Section)
-
-The current site dumps users into a grid of part numbers like "JD 118, V/UHF Blade Antenna". To focus on storytelling, organize this section by the solutions they provide.
-
-- **Section Header:** _Excellence Built Into Every Flight._
-- **Pillar 1: Airborne Antennas & Radomes.** _Highlighting high-performance aerodynamics and frequency tuning._
-- **Pillar 2: Custom-Engineered Solutions.** _Showcasing their ability to build bespoke solutions for unique platform constraints—a capability that earned them the SIATI Award for Excellence in Aerospace Indigenization._
-- **Pillar 3: Advanced Testing & Manufacturing.** _Highlighting their in-house Indoor Anechoic Chamber (up to 20 GHz) and ground plane setups, proving they control the quality from design to delivery._
-- **Visual Direction:** Use high-quality, stylized imagery of the engineering process, composite materials, or testing chambers rather than flat product shots.
-
-## 4. The Verdant Advantage (The "Who We Are" Section)
-
-Instead of a standard corporate history, frame their background as a strategic advantage for international buyers.
-
-- **Headline:** _Decades of RF and Composite Expertise._
-- **Copy snippet:** _In an industry where every gram and gigahertz matters, our commitment to innovation and quality keeps our partners ahead of the curve._
-- **Visual Direction:** A modern, stylized version of the team working in the facility, perhaps overlaid with a sleek timeline highlighting their 2023–2025 milestones like the development of ultra-supersonic platform antennas.
-
-## 5. Modernized Footer
-
-The current footer is heavily stacked and visually heavy.
-
-- **Design:** Streamline it into clean columns: "Solutions," "Company," "Certifications," and "Global Headquarters."
-- **Contact:** Present the Cochin, Kerala address with a clean map integration and clear global sales contact channels.
-
-
-## Verdant Telemetry
-
-Verdant is a dedicated designer and manufacturer of antennas and radomes, specialising in airborne application. Verdant has been at the forefront of innovation, backed by a strong Quality Management System (QMS).
-
-Verdant Telemetry & Antenna Systems Pvt. Ltd. is a leading designer and manufacturer of high-performance antennas and radomes, with a strong focus on airborne applications.
-
-Since the 1990s, we have provided innovative and quality solutions to the Aerospace & Defence industries worldwide.
-
-Backed by a robust Quality Management System (QMS) compliant with AS9100 Rev. D, Verdant is committed to excellence in every stage of design and manufacturing. Our state-of-the-art facility in Cochin, serves as a hub for cutting-edge development and rigorous testing.
-
-Our team brings decades of proven expertise in:
-- RF and antenna design
-- Composite and radome engineering
-
-Welcome to the world of airborne connectivity—where precision engineering meets mission-critical performance. At the forefront of aviation and defense, we design and manufacture advanced antennas and radomes that enable secure, high-reliability communication. In an industry where every gram and gigahertz matters, our commitment to innovation and quality keeps our partners ahead of the curve. Excellence is built into every flight.
-
-We excel in custom-engineered solutions to meet our clients’ evolving needs. Our tailored designs for aerodynamics, frequency tuning, or platform constraints have earned us the SIATI Award for Excellence in Aerospace Indigenisation.
-
-At Verdant, we focus on developing partnerships grounded in performance, reliability, and trust, alongside creating products.
-Verdant Telemetry & Antenna Systems
-Mission, vision and values
-Mission
-
-To drive continuous innovation in pursuit of technical excellence, uphold a rigorous quality-centric approach, exceed customer expectations, and maintain a strong commitment to sustainability and social responsibility.
-Vision
-
-To be a global leader in RF AND ANTENNA solutions through technological innovation, engineering excellence, and the delivery of reliable, cutting-edge systems for the Aerospace and Defence industries.
-Our Values
-
-Client Value Creation: Delivering high-tech solutions that exceed expectations through quality, affordability, and innovation.
-Passion for Innovation: Continuously pushing boundaries in product development and technology enhancement.
-Quality First: Adhering to stringent international standards across all functions.
-Commitment to Excellence: Embedding excellence in everything we do—from engineering to execution.
-
-### Facility Overview
-
-Our Cochin facility integrates design, manufacturing, and testing for antennas and radomes, with dedicated RF and Composite Engineering divisions for efficient collaboration.
-
-**Advanced Testing Capabilities:**
-
-- Indoor Anechoic Chamber: Up to 20 GHz for controlled EMI testing.
-- Outdoor Ranges: 20 MHz to 500 MHz.
-- Ground Plane Setup: 32 ft facility (20 MHz to 400 MHz), compliant with MIL-DTL-85670C.
-- Additional Test Setups: For gain, VSWR, radiation patterns, and radome performance.
-
-### Social Commitment
-
-At Verdant, we believe true success is measured by the positive impact we create on society and the environment. We actively support a range of community and environmental initiatives through both financial contributions and hands-on employee involvement.
-
-**Key Initiatives:**
-
-- Environmental Sustainability: Promoting eco-friendly practices.
-- Civic Engagement: Supporting local development and underprivileged communities.
-- Education & Skill Development: Conducting workshops and training in schools and colleges.
-- Entrepreneurship Awareness: Inspiring and mentoring future innovators.
-
-### Quality at Verdant
-
-Quality is not just a benchmark at Verdant—it’s the foundation of everything we do. We maintain a comprehensive Quality Management System (QMS) that governs all stages of the product lifecycle: from design and development to manufacturing and delivery.
-
-Our certifications include:
-
-    AS 9100:2016 Rev. D (Since June 2009)
-    ISO 9001:2015
-
-Regular audits ensure continued compliance with international aerospace standards, empowering us to deliver dependable, high-performance solutions for global Aerospace and Defence markets.
-
-Regular audits ensure compliance with international aerospace standards, enabling the delivery of reliable, high-performance solutions for Aerospace and Defence markets globally.
-
-**Quality Policy:**
-
-“To pursue global standards in design, excellence in manufacturing, and commitment to customer satisfaction through innovation and continual improvement.”
-Our Clients
-
-Verdant serves a diverse clientele worldwide, including OEMs, system integrators, and defence agencies, providing essential RF solutions.
-Our Products
-
-Verdant leverages expertise in RF and composite technologies to provide tailored, high-performance antennas and radomes. Our unique designs and manufacturing processes guarantee consistent quality and reliability, even in the most challenging operational environments.
-
-We offer:
-
-    Cost-effective, tailored solutions
-    Low-to-medium volume production support
-    Precision performance across airborne, naval, and ground platforms
-
-Message from the Managing Director
-
-Greetings, and welcome to Verdant Telemetry & Antenna Systems Pvt. Ltd.
-
-From our humble beginnings as a small workshop, Verdant has grown into a technically advanced and professionally managed organization. This journey has been fueled by innovation, dedication, and a relentless commitment to excellence.
-
-Our team plays a critical role in delivering high-performance solutions tailored to the Aerospace and Defence sectors. We value the trust of our clients and partners and continuously strive to exceed their expectations.
-
-As we enter the next phase of growth and global expansion, we aim to provide advanced technologies, sustain operational efficiency, and promote a collaborative work environment.
-
-Thank you for your interest in Verdant. We look forward to building lasting partnerships with you.
-Louis J George
-CEO Verdant Telemetry & Antenna Systems Pvt.Ltd.
- Management Team
-
-Meet Our Leadership Team
-Louis George
-Louis George
-C.E.O
-
-Louis leads Verdant’s long-term strategy and growth efforts as the CEO. With over 30 years of experience in composite design for airborne applications, he also heads Verdant’s Composite Design division. He holds a degree in Physics from Mahatma Gandhi University and has specialized in Composite Design at IIT Chennai.
-Kuruvilla George
-Kuruvilla George
-C.T.O
-
-As CTO, Kuruvilla brings over 30 years of experience to drive Verdant’s technical strategy and lead project execution and design delivery. He ensures seamless alignment between RF design, simulation, and program timelines, combining deep technical expertise with strong execution focus. His role bridges innovation and implementation across all major development efforts.
-Tony G. Thomas -
-Tony G. Thomas -
-Chief Mentor
-
-Tony G. Thomas began his career at AT&T Bell Labs before co-founding AdventNet (now Zoho) in 1996. A seasoned engineer, tech entrepreneur, and investor, he holds a B.Tech from IIT Madras and a Ph.D. from Johns Hopkins University. In addition to his foundational role at Zoho, Tony remains active in the startup ecosystem as an angel investor in ventures such as Verdant.
-
-### Milestone
-
-    2025
-
-    Designed and Developed an Ultra-light weight antenna for UAV platforms.
-    2024
-
-    Designed and Developed conformal Satcom antennas for transport and supersonic platforms.
-    2023
-
-    Honored at the Aero India Expo 2023 by Dr. G. Satheesh Reddy, Scientific advisor to the Ministry of Defence for the indigenization of LRUs for Indian Platforms.
-    2023
-
-    Established a dedicated Design Centre in Coimbatore to enhance capabilities and support product innovation.
-    2022
-
-    EW antennas successfully developed for ELBIT Systems for LCA Tejas.
-    2021
-
-    TDF Project awarded – “Development of VLF LOOP AERIAL and VLF HF Matrix”
-    2020
-
-    ADE Creative Partnership Award received for significant contribution towards indigenization of UAV antenna products.
-    2020
-
-    TDF Project awarded – “Development of Avionics Antenna LRUs for Aircraft Application”
-    2018
-
-    Verdant successfully completed transition audit of QMS to International Aerospace Standard AS 9100D and ISO 9001:2015
-    2017
-
-    Develops phase and amplitude matched VHF Blade antenna for DF system.
-    2016
-
-    Launched VHF antenna for AIS for maritime surveillance system.
-    2016
-
-    Received Award for Excellence in Aerospace Indigenization from SIATI for the outstanding contribution towards indigenous development of VUHF Upper and Lower Antennas of AN-32 Aircraft for Indian Air force.
-    2015
-
-    Developed and qualified VOR/ILS, Marker beacon and UHF Blade antennas for supersonic Aircraft.
-    2014
-
-    Designed, Developed and qualified HF Airborne antenna tuner, AT 40 for the Indian SDR program.
-    2014
-
-    Air Marshal P. Kanakaraj, Air Officer Commanding-in-Chief, Maintenance Command, Indian Air Force visited Verdant’s Facility at Cochin.
-    2013
-
-    Designed, Developed and qualified conformal VOR/ILS antenna for supersonic platform.
-    2013
-
-    Designed, Developed and qualified conformal V/UHF antenna for LCA TEJAS.
-    2012
-
-    RF test instrumentation upgraded up to 40 GHz.
-    2012
-
-    Verdant QMS upgraded to AS 9100 Revision C
-    2012
-
-    Verdant sets the benchmark by developing the Lightweight Blade Antenna Series that offers substantial weight savings when compared to conventional straight blade antennas.
-    2011
-
-    Verdant sets up a new Anechoic Chamber as a part of the facility expansion programme.
-    2011
-
-    Develops Spiral Antennas & Arrays for the Defence Research and Development Organisation (DRDO)
-    2010
-
-    Designed and Developed V/UHF Blade Antenna for Sierra Nevada Corporation (SNC)
-    2009
-
-    Designed and Developed IFF Yagi Antenna for Manpad Systems.
-    2009
-
-    Thales Communications SA France (TCF) visits Verdant.
-    2009
-
-    Verdant successfully clears the audit for assessing the compliance to AS 9100 Rev.B Standard. Based on the audit conducted by UL India on 21st and 22nd February, 2009, Verdant is recommended for the registration to AS 9100 Rev.B
-    2008
-
-    Loop Aerial JM 708 successfully developed and qualified. This series was supplied for AN32 aircrafts and Cheeta/Chetak Helicopters.
-    2008
-
-    A five member team from Raytheon (USA) visits Verdant to perform a site survey.
-    2008
-
-    Verdant obtains industrial license from DIPP for becoming Defence Offset partner.
-    2008
-
-    CEMILAC gives the Design Approval to Verdant Telemetry to undertake design and development activities of Airborne Antennas, Systems and Radomes.
-    2008
-
-    Verdant launches AS 9100 Implementation Programme.
-    2008
-
-    Develops Airborne Radomes for CABS.
-    2008
-
-    Verdant Telemetry becomes Verdant Telemetry and Antenna Systems Pvt. Ltd
-    2007
-
-    Lockheed Martin visits Verdant.
-    2007
-
-    Verdant participates in the Aero India 2007, the 6th International Aerospace and Defence Exhibition in Bangalore.
-    2006
-
-    Develops Sandwich Radome for ECIL, Hyderabad.
-    2006
-
-    Verdant successfully completes a project for Indian Space Research Organisation (ISRO) by manufacturing a low loss Kevlar PMI Sandwich X-Band Radome for SATNAV (Satellite Navigation).
-    2006
-
-    Verdant Telemetry moves to a new location: 26/411A Konthuruthy, Cochin.
-    2005
-
-    Develops JM 705 ADF airborne loop antenna for Cheeta/Chetak Helicopter and supplied to HAL, Hyderabad.
-    2005
-
-    Chelton Ltd, UK visits Verdant.
-    2005
-
-    Verdant participates in the Aero India 2005, the 5th International Aerospace and Defence Exhibition in Bangalore.
-    2001
-
-    Verdant wins the Award for Excellence in Aerospace Indigenization from SIATI for the outstanding contribution towards indigenization of Design and Development of Loop Antenna for ADF system of Jaguar Aircraft.
-    2000
-
-    Develops Horn Antennas, Whip Antenna and V/UHF antennas for DRDO.
-    2000
-
-    Develops JM 708 ADF airborne Loop antenna for Jaguar and supplied to HAL, Aircraft Division, Bangalore.
-    1999
-
-    Develops VHF antennas for ECIL, Hyderabad. (JH 10V, JH 18-B, JH 13-H)
-    1997
-
-    Verdant develops JH 2Y, low profile VHF antenna for NPOL, Cochin.
-    1997
-
-    Inception of Verdant Telemetry.
-
+ROLE
+Senior creative developer and brand designer. Build a production-quality multi-view marketing site for Verdant Telemetry as ONE index.html (HTML + CSS + JS), hash-routed. Output only code. No lorem ipsum, no invented stats, clients or awards. Use only the facts below.
+
+BRAND FACTS (source of truth)
+- Verdant Telemetry & Antenna Systems Pvt. Ltd. Designs and manufactures airborne, terrestrial, shipborne, tactical, conformal antennas and radomes.
+- Founded 1997 (Cochin). Started as a small workshop. HQ: 26/411 A, Konthuruthy, Cochin – 682 013, India. Tel 0091-484-2663104 / 0091-484-2663576. info@verdanttelemetry.com
+- Customers: HAL, ISRO, DRDO, ECIL, NPOL; also worked with Elbit (LCA Tejas EW antennas), Sierra Nevada Corp (V/UHF blade).
+- Quality: AS9100 Rev D (since June 2009), ISO 9001:2015, CEMILAC design approval (2008), regular audits.
+- Awards: SIATI Excellence in Aerospace Indigenisation (2001, 2016), ADE Creative Partnership Award (2020), honoured at Aero India 2023.
+- Test facility: indoor anechoic chamber up to 20 GHz; outdoor ranges 20–500 MHz; 32 ft ground plane (20–400 MHz, MIL-DTL-85670C); gain, VSWR, pattern and radome tests; RF instrumentation to 40 GHz.
+- Design centre in Coimbatore (2023). Latest: ultra-light UAV antenna (2025), conformal Satcom antennas (2024).
+- Leadership: Louis George (CEO, 30+ yrs composite design, Physics MGU, composites at IIT Chennai); Kuruvilla George (CTO, 30+ yrs, RF design/simulation/execution); Tony G. Thomas (Chief Mentor; ex-AT&T Bell Labs, co-founder AdventNet/Zoho, IIT Madras, Johns Hopkins PhD).
+- Strategy: domestic defence supplier -> globally recognised brand with own products. Theme: "From Kerala to the world. From India to the world."
+- Goal: an overseas buyer should trust Verdant before contacting.
+
+AUDIENCE AND CONVERSION
+- Visitors: international defence/aerospace procurement leads, engineers, integrators.
+- Within 5 seconds the page answers: who, what, why it matters, what next.
+- Primary CTA: "Talk to our engineers" (-> #contact). Secondary: "Learn more" (-> #how).
+- Motivating, scannable: one idea per screen, short lines, clear hierarchy.
+
+ROUTES (hash router, no reload, scroll reset, focus moved to <h1>, document.title updated per view, active nav state)
+- #/ Home (one-page scroll with sections below)
+- #/products Products page (fully working)
+- #/about About Us (Kerala-to-the-world story)
+- #/capabilities overview + #/capabilities/design, /manufacturing, /customisation, /testing (lightweight detail views)
+- #/careers placeholder view (clear "Open roles: editable" content field)
+- #/contact contact view (same form as home contact)
+- #how "How we build" view
+- Unknown hash -> friendly 404 view with link home.
+
+NAVIGATION (use the established mega-nav pattern of sites like Stripe/Vercel/Linear)
+- Items: Products, About Us, Capabilities, Career, Contact Us. Logo left, links centre, CTA "Talk to our engineers" right, search icon opens a command-palette style overlay (searches products + pages, keyboard: "/" to open, Esc to close).
+- Capabilities dropdown: Design & Development, Manufacturing, Customisation, Testing, each with icon + one-line description. Career dropdown: Open roles, Life at Verdant, Internships (all routed to #/careers with anchors).
+- Dropdowns: open on hover/focus (desktop), click on touch; full ARIA (aria-expanded, aria-haspopup, roving focus, Esc closes, arrow keys navigate).
+- Behaviour: fully visible at page top; hides on scroll down, reappears on scroll up with blurred dark translucent background.
+- Mobile: full-screen overlay with accordion submenus, focus trap, body scroll lock.
+
+VISUAL SYSTEM (CSS variables)
+- Dark. bg #05090D, surface #0B1217, elevated #111B22, border rgba(255,255,255,.08).
+- Text: #EAF2F0 / #8FA3A0 / #5B6E6C. Accent #03BC9F, glow rgba(3,188,159,.35). Secondary #1E6F8C (sparingly).
+- Semantic: success #2ECC8F, warning #F2B84B, error #FF5C6C, info #4DB6FF.
+- Fonts: Space Grotesk (display, tight tracking, fluid clamp, hero 72–140px), Inter (body), JetBrains Mono (uppercase labels).
+- Buttons: primary solid accent pill with dark text; secondary ghost 1px border; hover glow + 2px lift; accent focus ring; min 44px target.
+- Icons: one inline-SVG set, 1.5px stroke, round caps. No emoji.
+- Illustration: line-art only (waveforms, radiation rings, dotted globe, antenna silhouettes), inline SVG/canvas.
+
+ANTI-CLUTTER RULES
+- Per viewport: 1 headline, 1 supporting line, 1–2 CTAs. Max 2 accent elements.
+- Section padding >= 12vh; 12-col grid, max 1280px. Thin-border cards, no heavy shadows/gradients. No carousels, no autoplay noise.
+
+ASSETS
+- Load media from ./assets/ with a single ASSETS config object at the top of the script (logo, product images, team photos, hero video, etc.). Every asset has a graceful fallback (SVG placeholder / initials avatar) if the file is missing, so the page works with an empty folder.
+
+HOME SECTIONS
+1. Hero I (100vh): full-bleed WebGL (Three.js, CDN, pinned) dot-matrix wireframe Earth, slow rotation, signal arcs and pulses from Kochi (highlighted origin) to world nodes. Drag/move/touch rotates with easing. Do NOT depend on the supplied 2D polygon shader's missing data; use lat/long grid + procedural dot-matrix land mask, keeping its mouse-rotation idea. Eyebrow "AEROSPACE & DEFENCE ANTENNAS · COCHIN, INDIA". Headline e.g. "Signals that cross every border." with one accent word. One supporting line. Buttons: Learn more, Talk to our engineers. Scroll cue.
+2. Hero II (pinned purpose): dimmed globe; large sentence reveals word by word on scroll (muted -> white, key words accent): "We design and build the antennas and radomes that keep aircraft, ships and ground forces connected, from Kerala to the world." Then the next section slides up over it while hero scales down/fades.
+3. Capabilities: sticky left title, right list of 4 (Design & Development, Manufacturing, Customisation, Testing): number, icon, one-line outcome, thin animated waveform on hover/in view; each links to its capability view. Trust row (text only): "AS9100 · ISO 9001 · CEMILAC-approved · Trusted by HAL, ISRO, DRDO".
+4. Featured products teaser: 3 products from the catalogue + "View all products ->".
+5. About teaser: one line of the Kerala-to-the-world story + "Read our story ->" (-> #/about).
+6. Meet our people (contact): large quote "We're a diverse team of thinkers and doers, united by a steadfast commitment to serving our customers."; 3 minimal leadership cards (photo from assets or initials); line-art map/globe locating Cochin with pulsing marker and rings; contact form (name, work email, organisation, message; inline validation; success/error states; mailto fallback) + real address/phone/email from facts above.
+7. Newsroom: 3 cards from real items (date, tag, title, Read more ->): SIATI Award for Excellence in Aerospace Indigenisation; Verdant on Manorama Channel; AS 9100 Revision C Certification. Hover: arrow + accent underline. Body text is an editable field.
+8. Footer: logo, one-line brand statement, Useful Links (Home, About Us, Products, Capabilities, Contact Us), Capabilities links, contact info, certifications, social icon placeholders, (c) 2026 Verdant. Large faint "VERDANT" wordmark with a signal line through it.
+
+PRODUCTS PAGE (#/products) - must fully work
+- Header: "Products", short intro (RF + composite expertise, tailored antennas/radomes, low-to-medium volume, airborne/naval/ground), button "Make an enquiry" (opens modal form prefilled with selected product; focus trap).
+- Data: a PRODUCTS array in JS (name, code, category, application, frequency band, type, image, datasheet URL). Seed with these real items: JC 07 C Band Omni; JC 1003 and JC 1006 Radio Altimeter; JC 50 C-Band Blade; JC 62 C Band Omni; JD 118 V/UHF Blade; JD 120 T1B-A, JD 120 T1B, JD 120 T2G V/UHF Top-Load Blade; JD 201 VHF/UHF Blade; JD 202 V/UHF Blade; JD 252 A HT Triband Dual Connector Blade; JD 300 B02, D02, L02 V/UHF Blade. Fields I don't know (frequency band, image, datasheet) are clearly marked editable placeholders, not invented specs.
+- Filters (left rail desktop, bottom sheet mobile): Application (Navigation, Communication, EW, Identification, Datalink & Telemetry), Frequency, Type. Multi-select checkboxes with counts, "Clear all", active filter chips.
+- Controls: search box, sort (Default, Name A-Z, Name Z-A), per-page (15/30/60), pagination with prev/next + page numbers, result count, aria-live updates. State kept in URL query (#/products?app=...&page=2).
+- Product card: image/placeholder illustration, code, name, application tag, buttons "Show details" and "Download datasheet". Details open in a side drawer/modal (specs table, enquiry CTA), deep-linkable (#/products/jd-118).
+- Empty state with "Clear filters". Skeleton loading state. Keyboard and screen-reader friendly.
+
+ABOUT US PAGE (#/about) - reframed as "Kerala to the world"
+- Hero line + short story arc, not a corporate dump. Scroll-driven narrative:
+  1. Origin: 1997, a small workshop in Cochin.
+  2. Craft: first antennas for NPOL, ECIL, DRDO, HAL (Jaguar, AN-32, Cheetah/Chetak).
+  3. Standards: CEMILAC approval (2008), AS9100 (2009), anechoic chamber (2011), upgrades.
+  4. Recognition: SIATI awards, ADE award, Aero India honour.
+  5. Platforms: LCA Tejas, supersonic conformal antennas, Satcom, UAV ultra-light antenna.
+  6. Next: global expansion with own products; Coimbatore design centre; global visitors (Thales, Raytheon, Lockheed Martin, Chelton visits as "partners who came to see us" - phrase factually as visits, not contracts).
+- Visual: a line that draws from Kerala outward across the globe as the user scrolls, milestones pinned along it.
+- Interactive milestone timeline (1997–2025) from the supplied list; filter by Awards / Products / Certifications; collapsed by default, no wall of text.
+- Mission, Vision and 4 Values as 6 compact cards.
+- Facility overview (test ranges and chamber as a spec grid), Quality (certs + quality policy quote), Social commitment (4 short items).
+- Leadership with bios (shortened), MD message as a pull-quote.
+- Closing CTA -> contact.
+
+CAPABILITY VIEWS
+- Each: outcome-led headline, 3-4 short bullets drawn from the facts (e.g. Testing: chamber to 20 GHz, ranges, ground plane, VSWR/gain/pattern/radome tests), one line illustration, link to products + contact. No fabricated claims.
+
+HOW VIEW (#how)
+- Full-screen, back control. 4-step vertical timeline (Design -> Build -> Customise -> Test), short description + line illustration each, closing CTA to contact.
+
+MOTION
+- GSAP + ScrollTrigger (CDN, pinned), optional Lenis. Pinned hero text, 24px reveal-on-scroll, globe parallax, section overlap transitions, view-transition fade between routes. power3.out, 0.6–1s, stagger 60–90ms. One motion language.
+- prefers-reduced-motion: no pinning/parallax/globe animation; static globe image.
+
+QUALITY
+- Responsive 360–1920px. Mobile: fewer particles, simpler pins.
+- DPR cap 2; pause rendering when tab/hero offscreen; lazy-init per route; destroy WebGL and ScrollTriggers when leaving Home.
+- Accessibility: landmarks, skip link, WCAG AA, aria-labels, visible focus, canvas aria-hidden, SVG titles.
+- SEO: title, meta description, OG, Organization JSON-LD; per-route titles.
+- Code organised and commented by module: config/assets, data, router, nav, globe, home, products, about, capabilities, forms, footer.
+
+DELIVERABLE
+One complete index.html that works opened directly (hash routing, no server). Placeholders only in clearly marked editable content fields.
