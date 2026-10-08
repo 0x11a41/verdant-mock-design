@@ -20,9 +20,15 @@ import {
   toggleProductAppFilter,
   toggleProductTypeFilter,
   clearAllProductFilters,
+  clearProductAppFilters,
+  handleProductTypeSelect,
   setProductPage,
-  openProductDrawer,
-  closeProductDrawer
+  inspectProduct,
+  closeInspectionModal,
+  switchInspectionView,
+  switchSpecsTab,
+  handleImageZoom,
+  resetImageZoom
 } from './views/products.js';
 
 // Import About Handlers
@@ -36,8 +42,14 @@ import {
 } from './views/contact.js';
 
 // Expose handlers globally on window for inline HTML template compatibility
-window.openProductDrawer = openProductDrawer;
-window.closeProductDrawer = closeProductDrawer;
+window.inspectProduct = inspectProduct;
+window.closeInspectionModal = closeInspectionModal;
+window.switchInspectionView = switchInspectionView;
+window.switchSpecsTab = switchSpecsTab;
+window.handleImageZoom = handleImageZoom;
+window.resetImageZoom = resetImageZoom;
+window.openProductDrawer = inspectProduct;
+window.closeProductDrawer = closeInspectionModal;
 window.openEnquiryModal = openEnquiryModal;
 window.closeEnquiryModal = closeEnquiryModal;
 window.handleProductSearch = handleProductSearch;
@@ -46,6 +58,8 @@ window.handleProductPerPage = handleProductPerPage;
 window.toggleProductAppFilter = toggleProductAppFilter;
 window.toggleProductTypeFilter = toggleProductTypeFilter;
 window.clearAllProductFilters = clearAllProductFilters;
+window.clearProductAppFilters = clearProductAppFilters;
+window.handleProductTypeSelect = handleProductTypeSelect;
 window.setProductPage = setProductPage;
 window.setTimelineFilter = setTimelineFilter;
 window.handleContactSubmit = handleContactSubmit;
@@ -54,6 +68,14 @@ window.copyContactEmail = copyContactEmail;
 window.showToast = showToast;
 window.openMobileMenu = openMobileMenu;
 window.closeMobileMenu = closeMobileMenu;
+
+// Global Escape Key Listener for Modals
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeInspectionModal();
+    closeEnquiryModal();
+  }
+});
 
 /**
  * Bootstrap Application

@@ -43,8 +43,8 @@ export function renderHomeView() {
         </div>
       </div>
 
-      <!-- Scroll Cue -->
-      <div id="hero-scroll-cue" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-subtle); font-size: 0.75rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; pointer-events: none; transition: opacity 0.3s ease;">
+      <!-- Scroll Cue with subtle aerospace floating animation -->
+      <div id="hero-scroll-cue" class="hero-scroll-cue-floating" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--text-subtle); font-size: 0.75rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; pointer-events: none; transition: opacity 0.3s ease;">
         <span>Scroll to explore</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="m7 13 5 5 5-5"/><path d="m7 6 5 5 5-5"/></svg>
       </div>
@@ -87,28 +87,30 @@ export function renderHomeView() {
         </section>
 
         <!-- Trust Row: Defence Leaders & Quality Certifications (Unified Single Flow) -->
-        <section id="trust-section" class="hero-slide-in-surface" style="padding: 2.25rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg);">
+        <section id="trust-section" class="hero-slide-in-surface" style="padding: 2.25rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg); overflow: hidden;">
           <div class="container-wide">
             <div style="display: flex; flex-direction: column; gap: 0.85rem;">
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">TRUSTED BY DEFENCE LEADERS</span>
-              <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem;">
-                <div class="trusted-card">
-                  <img src="/assets/hal.png" alt="HAL" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">HAL</span>
-                </div>
-                <div class="trusted-card">
-                  <img src="/assets/drdo.png" alt="DRDO" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">DRDO</span>
-                </div>
-                <div class="trusted-card">
-                  <img src="/assets/isro.png" alt="ISRO" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">ISRO</span>
-                </div>
-                <div class="trusted-card" style="padding: 0.5rem 1.15rem;">
-                  <img src="/assets/as9100d-certified-logo.png" alt="AS9100 Rev D Certified" style="height: 28px; width: auto; object-fit: contain;" onerror="this.style.display='none';" />
-                  <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.35;">
-                    <span style="color: var(--accent); font-weight: 600;">AS9100 Rev D · ISO 9001:2015</span>
-                    <span style="color: var(--text-subtle); display: block;">CEMILAC Design Approval</span>
+              <div id="trust-scroll-container" class="trust-scroll-container">
+                <div id="trust-cards-row" class="trust-cards-row">
+                  <div class="trusted-card">
+                    <img src="/assets/hal.png" alt="HAL" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">HAL</span>
+                  </div>
+                  <div class="trusted-card">
+                    <img src="/assets/drdo.png" alt="DRDO" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">DRDO</span>
+                  </div>
+                  <div class="trusted-card">
+                    <img src="/assets/isro.png" alt="ISRO" style="height: 28px; width: auto; object-fit: contain; filter: brightness(1.1);" onerror="this.style.display='none';" />
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text); font-weight: 600;">ISRO</span>
+                  </div>
+                  <div class="trusted-card" style="padding: 0.5rem 1.15rem;">
+                    <img src="/assets/as9100d-certified-logo.png" alt="AS9100 Rev D Certified" style="height: 28px; width: auto; object-fit: contain;" onerror="this.style.display='none';" />
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.35;">
+                      <span style="color: var(--accent); font-weight: 600;">AS9100 Rev D · ISO 9001:2015</span>
+                      <span style="color: var(--text-subtle); display: block;">CEMILAC Design Approval</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -138,17 +140,27 @@ export function renderHomeView() {
 
       <!-- POST-REGIMES SURFACE: Glides on top of pinned regimes motto -->
       <div id="post-regimes-panel" class="post-regimes-surface">
-      <!-- PRODUCTS: Horizontally Scrollable Track -->
-      <section id="featured-products-section" style="padding: clamp(4rem, 10vh, 7rem) 0; background: #05090D; border-bottom: 1px solid var(--border);">
+      <!-- PRODUCTS: Featured Flagship Hardware Showcase (Horizontally Scrollable) -->
+      <section id="featured-products-section" style="padding: clamp(4.5rem, 10vh, 7.5rem) 0; background: #05090D; border-bottom: 1px solid var(--border);">
       <div class="container-wide">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem;">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.25rem;">
           <div>
-            <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.85rem); font-weight: 700; color: var(--text); letter-spacing: -0.03em;">
-              Products
+            <h2 style="font-family: var(--font-display); font-size: 29.1875px; font-weight: 700; color: var(--text); letter-spacing: -0.03em; margin: 0;">
+              Featured Products
             </h2>
           </div>
           
-          <div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <!-- Scroll Arrow Controls for Horizontal Track -->
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="feat-scroll-prev" aria-label="Scroll featured products left" class="btn-secondary" style="width: 40px; height: 40px; padding: 0; min-height: 40px; border-radius: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button id="feat-scroll-next" aria-label="Scroll featured products right" class="btn-secondary" style="width: 40px; height: 40px; padding: 0; min-height: 40px; border-radius: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+
             <a href="#/products" class="btn-secondary" style="font-size: 0.8125rem;">
               View all
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -156,33 +168,44 @@ export function renderHomeView() {
           </div>
         </div>
 
-        <!-- Horizontally Scrollable Track -->
-        <div id="catalog-horizontal-track" class="catalog-horizontal-track" role="region" aria-label="Featured antennas track" tabindex="0">
-          ${PRODUCTS.map(p => `
-            <div class="catalog-product-card">
-              <div style="height: 185px; width: 100%; border-radius: 10px; overflow: hidden; background: radial-gradient(circle at center, rgba(3,188,159,0.07) 0%, #05090D 80%); margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.05); position: relative;">
-                ${safeImg(p.image, p.fallbackType, p.code, p.name, '', 'width: 100%; height: 100%; object-fit: contain; padding: 0.75rem;')}
-                <span style="position: absolute; top: 0.6rem; right: 0.6rem; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--accent); background: rgba(5,9,13,0.85); border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.45rem;">
-                  ${p.category}
-                </span>
+        <!-- Horizontally Scrollable Featured Showcase with Uniform Normal Hardware Cards -->
+        <div id="featured-scroll-track" class="featured-horizontal-scroll" role="region" aria-label="Featured antenna systems carousel" tabindex="0">
+          ${PRODUCTS.filter(p => p.featured).map((p, idx) => `
+            <div class="featured-hw-card" data-product-id="${p.id}" role="button" tabindex="0" onclick="window.inspectProduct('${p.id}', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); window.inspectProduct('${p.id}', this);}">
+              <!-- 1:1 Hardware Image Frame with Corner Badges -->
+              <div class="hw-stage-square">
+                <div class="hw-corner-tag-tl">${p.code}</div>
+                <div class="hw-corner-tag-tr">${p.platformDomain.split('·')[0].trim()}</div>
+                <img src="${p.primaryImage}" alt="${p.name}" class="hw-stage-square-img" loading="lazy" onerror="this.onerror=null; this.src='${p.images[0] || '/assets/antina.webp'}';" />
               </div>
 
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.75rem;">
-                <span style="font-family: var(--font-mono); color: var(--accent); font-weight: 600;">${p.code}</span>
-                <span style="color: var(--text-muted);">${p.application}</span>
-              </div>
+              <!-- Card Body -->
+              <div class="hw-card-body">
+                <h3 class="hw-card-name" title="${p.name}">
+                  ${p.name}
+                </h3>
+                <div class="hw-card-location" title="${p.mountingLocation}">
+                  <span style="color: var(--accent); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;">LOC:</span>
+                  <span>${p.mountingLocation}</span>
+                </div>
 
-              <h3 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.45rem; line-height: 1.3;">
-                ${p.name}
-              </h3>
+                <!-- Core Engineering Specs Strip -->
+                <div class="hw-specs-strip">
+                  <div class="hw-spec-row">
+                    <span class="hw-spec-key">BANDWIDTH</span>
+                    <span class="hw-spec-val" title="${p.freqBand}">${p.freqBand.split('(')[0].trim()}</span>
+                  </div>
+                  <div class="hw-spec-row">
+                    <span class="hw-spec-key">VSWR / POL</span>
+                    <span class="hw-spec-val">${p.vswr.split(' ')[0]} ${p.vswr.split(' ')[1] || ''} · ${p.polarisation.split(' ')[0]}</span>
+                  </div>
+                </div>
 
-              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle); margin-bottom: 1.25rem;">
-                ${p.freqBand}
-              </div>
-
-              <div style="display: flex; gap: 0.65rem; padding-top: 1rem; border-top: 1px solid var(--border); margin-top: auto;">
-                <a href="#/products/${p.id}" class="btn-secondary" style="flex: 1; padding: 0.45rem 0.75rem; font-size: 0.75rem; min-height: 38px;">Details</a>
-                <a href="#/contact?enquiry=${encodeURIComponent(p.code)}" class="btn-primary" style="flex: 1; padding: 0.45rem 0.75rem; font-size: 0.75rem; min-height: 38px;">Enquire</a>
+                <!-- Action Cue -->
+                <div class="hw-inspect-bar">
+                  <span style="font-weight: 500;">Inspect Specifications</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
               </div>
             </div>
           `).join('')}
@@ -676,6 +699,24 @@ export function initHomeView() {
   window.addEventListener('resize', handleHomeScroll, { passive: true });
   handleHomeScroll();
 
+  // Horizontal featured products track controls
+  const featTrack = document.getElementById('featured-scroll-track');
+  const featPrev = document.getElementById('feat-scroll-prev');
+  const featNext = document.getElementById('feat-scroll-next');
+
+  if (featTrack) {
+    if (featPrev) {
+      featPrev.onclick = () => {
+        featTrack.scrollBy({ left: -340, behavior: 'smooth' });
+      };
+    }
+    if (featNext) {
+      featNext.onclick = () => {
+        featTrack.scrollBy({ left: 340, behavior: 'smooth' });
+      };
+    }
+  }
+
   // Horizontal catalog preview controls
   const catTrack = document.getElementById('catalog-horizontal-track');
   const catLeft = document.getElementById('catalog-scroll-left');
@@ -685,5 +726,148 @@ export function initHomeView() {
   }
   if (catTrack && catRight) {
     catRight.onclick = () => catTrack.scrollBy({ left: 340, behavior: 'smooth' });
+  }
+
+  // Dynamic horizontal auto-scroll for trust section when horizontal space is constrained
+  if (window.__trustScrollCleanup) {
+    window.__trustScrollCleanup();
+    window.__trustScrollCleanup = null;
+  }
+
+  const trustContainer = document.getElementById('trust-scroll-container');
+  const trustRow = document.getElementById('trust-cards-row');
+
+  if (trustContainer && trustRow) {
+    let trustAnimationId = null;
+    let isUserInteracting = false;
+    let resumeTimeout = null;
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    const pauseInteraction = () => {
+      isUserInteracting = true;
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isUserInteracting = false;
+      }, 1500);
+    };
+
+    trustContainer.addEventListener('mouseenter', () => { isUserInteracting = true; }, { passive: true });
+    trustContainer.addEventListener('mouseleave', () => { isUserInteracting = false; }, { passive: true });
+    trustContainer.addEventListener('touchstart', pauseInteraction, { passive: true });
+    trustContainer.addEventListener('touchmove', pauseInteraction, { passive: true });
+    trustContainer.addEventListener('touchend', pauseInteraction, { passive: true });
+
+    // Drag to scroll for mouse users
+    trustContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      pauseInteraction();
+      trustContainer.style.cursor = 'grabbing';
+      startX = e.pageX - trustContainer.offsetLeft;
+      scrollStart = trustContainer.scrollLeft;
+    });
+
+    const onMouseUp = () => {
+      if (isDown) {
+        isDown = false;
+        trustContainer.style.cursor = 'grab';
+        pauseInteraction();
+      }
+    };
+    window.addEventListener('mouseup', onMouseUp);
+
+    trustContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      pauseInteraction();
+      const x = e.pageX - trustContainer.offsetLeft;
+      const walk = (x - startX);
+      trustContainer.scrollLeft = scrollStart - walk;
+    });
+
+    function setupTrustScroll() {
+      if (trustAnimationId) {
+        cancelAnimationFrame(trustAnimationId);
+        trustAnimationId = null;
+      }
+
+      // Remove existing clones before measuring
+      const existingClones = trustRow.querySelectorAll('.trusted-clone');
+      existingClones.forEach(el => el.remove());
+
+      const originalCards = Array.from(trustRow.querySelectorAll('.trusted-card:not(.trusted-clone)'));
+      if (originalCards.length === 0) return;
+
+      const availableWidth = trustContainer.clientWidth;
+      const naturalWidth = trustRow.scrollWidth;
+
+      // Determine if there is NOT enough horizontal space
+      const hasInsufficientSpace = naturalWidth > availableWidth + 2;
+
+      if (!hasInsufficientSpace) {
+        trustContainer.style.overflowX = 'visible';
+        trustContainer.style.maskImage = 'none';
+        trustContainer.style.webkitMaskImage = 'none';
+        trustContainer.style.cursor = 'default';
+        trustContainer.scrollLeft = 0;
+        return;
+      }
+
+      // Not enough horizontal space: horizontally scrollable with infinite, slow auto-scroll
+      trustContainer.style.overflowX = 'auto';
+      trustContainer.style.cursor = 'grab';
+      trustContainer.style.maskImage = 'linear-gradient(90deg, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%)';
+      trustContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%)';
+
+      // Clone original cards to allow seamless infinite loop
+      for (let c = 0; c < 2; c++) {
+        originalCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.classList.add('trusted-clone');
+          clone.setAttribute('aria-hidden', 'true');
+          trustRow.appendChild(clone);
+        });
+      }
+
+      const firstClone = trustRow.querySelector('.trusted-clone');
+      const loopWidth = firstClone ? (firstClone.offsetLeft - originalCards[0].offsetLeft) : naturalWidth;
+
+      if (prefersReduced || loopWidth <= 0) return;
+
+      let lastTimestamp = null;
+      const speedPxPerSec = 26; // Smooth, slow drift (~26px/s)
+
+      function scrollStep(timestamp) {
+        if (!lastTimestamp) lastTimestamp = timestamp;
+        const delta = Math.min(64, timestamp - lastTimestamp);
+        lastTimestamp = timestamp;
+
+        if (!isUserInteracting && loopWidth > 0) {
+          const pxToScroll = (speedPxPerSec * delta) / 1000;
+          trustContainer.scrollLeft += pxToScroll;
+
+          if (trustContainer.scrollLeft >= loopWidth) {
+            trustContainer.scrollLeft -= loopWidth;
+          }
+        }
+
+        trustAnimationId = requestAnimationFrame(scrollStep);
+      }
+
+      trustAnimationId = requestAnimationFrame(scrollStep);
+    }
+
+    setupTrustScroll();
+    window.addEventListener('resize', setupTrustScroll, { passive: true });
+
+    window.__trustScrollCleanup = () => {
+      if (trustAnimationId) cancelAnimationFrame(trustAnimationId);
+      window.removeEventListener('resize', setupTrustScroll);
+      window.removeEventListener('mouseup', onMouseUp);
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      const existingClones = trustRow.querySelectorAll('.trusted-clone');
+      existingClones.forEach(el => el.remove());
+    };
   }
 }

@@ -262,6 +262,30 @@
     </div>
   </footer>
 
+  <!-- Full-Screen Hardware Inspection Cockpit (Backdrop + Edge-to-Edge Dialog) -->
+  <div id="inspection-overlay" onclick="window.closeInspectionModal();"></div>
+  <div id="inspection-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-product-title"></div>
+
+  <!-- General Technical Enquiry Modal -->
+  <div id="general-enquiry-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 200; align-items: center; justify-content: center; padding: 1.5rem;">
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 540px; padding: 2.25rem; position: relative;">
+      <button onclick="window.closeEnquiryModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.35rem; line-height: 1;">&times;</button>
+      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase;">AEROSPACE PROCUREMENT &amp; ICD REQUEST</div>
+      <h3 style="font-size: 1.35rem; color: var(--text); margin-bottom: 0.5rem;" id="enquiry-modal-title">Request Technical ICD &amp; Specs</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Receive complete engineering interface drawings, STEP 3D envelopes, and formal qualification test reports.</p>
+      <form onsubmit="window.handleContactSubmit(event, 'modal-enquiry-form')" id="modal-enquiry-form">
+        <input type="hidden" id="modal-product-ref" value="" />
+        <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <input type="text" id="m-name" required placeholder="Engineer / Officer Name" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
+          <input type="email" id="m-email" required placeholder="Official Work Email (@hal-india / @drdo / corporate)" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
+          <input type="text" id="m-org" required placeholder="Defence Entity / Aerospace Agency" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
+          <textarea id="m-msg" rows="3" required placeholder="Specify platform mounting envelope, connector type, RF power requirements, or tender ref..." style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;"></textarea>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Submit Technical Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- App Script -->
   <script type="module" src="/src/app.js"></script>
 </body>

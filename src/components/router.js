@@ -26,6 +26,10 @@ export function route() {
     window.removeEventListener('resize', window.__homeScrollHandler);
     window.__homeScrollHandler = null;
   }
+  if (window.__trustScrollCleanup) {
+    window.__trustScrollCleanup();
+    window.__trustScrollCleanup = null;
+  }
 
   const globeInstance = getGlobeInstance();
   if (globeInstance && cleanHash !== '#/' && cleanHash !== '') {
@@ -53,6 +57,14 @@ export function route() {
     mainContent.innerHTML = renderProductsView(detailId);
     pageTitle = 'Products & Radomes | Verdant Telemetry';
     highlightNav('products');
+    if (detailId) {
+      setTimeout(() => {
+        const trigger = document.querySelector(`[data-product-id="${detailId}"]`);
+        if (window.inspectProduct) {
+          window.inspectProduct(detailId, trigger);
+        }
+      }, 60);
+    }
   } else if (cleanHash === '#/about') {
     mainContent.innerHTML = renderAboutView();
     pageTitle = 'About Us | Kerala to the World | Verdant Telemetry';
