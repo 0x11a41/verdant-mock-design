@@ -1192,7 +1192,7 @@ function renderHomeView() {
         <div class="container-wide">
           <div class="purpose-statement-vignette" style="max-width: 1040px; margin: 0 auto; text-align: center; padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 3.5rem);">
             <div id="purpose-eyebrow" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 2.25rem; opacity: 0.5; transition: opacity 0.3s ease;">
-              OUR FOUNDING PURPOSE
+              OUR PURPOSE
             </div>
             <p id="purpose-statement-text" class="reveal-statement" style="font-family: var(--font-display); font-size: clamp(2rem, 4.4vw, 3.6rem); font-weight: 500; line-height: 1.35; letter-spacing: -0.025em; color: var(--text-muted); text-wrap: balance;">
               <span class="word-token">We</span>
@@ -1250,8 +1250,8 @@ function renderHomeView() {
         </div>
       </section>
 
-  <!-- OPERATIONAL REGIMES: Centered Big Standout Motto (1-to-1 Scrubbed Scroll Animation) -->
-  <section id="regimes-section" style="padding: clamp(7rem, 16vh, 11rem) 0; background: #060B10; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; text-align: center;">
+  <!-- OPERATIONAL REGIMES: Centered Big Standout Motto (Pinned Background Layer) -->
+  <section id="regimes-section" class="regimes-pinned-backdrop" style="padding: clamp(5.5rem, 12vh, 8.5rem) 0; background: #05090D; overflow: hidden; text-align: center; margin-bottom: clamp(14vh, 22vh, 30vh);">
     <div class="container-wide" style="position: relative; z-index: 2;">
       <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
         <h2 id="regime-motto-heading" style="font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.25rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.035em; color: var(--text); margin: 0 auto; text-wrap: balance; will-change: transform, letter-spacing;">
@@ -1269,8 +1269,10 @@ function renderHomeView() {
     </div>
   </section>
 
-  <!-- PRODUCTS: Horizontally Scrollable Track -->
-  <section id="featured-products-section" style="padding: clamp(4rem, 10vh, 7rem) 0; background: #05090D; border-bottom: 1px solid var(--border);">
+  <!-- POST-REGIMES SURFACE: Glides on top of pinned regimes motto -->
+  <div id="post-regimes-panel" class="post-regimes-surface">
+    <!-- PRODUCTS: Horizontally Scrollable Track -->
+    <section id="featured-products-section" style="padding: clamp(4rem, 10vh, 7rem) 0; background: #05090D; border-bottom: 1px solid var(--border);">
     <div class="container-wide">
       <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem;">
         <div>
@@ -1650,6 +1652,7 @@ function renderHomeView() {
       </div>
     </div>
   </section>
+      </div> <!-- /post-regimes-panel -->
     </div> <!-- /hero-sliding-panel -->
   </div> <!-- /hero-pinned-wrapper -->
   `;
@@ -3120,14 +3123,22 @@ function initHomeView() {
       });
     }
 
-    // 4. Operational Regimes Section 1-to-1 Scroll-Driven Text & Visual Scrub
+    // 4. Operational Regimes Section 1-to-1 Scroll-Driven Scrub & Centered Background Pinning
     const regimesSec = document.getElementById('regimes-section');
     if (regimesSec) {
       const rect = regimesSec.getBoundingClientRect();
-      const startTrigger = vh * 0.95;
-      const endTrigger = vh * 0.28;
+      const secHeight = regimesSec.offsetHeight || 340;
+      // Sticky top offset so that the section locks exactly in the vertical center of the viewport
+      const targetStickyTop = Math.max(20, Math.round((vh - secHeight) / 2));
+      regimesSec.style.setProperty('--regime-sticky-top', `${targetStickyTop}px`);
+
+      // 1-to-1 scrub: from entering screen (vh * 0.92) to settling into centered sticky anchor (targetStickyTop + 15)
+      const startTrigger = vh * 0.92;
+      const endTrigger = targetStickyTop + 15;
       let regimeProgress = 0;
-      if (rect.top < startTrigger) {
+      if (rect.top <= endTrigger) {
+        regimeProgress = 1;
+      } else if (rect.top < startTrigger) {
         regimeProgress = Math.min(1, Math.max(0, (startTrigger - rect.top) / (startTrigger - endTrigger)));
       }
 
@@ -3215,8 +3226,10 @@ function initHomeView() {
   }
 
   window.removeEventListener('scroll', window.__homeScrollHandler);
+  window.removeEventListener('resize', window.__homeScrollHandler);
   window.__homeScrollHandler = handleHomeScroll;
   window.addEventListener('scroll', handleHomeScroll, { passive: true });
+  window.addEventListener('resize', handleHomeScroll, { passive: true });
   // Initial check on load
   handleHomeScroll();
 

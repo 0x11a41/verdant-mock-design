@@ -220,6 +220,24 @@
       background: transparent;
       pointer-events: auto;
     }
+    /* Operational Regimes: Centered Sticky Pinned Backdrop */
+    .regimes-pinned-backdrop {
+      position: -webkit-sticky;
+      position: sticky;
+      top: var(--regime-sticky-top, calc(50vh - 160px));
+      z-index: 1;
+      will-change: transform;
+      background: #05090D;
+      width: 100%;
+    }
+    /* Post-Regimes Surface: Layer that rolls smoothly on top of pinned regimes backdrop */
+    .post-regimes-surface {
+      position: relative;
+      z-index: 10;
+      background: #05090D;
+      box-shadow: 0 -28px 64px rgba(0, 0, 0, 0.95);
+      border-top: 1px solid var(--border);
+    }
     /* Globe Soft Ambient Glow */
     .globe-ambient-glow {
       position: absolute;
@@ -591,7 +609,7 @@
   </main>
 
   <!-- Site Footer -->
-  <footer style="background: #020508; border-top: 1px solid var(--border); padding: 5rem 0 2.5rem; position: relative; overflow: hidden;">
+  <footer style="background: #020508; border-top: 1px solid var(--border); padding: 5rem 0 2.5rem; position: relative; z-index: 20; overflow: hidden;">
     <div class="container-wide">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
         <div>
