@@ -30,21 +30,38 @@ export function initNavigation() {
   const mobileClose = document.getElementById('mobile-menu-close');
   if (mobileBtn) mobileBtn.addEventListener('click', openMobileMenu);
   if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+
+  // Close mobile menu when navigating
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenu) {
+    mobileMenu.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link) {
+        closeMobileMenu();
+      }
+    });
+  }
 }
 
 export function openMobileMenu() {
   const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('mobile-menu-btn');
   if (menu) {
+    menu.classList.add('active');
     menu.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    if (btn) btn.setAttribute('aria-expanded', 'true');
   }
 }
 
 export function closeMobileMenu() {
   const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('mobile-menu-btn');
   if (menu) {
+    menu.classList.remove('active');
     menu.style.display = 'none';
     document.body.style.overflow = '';
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 }
 

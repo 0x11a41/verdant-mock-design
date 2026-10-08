@@ -69,11 +69,12 @@ window.showToast = showToast;
 window.openMobileMenu = openMobileMenu;
 window.closeMobileMenu = closeMobileMenu;
 
-// Global Escape Key Listener for Modals
+// Global Escape Key Listener for Modals & Drawers
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeInspectionModal();
     closeEnquiryModal();
+    closeMobileMenu();
   }
 });
 

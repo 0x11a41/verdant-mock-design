@@ -1443,6 +1443,155 @@
       transform: scale(0.97) !important;
     }
 
+    /* Form Controls & Contact Inputs */
+    .contact-input:focus {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 0 3px rgba(3, 188, 159, 0.15) !important;
+    }
+
+    /* Mobile Menu Drawer (Edge-to-Edge Cockpit) */
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background: #05090D;
+      z-index: 1200;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #mobile-menu.active {
+      display: flex;
+    }
+    .mobile-menu-header {
+      height: 72px;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      background: #05090D;
+    }
+    .mobile-menu-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .mobile-menu-brand span {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #EAF2F0;
+      letter-spacing: -0.02em;
+    }
+    .mobile-menu-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .mobile-menu-close-btn:hover,
+    .mobile-menu-close-btn:active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--elevated);
+    }
+    .mobile-menu-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 1.15rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      color: #EAF2F0;
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      background: var(--surface);
+      color: var(--accent);
+      border-color: rgba(3, 188, 159, 0.25);
+      padding-left: 1.15rem;
+    }
+    .mobile-nav-group {
+      margin: 0.4rem 0;
+      border-radius: 10px;
+      background: rgba(14, 40, 37, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.65rem 0.6rem;
+    }
+    .mobile-nav-group-header {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem 0.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mobile-nav-sublinks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .mobile-nav-sublink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px;
+      color: #A3B5B1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: var(--font-body);
+      transition: all 0.15s ease;
+    }
+    .mobile-nav-sublink:hover,
+    .mobile-nav-sublink:active {
+      background: rgba(3, 188, 159, 0.12);
+      color: #FFFFFF;
+      padding-left: 0.95rem;
+    }
+    .mobile-menu-footer {
+      padding: 1.1rem 1.25rem;
+      border-top: 1px solid var(--border);
+      background: #05090D;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
     /* General Responsive Refinements */
     @media (max-width: 900px) {
       #desktop-nav {

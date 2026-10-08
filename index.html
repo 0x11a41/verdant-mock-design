@@ -125,47 +125,121 @@
         </div>
       </nav>
 
-      <!-- Zone 3: Search + CTA -->
-      <div style="display: flex; align-items: center; gap: 0.75rem;">
-        <button id="search-trigger-btn" aria-label="Open search command palette (or press /)" style="background: none; border: 1px solid var(--border); color: var(--text-muted); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <!-- Zone 3: Search + CTA + Mobile Toggle -->
+      <div style="display: flex; align-items: center; gap: 0.65rem;">
+        <button id="search-trigger-btn" aria-label="Open search command palette (or press /)" style="background: none; border: 1px solid var(--border); color: var(--text-muted); width: 40px; height: 40px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
         <a href="#/contact" class="btn-primary header-talk-cta" style="padding: 0.5rem 1.1rem; font-size: 0.8125rem;">Contact us</a>
-        <button id="mobile-menu-btn" aria-label="Open navigation menu" style="display: none; background: none; border: 1px solid var(--border); color: var(--text); width: 40px; height: 40px; border-radius: 8px; cursor: pointer; align-items: center; justify-content: center;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" style="display: none; background: none; border: 1px solid var(--border); color: var(--text); width: 40px; height: 40px; border-radius: 8px; cursor: pointer; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay -->
-  <div id="mobile-menu" style="display: none; position: fixed; inset: 0; background: var(--bg); z-index: 90; padding: 5rem 1.5rem 2rem; flex-direction: column; overflow-y: auto;">
-    <button id="mobile-menu-close" aria-label="Close menu" style="position: absolute; top: 1.25rem; right: 1.5rem; background: none; border: none; color: var(--text); cursor: pointer; padding: 0.5rem;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <div style="margin-bottom: 2rem;">
-      <img src="/assets/logo-teal.webp" alt="Verdant Telemetry" style="height: 48px; width: auto; max-width: 240px;" />
+  <!-- Mobile Drawer Overlay (Full Viewport Cockpit) -->
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <!-- Clean Aligned Header Row -->
+    <div class="mobile-menu-header">
+      <a href="#/" class="mobile-menu-brand" aria-label="Verdant Telemetry Home">
+        <img src="/assets/logo-teal.webp" alt="Verdant Telemetry &amp; Antenna Systems" style="height: 38px; width: auto; max-width: 195px; object-fit: contain; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div style="display: none; align-items: center; gap: 0.6rem;">
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+            <rect width="40" height="40" rx="8" fill="#0E2825"/>
+            <path d="M7 26C14 10 26 10 33 26" stroke="#03BC9F" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="20" cy="14" r="3" fill="#03BC9F"/>
+            <line x1="20" y1="14" x2="20" y2="28" stroke="#03BC9F" stroke-width="2"/>
+          </svg>
+          <span>VERDANT</span>
+        </div>
+      </a>
+      <button id="mobile-menu-close" class="mobile-menu-close-btn" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.25rem; font-family: var(--font-display);">
-      <a href="#/" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">Home</a>
-      <a href="#/products" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">Products</a>
-      <a href="#/about" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">About Us</a>
-      <a href="#/infrastructure" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">Infrastructure</a>
-      <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
-        <div style="font-size: 0.85rem; color: var(--accent); font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 0.75rem;">Capabilities</div>
-        <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 1rem;">
-          <a href="#/capabilities/design" class="mobile-nav-link" style="color: var(--text-muted); text-decoration: none;">Design & Development</a>
-          <a href="#/capabilities/manufacturing" class="mobile-nav-link" style="color: var(--text-muted); text-decoration: none;">Manufacturing</a>
-          <a href="#/capabilities/customisation" class="mobile-nav-link" style="color: var(--text-muted); text-decoration: none;">Customisation</a>
-          <a href="#/capabilities/testing" class="mobile-nav-link" style="color: var(--text-muted); text-decoration: none;">Testing & Qualification</a>
+
+    <!-- Scrollable Navigation Items -->
+    <div class="mobile-menu-body">
+      <a href="#/" class="mobile-nav-link">
+        <span>Home</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="#/products" class="mobile-nav-link">
+        <span>Products & Radomes</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="#/about" class="mobile-nav-link">
+        <span>About Us</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <!-- Capabilities Group with Aligned Sub-items -->
+      <div class="mobile-nav-group">
+        <div class="mobile-nav-group-header">
+          <span>Capabilities</span>
+          <span style="font-size: 0.65rem; color: #7B8F8C; font-family: var(--font-mono);">R&D & MFGR</span>
+        </div>
+        <div class="mobile-nav-sublinks-grid">
+          <a href="#/capabilities/design" class="mobile-nav-sublink">
+            <span>Design & Development</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">Coimbatore</span>
+          </a>
+          <a href="#/capabilities/manufacturing" class="mobile-nav-sublink">
+            <span>Manufacturing</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">Cochin</span>
+          </a>
+          <a href="#/capabilities/customisation" class="mobile-nav-sublink">
+            <span>Customisation</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">Conformal</span>
+          </a>
+          <a href="#/capabilities/testing" class="mobile-nav-sublink">
+            <span>Testing & Qualification</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">20 GHz</span>
+          </a>
         </div>
       </div>
-      <a href="#/careers" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">Career</a>
-      <a href="#/contact" class="mobile-nav-link" style="color: var(--text); text-decoration: none;">Contact Us</a>
-      <a href="#how" class="mobile-nav-link" style="color: var(--text-muted); font-size: 1rem; text-decoration: none;">How We Build</a>
+
+      <a href="#/infrastructure" class="mobile-nav-link">
+        <span>Infrastructure</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+
+      <!-- Careers Group -->
+      <div class="mobile-nav-group">
+        <div class="mobile-nav-group-header">
+          <span>Careers</span>
+          <span style="font-size: 0.65rem; color: #7B8F8C; font-family: var(--font-mono);">AEROSPACE RF</span>
+        </div>
+        <div class="mobile-nav-sublinks-grid">
+          <a href="#/careers" class="mobile-nav-sublink">
+            <span>Overview</span>
+          </a>
+          <a href="#/careers#open-roles" class="mobile-nav-sublink">
+            <span>Open Engineering Roles</span>
+          </a>
+          <a href="#/careers#life-at-verdant" class="mobile-nav-sublink">
+            <span>Life at Verdant</span>
+          </a>
+          <a href="#/careers#internships" class="mobile-nav-sublink">
+            <span>Student Internships</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="#/contact" class="mobile-nav-link">
+        <span>Contact Us</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
-    <div style="margin-top: auto; padding-top: 2rem;">
-      <a href="#/contact" class="btn-primary" style="width: 100%;">Contact us</a>
+
+    <!-- Aligned Footer Section -->
+    <div class="mobile-menu-footer">
+      <a href="#/contact" class="btn-primary" style="width: 100%; justify-content: center; min-height: 44px; font-size: 0.875rem;">Contact Technical Sales</a>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.72rem; color: var(--text-subtle); font-family: var(--font-mono);">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block;"></span>
+        AS9100 Rev D & CEMILAC Approved
+      </div>
     </div>
   </div>
 

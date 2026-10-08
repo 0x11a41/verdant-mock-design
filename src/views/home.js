@@ -112,6 +112,20 @@ export function renderHomeView() {
                       <span style="color: var(--text-subtle); display: block;">CEMILAC Design Approval</span>
                     </div>
                   </div>
+                  <div class="trusted-card" style="padding: 0.5rem 1.15rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; background: rgba(3, 188, 159, 0.12); border: 1px solid rgba(3, 188, 159, 0.35); color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; flex-shrink: 0;">ADA</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.35;">
+                      <span style="color: var(--text); font-weight: 600; font-size: 0.8125rem;">ADA</span>
+                      <span style="color: var(--text-subtle); display: block;">LCA Tejas Programme</span>
+                    </div>
+                  </div>
+                  <div class="trusted-card" style="padding: 0.5rem 1.15rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 6px; background: rgba(3, 188, 159, 0.12); border: 1px solid rgba(3, 188, 159, 0.35); color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; flex-shrink: 0;">MOD</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); line-height: 1.35;">
+                      <span style="color: var(--text); font-weight: 600; font-size: 0.8125rem;">Indian Armed Forces</span>
+                      <span style="color: var(--text-subtle); display: block;">Air Force · Navy · Army</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -412,31 +426,40 @@ export function renderHomeView() {
 
           <!-- Contact Form Component -->
           <div class="card" style="padding: 2.25rem;">
-            <form id="home-contact-form" onsubmit="window.handleContactSubmit(event, 'home-contact-form')">
+            <div style="margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem;">
+                Send Technical Enquiry
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+                Direct channel to our antenna engineering and qualification team in Cochin.
+              </p>
+            </div>
+
+            <form id="home-contact-form" onsubmit="window.handleContactSubmit(event, 'home-contact-form')" novalidate>
               <div id="form-feedback" style="display: none; margin-bottom: 1.25rem;"></div>
 
               <div class="contact-fields-container" style="display: flex; flex-direction: column; gap: 1.25rem;">
                 <div>
                   <label for="c-name" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">NAME *</label>
-                  <input type="text" id="c-name" required placeholder="e.g. Commander R. K. Sharma" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none;" />
+                  <input type="text" id="c-name" required placeholder="e.g. Commander R. K. Sharma" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
                 </div>
 
                 <div>
                   <label for="c-email" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">WORK EMAIL *</label>
-                  <input type="email" id="c-email" required placeholder="name@organisation.com" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none;" />
+                  <input type="email" id="c-email" required placeholder="name@organisation.com" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
                 </div>
 
                 <div>
                   <label for="c-org" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">ORGANISATION / DEFENCE UNIT</label>
-                  <input type="text" id="c-org" placeholder="e.g. HAL / DRDO / Procurement Agency" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none;" />
+                  <input type="text" id="c-org" placeholder="e.g. HAL / DRDO / Procurement Agency" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
                 </div>
 
                 <div>
                   <label for="c-msg" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">TECHNICAL REQUIREMENTS / QUERY *</label>
-                  <textarea id="c-msg" required rows="4" placeholder="Specify frequency band, platform type, mechanical constraints, or antenna model..." style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
+                  <textarea id="c-msg" required rows="4" placeholder="Specify frequency band, platform type, mechanical constraints, or antenna model..." class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; resize: vertical; line-height: 1.5; transition: border-color 0.2s, box-shadow 0.2s;"></textarea>
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.35rem; justify-content: center; font-size: 0.925rem; padding: 0.8rem 1.5rem; border-radius: 8px;">
                   Send Technical Enquiry
                 </button>
               </div>
@@ -744,25 +767,50 @@ export function initHomeView() {
     let isDown = false;
     let startX = 0;
     let scrollStart = 0;
+    let currentScrollX = 0;
+    let loopWidth = 0;
+    let resizeObserver = null;
+    let resizeDebounce = null;
 
-    const pauseInteraction = () => {
+    const syncScrollPos = () => {
+      currentScrollX = trustContainer.scrollLeft || 0;
+    };
+
+    const pauseInteraction = (delayMs = 1200) => {
       isUserInteracting = true;
+      syncScrollPos();
       if (resumeTimeout) clearTimeout(resumeTimeout);
       resumeTimeout = setTimeout(() => {
         isUserInteracting = false;
-      }, 1500);
+        syncScrollPos();
+      }, delayMs);
     };
 
-    trustContainer.addEventListener('mouseenter', () => { isUserInteracting = true; }, { passive: true });
-    trustContainer.addEventListener('mouseleave', () => { isUserInteracting = false; }, { passive: true });
-    trustContainer.addEventListener('touchstart', pauseInteraction, { passive: true });
-    trustContainer.addEventListener('touchmove', pauseInteraction, { passive: true });
-    trustContainer.addEventListener('touchend', pauseInteraction, { passive: true });
+    // User hover & touch interaction listeners
+    trustContainer.addEventListener('mouseenter', () => {
+      isUserInteracting = true;
+      syncScrollPos();
+    }, { passive: true });
+
+    trustContainer.addEventListener('mouseleave', () => {
+      pauseInteraction(300);
+    }, { passive: true });
+
+    trustContainer.addEventListener('touchstart', () => pauseInteraction(1500), { passive: true });
+    trustContainer.addEventListener('touchmove', () => pauseInteraction(1500), { passive: true });
+    trustContainer.addEventListener('touchend', () => pauseInteraction(1200), { passive: true });
+
+    // Trackpad / touch scroll sync
+    trustContainer.addEventListener('scroll', () => {
+      if (isUserInteracting) {
+        syncScrollPos();
+      }
+    }, { passive: true });
 
     // Drag to scroll for mouse users
     trustContainer.addEventListener('mousedown', (e) => {
       isDown = true;
-      pauseInteraction();
+      pauseInteraction(1500);
       trustContainer.style.cursor = 'grabbing';
       startX = e.pageX - trustContainer.offsetLeft;
       scrollStart = trustContainer.scrollLeft;
@@ -772,7 +820,7 @@ export function initHomeView() {
       if (isDown) {
         isDown = false;
         trustContainer.style.cursor = 'grab';
-        pauseInteraction();
+        pauseInteraction(1200);
       }
     };
     window.addEventListener('mouseup', onMouseUp);
@@ -780,10 +828,11 @@ export function initHomeView() {
     trustContainer.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       e.preventDefault();
-      pauseInteraction();
+      pauseInteraction(1500);
       const x = e.pageX - trustContainer.offsetLeft;
       const walk = (x - startX);
       trustContainer.scrollLeft = scrollStart - walk;
+      currentScrollX = trustContainer.scrollLeft;
     });
 
     function setupTrustScroll() {
@@ -792,36 +841,41 @@ export function initHomeView() {
         trustAnimationId = null;
       }
 
-      // Remove existing clones before measuring
+      // Remove existing clones before measuring natural unconstrained width
       const existingClones = trustRow.querySelectorAll('.trusted-clone');
       existingClones.forEach(el => el.remove());
 
       const originalCards = Array.from(trustRow.querySelectorAll('.trusted-card:not(.trusted-clone)'));
       if (originalCards.length === 0) return;
 
-      const availableWidth = trustContainer.clientWidth;
+      // Available container viewport width
+      const availableWidth = trustContainer.clientWidth || (trustContainer.parentElement ? trustContainer.parentElement.clientWidth : window.innerWidth);
       const naturalWidth = trustRow.scrollWidth;
 
-      // Determine if there is NOT enough horizontal space
-      const hasInsufficientSpace = naturalWidth > availableWidth + 2;
+      // Condition: Scroll slowly automatically ONLY when there is NOT enough horizontal space
+      const hasInsufficientSpace = naturalWidth > availableWidth + 4;
 
       if (!hasInsufficientSpace) {
-        trustContainer.style.overflowX = 'visible';
+        // Space is sufficient: static presentation
+        trustContainer.style.overflowX = 'hidden';
         trustContainer.style.maskImage = 'none';
         trustContainer.style.webkitMaskImage = 'none';
         trustContainer.style.cursor = 'default';
         trustContainer.scrollLeft = 0;
+        currentScrollX = 0;
         return;
       }
 
-      // Not enough horizontal space: horizontally scrollable with infinite, slow auto-scroll
+      // Space is constrained: enable seamless slow infinite horizontal auto-scroll
       trustContainer.style.overflowX = 'auto';
       trustContainer.style.cursor = 'grab';
-      trustContainer.style.maskImage = 'linear-gradient(90deg, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%)';
-      trustContainer.style.webkitMaskImage = 'linear-gradient(90deg, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%)';
+      const edgeMask = 'linear-gradient(90deg, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%)';
+      trustContainer.style.maskImage = edgeMask;
+      trustContainer.style.webkitMaskImage = edgeMask;
 
-      // Clone original cards to allow seamless infinite loop
-      for (let c = 0; c < 2; c++) {
+      // Clone original cards to enable seamless infinite loop
+      const copiesNeeded = Math.max(2, Math.ceil((availableWidth * 2) / naturalWidth) + 1);
+      for (let c = 0; c < copiesNeeded; c++) {
         originalCards.forEach(card => {
           const clone = card.cloneNode(true);
           clone.classList.add('trusted-clone');
@@ -831,12 +885,13 @@ export function initHomeView() {
       }
 
       const firstClone = trustRow.querySelector('.trusted-clone');
-      const loopWidth = firstClone ? (firstClone.offsetLeft - originalCards[0].offsetLeft) : naturalWidth;
+      loopWidth = firstClone ? (firstClone.offsetLeft - originalCards[0].offsetLeft) : naturalWidth;
 
       if (prefersReduced || loopWidth <= 0) return;
 
       let lastTimestamp = null;
-      const speedPxPerSec = 26; // Smooth, slow drift (~26px/s)
+      const speedPxPerSec = 16; // Smooth, readable precision drift (~16px/sec)
+      currentScrollX = trustContainer.scrollLeft || 0;
 
       function scrollStep(timestamp) {
         if (!lastTimestamp) lastTimestamp = timestamp;
@@ -845,11 +900,17 @@ export function initHomeView() {
 
         if (!isUserInteracting && loopWidth > 0) {
           const pxToScroll = (speedPxPerSec * delta) / 1000;
-          trustContainer.scrollLeft += pxToScroll;
+          currentScrollX += pxToScroll;
 
-          if (trustContainer.scrollLeft >= loopWidth) {
-            trustContainer.scrollLeft -= loopWidth;
+          // Seamless loop wrap
+          while (currentScrollX >= loopWidth) {
+            currentScrollX -= loopWidth;
           }
+          while (currentScrollX < 0) {
+            currentScrollX += loopWidth;
+          }
+
+          trustContainer.scrollLeft = currentScrollX;
         }
 
         trustAnimationId = requestAnimationFrame(scrollStep);
@@ -858,12 +919,39 @@ export function initHomeView() {
       trustAnimationId = requestAnimationFrame(scrollStep);
     }
 
+    const handleResize = () => {
+      if (resizeDebounce) cancelAnimationFrame(resizeDebounce);
+      resizeDebounce = requestAnimationFrame(() => setupTrustScroll());
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => {
+        handleResize();
+      });
+      resizeObserver.observe(trustContainer);
+    }
+
+    // Re-check measurements when card images finish loading
+    const cardImages = trustRow.querySelectorAll('img');
+    cardImages.forEach(img => {
+      if (!img.complete) {
+        img.addEventListener('load', handleResize, { once: true });
+        img.addEventListener('error', handleResize, { once: true });
+      }
+    });
+
+    // Run setup immediately and after micro-tick
     setupTrustScroll();
-    window.addEventListener('resize', setupTrustScroll, { passive: true });
+    requestAnimationFrame(() => setupTrustScroll());
+    setTimeout(() => setupTrustScroll(), 150);
 
     window.__trustScrollCleanup = () => {
       if (trustAnimationId) cancelAnimationFrame(trustAnimationId);
-      window.removeEventListener('resize', setupTrustScroll);
+      if (resizeDebounce) cancelAnimationFrame(resizeDebounce);
+      if (resizeObserver) resizeObserver.disconnect();
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('mouseup', onMouseUp);
       if (resumeTimeout) clearTimeout(resumeTimeout);
       const existingClones = trustRow.querySelectorAll('.trusted-clone');
