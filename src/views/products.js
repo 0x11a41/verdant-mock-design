@@ -201,8 +201,8 @@ export function renderProductsView(detailProductId = null) {
   return `
   <!-- Products Top Banner Hero (Expands to ~1/3 of screen height, anchored to image bottom) -->
   <section class="products-hero-banner" style="position: relative; height: clamp(280px, 33.33vh, 380px); min-height: 280px; width: 100%; display: flex; align-items: flex-end; padding-top: 80px; padding-bottom: clamp(2rem, 4vh, 2.75rem); overflow: hidden; background: #05090D; border-bottom: 1px solid rgba(255,255,255,0.08);">
-    <div style="position: absolute; inset: 0; background-image: url('/assets/products-banner.webp'); background-size: cover; background-position: center bottom; background-repeat: no-repeat; opacity: 0.72; mix-blend-mode: screen; filter: brightness(1.18) contrast(1.12);"></div>
-    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,9,13,0.92) 0%, rgba(5,9,13,0.55) 50%, rgba(5,9,13,0.88) 100%), linear-gradient(to top, #05090D 0%, rgba(5,9,13,0.3) 50%, transparent 100%), linear-gradient(to bottom, #05090D 0%, transparent 35%);"></div>
+    <div style="position: absolute; inset: 0; background-image: url('/assets/products-banner.webp'); background-size: cover; background-position: center bottom; background-repeat: no-repeat; opacity: 0.88; mix-blend-mode: screen; filter: brightness(1.22) contrast(1.15);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,9,13,0.82) 0%, rgba(5,9,13,0.32) 50%, rgba(5,9,13,0.76) 100%), linear-gradient(to top, #05090D 0%, rgba(5,9,13,0.12) 50%, transparent 100%), linear-gradient(to bottom, rgba(5,9,13,0.8) 0%, transparent 40%);"></div>
     <div class="container-wide" style="position: relative; z-index: 2; width: 100%;">
       <div>
         <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5.2vw, 4rem); font-weight: 700; color: #FFFFFF; margin: 0; line-height: 1.05; letter-spacing: -0.03em;">
@@ -398,12 +398,6 @@ export function renderProductsView(detailProductId = null) {
                         </div>
                       </div>
                     </div>
-
-                    <!-- Action Cue Button with Illuminated State on Hover -->
-                    <div class="hw-inspect-btn">
-                      <span>Inspect Specifications</span>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </div>
                   </div>
                 </div>
               `;
@@ -461,19 +455,9 @@ export function renderInspectionDialogContent(p, activeImgIdx = 0) {
   <div class="inspection-header">
     <div class="inspection-header-title-box">
       <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-        <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent); background: rgba(3,188,159,0.1); border: 1px solid rgba(3,188,159,0.3); border-radius: 4px; padding: 0.15rem 0.55rem; letter-spacing: 0.04em;">
-          ${p.code}
-        </span>
         <h2 id="dialog-product-title" class="inspection-header-title" style="margin: 0; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; color: #FFFFFF;">
           ${p.name}
         </h2>
-      </div>
-      <div class="inspection-header-subtitle" style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">
-        <span>${p.category}</span>
-        <span aria-hidden="true" style="opacity: 0.4;">·</span>
-        <span>${p.freqBand}</span>
-        <span aria-hidden="true" style="opacity: 0.4;">·</span>
-        <span style="color: var(--accent);">${p.platformDomain.split('·')[0].trim()}</span>
       </div>
     </div>
 

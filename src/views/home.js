@@ -234,7 +234,7 @@ export function renderHomeView() {
       <div id="capabilities-sticky-stage" class="capabilities-sticky-stage">
 
         <!-- SLIDE 0: Design & Development -->
-        <article class="cap-slide active" data-slide-idx="0" style="opacity: 1; pointer-events: auto; z-index: 2;">
+        <article class="cap-slide active" data-slide-idx="0">
           <div class="cap-slide-bg-wrap">
             <div class="cap-slide-bg" style="background-image: url('/assets/design-and-development.webp'); --cap-scale: 1;"></div>
             <div class="cap-slide-gradient"></div>
@@ -256,9 +256,9 @@ export function renderHomeView() {
         </article>
 
         <!-- SLIDE 1: Precision Manufacturing -->
-        <article class="cap-slide" data-slide-idx="1" style="opacity: 0; pointer-events: none; z-index: 1;">
+        <article class="cap-slide" data-slide-idx="1">
           <div class="cap-slide-bg-wrap">
-            <div class="cap-slide-bg" style="background-image: url('/assets/precision-manufacturing.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-bg" style="background-image: url('/assets/precision-manufacturing.webp'); --cap-scale: 1.035;"></div>
             <div class="cap-slide-gradient"></div>
             <div class="cap-slide-accent-glow"></div>
           </div>
@@ -278,9 +278,9 @@ export function renderHomeView() {
         </article>
 
         <!-- SLIDE 2: Tactical Customisation -->
-        <article class="cap-slide" data-slide-idx="2" style="opacity: 0; pointer-events: none; z-index: 1;">
+        <article class="cap-slide" data-slide-idx="2">
           <div class="cap-slide-bg-wrap">
-            <div class="cap-slide-bg" style="background-image: url('/assets/tactical-customization.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-bg" style="background-image: url('/assets/tactical-customization.webp'); --cap-scale: 1.035;"></div>
             <div class="cap-slide-gradient"></div>
             <div class="cap-slide-accent-glow"></div>
           </div>
@@ -300,9 +300,9 @@ export function renderHomeView() {
         </article>
 
         <!-- SLIDE 3: Testing & Qualification -->
-        <article class="cap-slide" data-slide-idx="3" style="opacity: 0; pointer-events: none; z-index: 1;">
+        <article class="cap-slide" data-slide-idx="3">
           <div class="cap-slide-bg-wrap">
-            <div class="cap-slide-bg" style="background-image: url('/assets/testing-and-qualification.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-bg" style="background-image: url('/assets/testing-and-qualification.webp'); --cap-scale: 1.035;"></div>
             <div class="cap-slide-gradient"></div>
             <div class="cap-slide-accent-glow"></div>
           </div>
@@ -1440,7 +1440,7 @@ export function initHomeView() {
 }
 
 // ========================================================
-// SYSTEM CAPABILITIES: Still Stage with Dynamic Content & Zoom Switching
+// SYSTEM CAPABILITIES: Still Stage with Seamless Image Fade & Kinetic HUD Transition
 // ========================================================
 window.updateCapSlideshowProgress = function(progress) {
   const slides = document.querySelectorAll('.cap-slide');
@@ -1450,44 +1450,92 @@ window.updateCapSlideshowProgress = function(progress) {
   const intervals = total - 1; // 3
   const p = Math.max(0, Math.min(intervals, progress * intervals));
 
+  // Determine current active pair: baseIdx and nextIdx
+  let baseIdx = Math.floor(p);
+  if (baseIdx >= total - 1) {
+    baseIdx = total - 2;
+  }
+  const nextIdx = baseIdx + 1;
+  const frac = Math.max(0, Math.min(1, p - baseIdx));
+
+  // Smoothstep easing for background crossfade
+  const bgEased = frac * frac * (3 - 2 * frac);
+
   slides.forEach((slide, idx) => {
+    const bgWrap = slide.querySelector('.cap-slide-bg-wrap');
     const bgImg = slide.querySelector('.cap-slide-bg');
     const content = slide.querySelector('.cap-slide-content');
-    const dist = Math.abs(p - idx);
+    if (!bgWrap || !content) return;
 
-    // Active crossfade range: each slide stays fully visible and still, with a smooth switch window
-    if (dist <= 0.65) {
-      // Easing curve for crossfade
-      const t = 1 - dist / 0.65;
-      const eased = t * t * (3 - 2 * t); // smoothstep 0..1
-      
-      slide.style.opacity = eased.toFixed(3);
-      slide.style.pointerEvents = eased > 0.4 ? 'auto' : 'none';
-      slide.style.zIndex = eased > 0.5 ? '2' : '1';
+    if (idx === baseIdx) {
+      // Base slide: sits underneath at z-index 1, stays visible until next slide covers it
+      slide.style.zIndex = '1';
+      slide.style.pointerEvents = frac < 0.5 ? 'auto' : 'none';
+      bgWrap.style.opacity = '1';
 
-      // Subtle zoom in / zoom out transition on background
-      // Active slide settles at scale 1.0, while entering/exiting slides have a subtle 4.5% zoom shift
-      const scale = 1.0 + (1 - eased) * 0.045;
+      const scale = 1.0 + bgEased * 0.035;
       if (bgImg) {
         bgImg.style.setProperty('--cap-scale', scale.toFixed(3));
       }
 
-      // Content stays centered/still with subtle gentle vertical float on transition
-      if (content) {
-        const dir = p < idx ? 1 : -1;
-        const translateY = (1 - eased) * 14 * dir;
-        content.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
-        content.style.opacity = eased.toFixed(3);
-      }
-    } else {
-      slide.style.opacity = '0';
-      slide.style.pointerEvents = 'none';
-      slide.style.zIndex = '0';
-      if (bgImg) {
-        bgImg.style.setProperty('--cap-scale', '1.045');
-      }
-      if (content) {
+      // Content transition out (plateau until 0.35, then glides up & fades)
+      if (frac <= 0.35) {
+        content.style.opacity = '1';
+        content.style.transform = 'translate3d(0, 0, 0)';
+        content.style.pointerEvents = 'auto';
+      } else if (frac < 0.58) {
+        const tOut = (frac - 0.35) / 0.23;
+        const easedOut = tOut * tOut * (3 - 2 * tOut);
+        const op = Math.max(0, 1 - easedOut);
+        const y = -36 * easedOut;
+        content.style.opacity = op.toFixed(3);
+        content.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+        content.style.pointerEvents = op > 0.4 ? 'auto' : 'none';
+      } else {
         content.style.opacity = '0';
+        content.style.transform = 'translate3d(0, -36px, 0)';
+        content.style.pointerEvents = 'none';
+      }
+
+    } else if (idx === nextIdx) {
+      // Next slide: sits on top at z-index 2, background fades in smoothly over base slide
+      slide.style.zIndex = '2';
+      slide.style.pointerEvents = frac >= 0.5 ? 'auto' : 'none';
+      bgWrap.style.opacity = bgEased.toFixed(3);
+
+      const scale = 1.035 - bgEased * 0.035;
+      if (bgImg) {
+        bgImg.style.setProperty('--cap-scale', scale.toFixed(3));
+      }
+
+      // Content transition in (emerges from 0.42, rises into view, settles at 0.65)
+      if (frac < 0.42) {
+        content.style.opacity = '0';
+        content.style.transform = 'translate3d(0, 36px, 0)';
+        content.style.pointerEvents = 'none';
+      } else if (frac <= 0.65) {
+        const tIn = (frac - 0.42) / 0.23;
+        const easedIn = tIn * tIn * (3 - 2 * tIn);
+        const op = Math.min(1, easedIn);
+        const y = 36 * (1 - easedIn);
+        content.style.opacity = op.toFixed(3);
+        content.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+        content.style.pointerEvents = op > 0.4 ? 'auto' : 'none';
+      } else {
+        content.style.opacity = '1';
+        content.style.transform = 'translate3d(0, 0, 0)';
+        content.style.pointerEvents = 'auto';
+      }
+
+    } else {
+      // Inactive slide
+      slide.style.zIndex = '0';
+      slide.style.pointerEvents = 'none';
+      bgWrap.style.opacity = '0';
+      content.style.opacity = '0';
+      content.style.pointerEvents = 'none';
+      if (bgImg) {
+        bgImg.style.setProperty('--cap-scale', '1.035');
       }
     }
   });
