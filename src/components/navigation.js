@@ -3,14 +3,24 @@
  * Verdant Telemetry & Antenna Systems
  */
 
-export function initNavigation() {
+let routeHandler = null;
+
+export function setRouteHandler(fn) {
+  routeHandler = fn;
+}
+
+export function initNavigation(customRouteHandler = null) {
+  if (customRouteHandler) {
+    routeHandler = customRouteHandler;
+  }
+
   const navbar = document.getElementById('navbar');
-  let lastScrollY = window.scrollY;
+  let lastScrollY = window.scrollY || window.pageYOffset || 0;
 
-  window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
+  const updateNavbarScroll = () => {
+    const currentScrollY = window.scrollY || window.pageYOffset || 0;
 
-    if (currentScrollY > 40) {
+    if (currentScrollY > 20) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
@@ -23,7 +33,11 @@ export function initNavigation() {
     }
 
     lastScrollY = currentScrollY;
-  }, { passive: true });
+  };
+
+  // Immediate evaluation on load
+  updateNavbarScroll();
+  window.addEventListener('scroll', updateNavbarScroll, { passive: true });
 
   // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -31,16 +45,33 @@ export function initNavigation() {
   if (mobileBtn) mobileBtn.addEventListener('click', openMobileMenu);
   if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
 
-  // Close mobile menu when navigating
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileMenu) {
-    mobileMenu.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (link) {
-        closeMobileMenu();
-      }
-    });
-  }
+  // Close mobile menu and guarantee immediate routing on internal link clicks
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+
+    // Handle skip-link or pure in-page anchor jumps
+    if (href === '#main-content') return;
+    if (href.startsWith('#open-') || href.startsWith('#life-')) {
+      closeMobileMenu();
+      return;
+    }
+
+    closeMobileMenu();
+
+    if (window.location.hash !== href) {
+      window.location.hash = href;
+    }
+
+    // Call route directly and reliably
+    if (routeHandler) {
+      routeHandler();
+    } else {
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
+  });
 }
 
 export function openMobileMenu() {

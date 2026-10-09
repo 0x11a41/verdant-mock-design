@@ -95,6 +95,7 @@ export function renderCapabilitiesView(subview = 'overview') {
         <a href="#/capabilities/manufacturing" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'manufacturing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Manufacturing</a>
         <a href="#/capabilities/customisation" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'customisation' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Customisation</a>
         <a href="#/capabilities/testing" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'testing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Testing &amp; Qualification</a>
+        <a href="#/infrastructure" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; color: var(--accent); border-color: rgba(3,188,159,0.35);">Infrastructure &amp; Ranges &rarr;</a>
       </div>
 
       <!-- Main Content Grid -->

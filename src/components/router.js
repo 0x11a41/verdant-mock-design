@@ -41,6 +41,27 @@ export function route() {
     ScrollTrigger.getAll().forEach(t => t.kill());
   }
 
+  // Always restore document scrolling and clean up overlays on route change
+  document.body.style.overflow = '';
+  const overlay = document.getElementById('inspection-overlay');
+  const dialog = document.getElementById('inspection-dialog');
+  if (window.gsap) {
+    if (dialog) gsap.killTweensOf(dialog);
+    if (overlay) gsap.killTweensOf(overlay);
+  }
+  const isProductDetail = cleanHash.startsWith('#/products/') || cleanHash.startsWith('#products/');
+  if (dialog && !isProductDetail) {
+    dialog.classList.remove('active');
+    dialog.removeAttribute('style');
+    dialog.innerHTML = '';
+  }
+  if (overlay && !isProductDetail) {
+    overlay.classList.remove('active');
+    overlay.removeAttribute('style');
+  }
+  const generalModal = document.getElementById('general-enquiry-modal');
+  if (generalModal) generalModal.style.display = 'none';
+
   // Active navigation highlight reset
   document.querySelectorAll('#desktop-nav .nav-link').forEach(link => {
     link.classList.remove('active');
@@ -48,12 +69,20 @@ export function route() {
 
   let pageTitle = 'Verdant Telemetry & Antenna Systems';
 
+  const isProductsRoute = cleanHash === '#/products' || cleanHash === '#products' ||
+                          cleanHash.startsWith('#/products/') || cleanHash.startsWith('#products/');
+
   if (cleanHash === '#/' || cleanHash === '') {
     mainContent.innerHTML = renderHomeView();
     pageTitle = 'Verdant Telemetry & Antenna Systems | Aerospace & Defence Antennas';
     initHomeView();
-  } else if (cleanHash === '#/products' || cleanHash.startsWith('#/products/')) {
-    const detailId = cleanHash.startsWith('#/products/') ? cleanHash.replace('#/products/', '') : null;
+  } else if (isProductsRoute) {
+    let detailId = null;
+    if (cleanHash.startsWith('#/products/')) {
+      detailId = cleanHash.replace('#/products/', '');
+    } else if (cleanHash.startsWith('#products/')) {
+      detailId = cleanHash.replace('#products/', '');
+    }
     mainContent.innerHTML = renderProductsView(detailId);
     pageTitle = 'Products & Radomes | Verdant Telemetry';
     highlightNav('products');
@@ -65,21 +94,26 @@ export function route() {
         }
       }, 60);
     }
-  } else if (cleanHash === '#/about') {
+  } else if (cleanHash === '#/about' || cleanHash === '#about') {
     mainContent.innerHTML = renderAboutView();
     pageTitle = 'About Us | Kerala to the World | Verdant Telemetry';
     highlightNav('about');
   } else if (cleanHash === '#/infrastructure') {
     mainContent.innerHTML = renderInfrastructureView();
     pageTitle = 'Infrastructure & Facilities | Verdant Telemetry';
-    highlightNav('infrastructure');
+    const capBtn = document.getElementById('capabilities-btn');
+    if (capBtn) capBtn.classList.add('active');
   } else if (cleanHash === '#/capabilities') {
     mainContent.innerHTML = renderCapabilitiesView('overview');
     pageTitle = 'Capabilities | Verdant Telemetry';
+    const capBtn = document.getElementById('capabilities-btn');
+    if (capBtn) capBtn.classList.add('active');
   } else if (cleanHash.startsWith('#/capabilities/')) {
     const sub = cleanHash.replace('#/capabilities/', '');
     mainContent.innerHTML = renderCapabilitiesView(sub);
     pageTitle = `Capabilities · ${sub.charAt(0).toUpperCase() + sub.slice(1)} | Verdant Telemetry`;
+    const capBtn = document.getElementById('capabilities-btn');
+    if (capBtn) capBtn.classList.add('active');
   } else if (cleanHash === '#/careers') {
     mainContent.innerHTML = renderCareersView();
     pageTitle = 'Careers in Aerospace | Verdant Telemetry';

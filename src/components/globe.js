@@ -98,17 +98,19 @@ export class DotMatrixGlobe {
   updateGlobePosition() {
     if (!this.globeGroup) return;
     const w = window.innerWidth;
-    if (w >= 1400) {
-      this.globeGroup.position.x = 74;
-    } else if (w >= 1024) {
-      this.globeGroup.position.x = 60;
+    if (w >= 1024) {
+      this.globeGroup.position.x = 35;
+      this.globeGroup.position.y = 0;
+      this.globeGroup.position.z = 0;
     } else if (w >= 768) {
-      this.globeGroup.position.x = 28;
+      this.globeGroup.position.x = 18;
+      this.globeGroup.position.y = -4;
+      this.globeGroup.position.z = 0;
     } else {
       this.globeGroup.position.x = 0;
+      this.globeGroup.position.y = 8;
+      this.globeGroup.position.z = 0;
     }
-    this.globeGroup.position.y = (w > 768) ? 0 : -4;
-    this.globeGroup.position.z = 0;
   }
 
   createSoftPointTexture() {

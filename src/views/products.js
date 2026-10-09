@@ -6,10 +6,130 @@
 import { PRODUCTS } from '../data/products.js';
 import { safeImg } from '../data/assets.js';
 
+export const PRODUCT_CATEGORIES = [
+  {
+    id: 'all',
+    name: 'All Systems',
+    tagline: 'Complete qualified hardware portfolio',
+    description: 'Airborne, naval, and ground tactical RF antennas engineered to MIL-STD-810G & CEMILAC standards.',
+    icon: 'grid',
+    count: 10,
+    matches: () => true
+  },
+  {
+    id: 'aerodynamic-blades',
+    name: 'Aerodynamic Blades',
+    tagline: 'High-speed combat aircraft airfoils',
+    description: 'Ultra-low drag composite blades engineered for high-g transonic & supersonic combat aircraft.',
+    icon: 'blade',
+    count: 3,
+    matches: (p) => p.category === 'Aerodynamic Blade'
+  },
+  {
+    id: 'tactical-blades',
+    name: 'Tactical & Combat Blades',
+    tagline: 'Wideband V/UHF communication',
+    description: 'Top-loaded and combat-proven blade antennas for tactical helicopters and high-performance fighters.',
+    icon: 'tactical',
+    count: 3,
+    matches: (p) => p.category === 'Top-Loaded Blade' || p.category === 'Supersonic Combat Blade' || p.category === 'Ruggedised Blade'
+  },
+  {
+    id: 'conformal-patches',
+    name: 'Conformal & Altimeter Patches',
+    tagline: 'Zero-drag flush-mounted radomes',
+    description: 'Precision microstrip patch antennas and radar altimeters for zero-drag skin integration.',
+    icon: 'patch',
+    count: 1,
+    matches: (p) => p.category === 'Conformal Patch'
+  },
+  {
+    id: 'dual-port-systems',
+    name: 'Multi-Band & Dual-Port Systems',
+    tagline: 'Multi-transceiver & EW surveillance',
+    description: 'Dual-connector multi-band arrays providing exceptional inter-port RF isolation.',
+    icon: 'dual',
+    count: 1,
+    matches: (p) => p.category === 'Dual-Port Blade'
+  },
+  {
+    id: 'omni-masts',
+    name: 'Omni Masts & Telemetry',
+    tagline: '360° airborne & naval telemetry',
+    description: 'Broadband omnidirectional mast antennas for drone command datalinks and naval vessels.',
+    icon: 'omni',
+    count: 2,
+    matches: (p) => p.category === 'Omni Mast' || p.category === 'Omni'
+  }
+];
+
+export function getCategorySvg(icon) {
+  if (icon === 'blade') {
+    return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 26H25V28H7V26Z" fill="currentColor" fill-opacity="0.3"/>
+      <path d="M10 26L14 8C14.5 6 16 5 18 5H19C21 5 21.8 6.2 21.5 8L18.5 26H10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="12" cy="27" r="1.2" fill="currentColor"/>
+      <circle cx="23" cy="27" r="1.2" fill="currentColor"/>
+      <path d="M15 13L18 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`;
+  }
+  if (icon === 'tactical') {
+    return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 26H26V28H6V26Z" fill="currentColor" fill-opacity="0.3"/>
+      <path d="M11 26L13.5 12H20.5L19 26H11Z" stroke="currentColor" stroke-width="2"/>
+      <path d="M10 12H24C24.5 12 25 11.5 25 11V9C25 8.5 24.5 8 24 8H10C9.5 8 9 8.5 9 9V11C9 11.5 9.5 12 10 12Z" stroke="currentColor" stroke-width="2"/>
+      <path d="M5 6C11 2 21 2 27 6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-dasharray="2 2"/>
+    </svg>`;
+  }
+  if (icon === 'patch') {
+    return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="5" width="22" height="22" rx="4" stroke="currentColor" stroke-width="2"/>
+      <rect x="10" y="10" width="12" height="12" rx="2" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="1.75"/>
+      <circle cx="16" cy="16" r="2.5" fill="currentColor"/>
+      <line x1="16" y1="5" x2="16" y2="9" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="16" y1="23" x2="16" y2="27" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="5" y1="16" x2="9" y2="16" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="23" y1="16" x2="27" y2="16" stroke="currentColor" stroke-width="1.5"/>
+    </svg>`;
+  }
+  if (icon === 'dual') {
+    return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 26H26V28H6V26Z" fill="currentColor" fill-opacity="0.3"/>
+      <path d="M9 26L13 7C13.5 5.5 15 4.5 17 4.5C19 4.5 20.5 5.5 21 7L24 26H9Z" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="27" r="1.5" fill="currentColor"/>
+      <circle cx="20" cy="27" r="1.5" fill="currentColor"/>
+      <path d="M12 18L15 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M17 18L20 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="16" y1="10" x2="16" y2="24" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+    </svg>`;
+  }
+  if (icon === 'omni') {
+    return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 28V6H17V28H15Z" fill="currentColor"/>
+      <circle cx="16" cy="5" r="2" fill="currentColor"/>
+      <path d="M11 9C9 11 8 13.5 8 16.5C8 19.5 9 22 11 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M21 9C23 11 24 13.5 24 16.5C24 19.5 23 22 21 24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M7 6C4 9.5 3 13 3 17C3 21 4 24.5 7 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+      <path d="M25 6C28 9.5 29 13 29 17C29 21 28 24.5 25 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+    </svg>`;
+  }
+  return `<svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="5" y="5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.75"/>
+    <rect x="19" y="5" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.75"/>
+    <rect x="5" y="19" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.75"/>
+    <rect x="19" y="19" width="8" height="8" rx="2" stroke="currentColor" stroke-width="1.75"/>
+    <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+    <circle cx="23" cy="9" r="1.5" fill="currentColor"/>
+    <circle cx="9" cy="23" r="1.5" fill="currentColor"/>
+    <circle cx="23" cy="23" r="1.5" fill="currentColor"/>
+  </svg>`;
+}
+
 export let productFilterState = {
   search: '',
   apps: [],
   types: [],
+  selectedCategory: 'all',
   sortBy: 'default',
   perPage: 15,
   page: 1
@@ -33,8 +153,16 @@ export function renderProductsView(detailProductId = null) {
     'Ruggedised Blade'
   ];
 
+  // Active Category Definition
+  const activeCategory = PRODUCT_CATEGORIES.find(c => c.id === productFilterState.selectedCategory) || PRODUCT_CATEGORIES[0];
+
   // Filter products
   let filtered = PRODUCTS.filter(p => {
+    // 1. Category Filter First
+    if (!activeCategory.matches(p)) {
+      return false;
+    }
+    // 2. Search Text
     if (productFilterState.search) {
       const q = productFilterState.search.toLowerCase();
       const match = p.name.toLowerCase().includes(q) ||
@@ -45,9 +173,11 @@ export function renderProductsView(detailProductId = null) {
                     p.description.toLowerCase().includes(q);
       if (!match) return false;
     }
+    // 3. Application Domain Filter
     if (productFilterState.apps.length > 0 && !productFilterState.apps.includes(p.application)) {
       return false;
     }
+    // 4. Type Filter
     if (productFilterState.types.length > 0 && !productFilterState.types.includes(p.type)) {
       return false;
     }
@@ -72,18 +202,13 @@ export function renderProductsView(detailProductId = null) {
   <section style="padding: 110px 0 80px; background: var(--bg); min-height: 85vh;">
     <div class="container-wide">
       <!-- Products Header -->
-      <div style="border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
-        <div style="max-width: 820px;">
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem; font-weight: 600;">
-            DEFENCE &amp; AEROSPACE RF HARDWARE
-          </div>
-          <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 700; color: var(--text); margin-bottom: 0; letter-spacing: -0.03em;">
-            Antennas &amp; Radomes Catalogue
-          </h1>
-        </div>
+      <div class="products-page-header" style="margin-bottom: 2rem;">
+        <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 700; color: var(--text); margin-bottom: 0; letter-spacing: -0.03em;">
+          Products
+        </h1>
       </div>
 
-      <!-- System Filters Toolbar (Integrated into page flow, not an isolated island) -->
+      <!-- SYSTEM FILTERS TOOLBAR -->
       <div class="products-filter-toolbar">
         <!-- Top Row: Search Input + Sort & Per-Page Controls -->
         <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -117,20 +242,20 @@ export function renderProductsView(detailProductId = null) {
               </select>
             </div>
 
-            ${(productFilterState.apps.length > 0 || productFilterState.types.length > 0 || productFilterState.search) ? `
+            ${(productFilterState.apps.length > 0 || productFilterState.types.length > 0 || productFilterState.search || productFilterState.selectedCategory !== 'all') ? `
               <button onclick="window.clearAllProductFilters()" class="btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; min-height: 32px;">
-                Reset filters &times;
+                Reset all filters &times;
               </button>
             ` : ''}
           </div>
         </div>
 
-        <!-- Bottom Row: Mission Domain Filter Pills -->
+        <!-- Bottom Row: Mission Domain Filter Tabs -->
         <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem;">
           <div class="filter-domain-chips">
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-right: 0.35rem;">DOMAIN:</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-right: 0.35rem;">MISSION:</span>
             <button class="filter-chip-btn ${productFilterState.apps.length === 0 ? 'active' : ''}" onclick="window.clearProductAppFilters()">
-              All (${PRODUCTS.length})
+              All Missions (${PRODUCTS.length})
             </button>
             ${applications.map(app => {
               const count = PRODUCTS.filter(p => p.application === app).length;
@@ -149,61 +274,134 @@ export function renderProductsView(detailProductId = null) {
         </div>
       </div>
 
-      <!-- Product Cards Grid: Integrated Catalogue Layout with 1:1 Images at Top -->
+      <!-- 03. PRODUCT CARDS GRID: 3D PROJECTION + SLOW SLIDE ON HOVER + REVEALED SPECS -->
       <div>
         ${paginated.length === 0 ? `
           <div class="card" style="padding: 4rem 2rem; text-align: center; border-radius: 8px;">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="margin: 0 auto 1rem; color: var(--text-subtle);"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <h3 style="font-size: 1.25rem; color: var(--text); margin-bottom: 0.5rem;">No hardware units match your parameters</h3>
             <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem;">Reset filter specifications to inspect the full inventory.</p>
-            <button onclick="window.clearAllProductFilters()" class="btn-primary">Reset filters</button>
+            <button onclick="window.clearAllProductFilters()" class="btn-primary">Reset all filters</button>
           </div>
         ` : `
           <div class="products-catalogue-grid">
-            ${paginated.map(p => `
-              <div class="hardware-card" data-product-id="${p.id}" onclick="window.inspectProduct('${p.id}', this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); window.inspectProduct('${p.id}', this);}">
-                <!-- 1:1 Square Hardware Image at the Top of the Card with Corner Badges -->
-                <div class="hw-stage-square">
-                  <!-- Corner Overlays -->
-                  <div class="hw-corner-tag-tl">${p.code}</div>
-                  <div class="hw-corner-tag-tr">${p.platformDomain.split('·')[0].trim()}</div>
+            ${paginated.map(p => {
+              const images = p.images && p.images.length > 0 ? p.images : [p.primaryImage || '/assets/antina.webp'];
+              const defaultLabels = ['Isometric Assembly', 'Baseplate & RF Port', 'Elevation Profile', 'Radome Sweep'];
+              const labels = p.imageLabels || images.map((_, i) => defaultLabels[i] || `Angle 0${i + 1}`);
+              const serializedLabels = JSON.stringify(labels).replace(/"/g, '&quot;');
 
-                  <img src="${p.primaryImage}" alt="${p.name}" class="hw-stage-square-img" loading="lazy" onerror="this.onerror=null; this.src='${p.images[0] || '/assets/antina.webp'}';" />
-                </div>
+              return `
+                <div class="hardware-card" 
+                     data-product-id="${p.id}" 
+                     data-active-slide="0"
+                     data-image-labels="${serializedLabels}"
+                     onmouseenter="window.startCardViewSlide(this)"
+                     onmouseleave="window.stopCardViewSlide(this)"
+                     onfocus="window.startCardViewSlide(this)"
+                     onblur="window.stopCardViewSlide(this)"
+                     onclick="window.inspectProduct('${p.id}', this)" 
+                     role="button" 
+                     tabindex="0" 
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); window.inspectProduct('${p.id}', this);}">
+                  
+                  <!-- 1:1 Square Hardware Stage with Multi-Angle Slow Slide on Hover -->
+                  <div class="hw-stage-square" data-views-count="${images.length}">
+                    <!-- Corner Overlays -->
+                    <div class="hw-corner-tag-tl">${p.code}</div>
+                    <div class="hw-corner-tag-tr">${p.platformDomain.split('·')[0].trim()}</div>
 
-                <!-- Card Body Below Image -->
-                <div class="hw-card-body">
-                  <!-- Product Name -->
-                  <h3 class="hw-card-name" title="${p.name}">
-                    ${p.name}
-                  </h3>
-
-                  <!-- Mounting Location -->
-                  <div class="hw-card-location" title="${p.mountingLocation}">
-                    <span style="color: var(--accent); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;">LOC:</span>
-                    <span>${p.mountingLocation}</span>
-                  </div>
-
-                  <!-- Core Engineering Specs Strip -->
-                  <div class="hw-specs-strip">
-                    <div class="hw-spec-row">
-                      <span class="hw-spec-key">FREQUENCY</span>
-                      <span class="hw-spec-val" title="${p.freqBand}">${p.freqBand.split('(')[0].trim()}</span>
+                    <!-- Multi-view Slider Track -->
+                    <div class="hw-slider-viewport">
+                      <div class="hw-slider-track">
+                        ${images.map((img, i) => `
+                          <div class="hw-slide" data-index="${i}">
+                            <img src="${img}" alt="${p.name} - ${labels[i] || `View 0${i+1}`}" class="hw-stage-square-img" loading="lazy" onerror="this.onerror=null; this.src='${p.primaryImage || '/assets/antina.webp'}';" />
+                          </div>
+                        `).join('')}
+                      </div>
                     </div>
-                    <div class="hw-spec-row">
-                      <span class="hw-spec-key">VSWR / POL</span>
-                      <span class="hw-spec-val">${p.vswr.split(' ')[0]} ${p.vswr.split(' ')[1] || ''} · ${p.polarisation.split(' ')[0]}</span>
-                    </div>
+
+                    <!-- Interactive Progress Indicators & Angle Caption -->
+                    ${images.length > 1 ? `
+                      <div class="hw-slider-indicators" aria-hidden="true">
+                        ${images.map((_, i) => `<span class="hw-indicator-bar ${i === 0 ? 'active' : ''}"></span>`).join('')}
+                      </div>
+                      <div class="hw-view-caption">
+                        <span class="hw-caption-label">${labels[0] || 'Isometric Assembly'}</span>
+                        <span class="hw-caption-counter">1/${images.length}</span>
+                      </div>
+                    ` : ''}
                   </div>
 
-                  <!-- Action Cue -->
-                  <div class="hw-inspect-bar">
-                    <span style="font-weight: 500;">Inspect Specifications</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <!-- Card Body Below Image -->
+                  <div class="hw-card-body">
+                    <!-- Clean unboxed metadata kicker -->
+                    <div class="hw-card-kicker">
+                      <span>${p.category}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>${p.application}</span>
+                    </div>
+
+                    <!-- Product Name -->
+                    <h3 class="hw-card-name" title="${p.name}">
+                      ${p.name}
+                    </h3>
+
+                    <!-- Mounting Location -->
+                    <div class="hw-card-location" title="${p.mountingLocation}">
+                      <span class="hw-loc-badge">LOC</span>
+                      <span>${p.mountingLocation}</span>
+                    </div>
+
+                    <!-- Precision Specs Compartment: 100% Constant Height, Smooth HUD Flip on Hover -->
+                    <div class="hw-specs-compartment">
+                      <!-- Default State: Primary RF Profile -->
+                      <div class="hw-specs-panel hw-specs-primary">
+                        <div class="hw-spec-header-tag">
+                          <span class="hw-tag-dot"></span>
+                          <span>PRIMARY RF PROFILE</span>
+                        </div>
+                        <div class="hw-spec-row">
+                          <span class="hw-spec-key">FREQUENCY</span>
+                          <span class="hw-spec-val" title="${p.freqBand}">${p.freqBand.split('(')[0].trim()}</span>
+                        </div>
+                        <div class="hw-spec-row">
+                          <span class="hw-spec-key">VSWR / POL</span>
+                          <span class="hw-spec-val">${p.vswr.split(' ')[0]} ${p.vswr.split(' ')[1] || ''} · ${p.polarisation.split(' ')[0]}</span>
+                        </div>
+                      </div>
+
+                      <!-- Hover State: Extended Telemetry Parameters -->
+                      <div class="hw-specs-panel hw-specs-extended">
+                        <div class="hw-spec-header-tag active">
+                          <span class="hw-tag-dot-active"></span>
+                          <span>EXTENDED TELEMETRY</span>
+                        </div>
+                        <div class="hw-spec-row">
+                          <span class="hw-spec-key">RF POWER</span>
+                          <span class="hw-spec-val">${p.powerRating || p.power || '50 W CW'}</span>
+                        </div>
+                        <div class="hw-spec-row">
+                          <span class="hw-spec-key">CONNECTOR</span>
+                          <span class="hw-spec-val">${p.connector ? p.connector.split('(')[0].trim() : 'TNC Female'} (50 Ω)</span>
+                        </div>
+                        <div class="hw-spec-row">
+                          <span class="hw-spec-key">ENVELOPE / WT</span>
+                          <span class="hw-spec-val">${p.dimensions ? p.dimensions.split('×')[0].trim() : 'Compact'} · ${p.weight || 'Nominal'}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Action Cue Button with Illuminated State on Hover -->
+                    <div class="hw-inspect-btn">
+                      <span>Inspect Specifications</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
 
           <!-- Pagination Bar -->
@@ -318,23 +516,8 @@ export function renderInspectionDialogContent(p, activeImgIdx = 0) {
 
     <!-- Right Column: ALL INFORMATION, VERTICALLY SCROLLABLE, CLEAR & ORGANIZED -->
     <div class="specs-console-container">
-      <!-- Section 1: Overview & Installation Context -->
+      <!-- Section 1: Overview & Installation Context (Tags removed per design requirements) -->
       <div class="info-section-block">
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); background: rgba(3,188,159,0.08); border: 1px solid rgba(3,188,159,0.25); border-radius: 4px; padding: 0.25rem 0.65rem; font-weight: 600;">
-            MODEL ${p.code}
-          </span>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #EAF2F0; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.25rem 0.65rem;">
-            ${p.category || p.type}
-          </span>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #8FA3A0; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 0.25rem 0.65rem;">
-            ${p.application}
-          </span>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #03BC9F; background: rgba(3,188,159,0.06); border: 1px solid rgba(3,188,159,0.2); border-radius: 4px; padding: 0.25rem 0.65rem;">
-            AS9100 Rev D · CEMILAC Approved
-          </span>
-        </div>
-
         <h3 class="info-section-title">
           Product Overview
         </h3>
@@ -810,12 +993,106 @@ export function handleProductTypeSelect(val) {
   refreshProductsView();
 }
 
+export function selectProductCategory(categoryId) {
+  productFilterState.selectedCategory = categoryId;
+  productFilterState.page = 1;
+  const hash = window.location.hash || '';
+  if (!hash.startsWith('#/products') && !hash.startsWith('#products')) {
+    window.location.hash = '#/products';
+  }
+  refreshProductsView();
+}
+
 export function clearAllProductFilters() {
   productFilterState.search = '';
   productFilterState.apps = [];
   productFilterState.types = [];
+  productFilterState.selectedCategory = 'all';
+  productFilterState.sortBy = 'default';
   productFilterState.page = 1;
   refreshProductsView();
+}
+
+/**
+ * Multi-Angle Smooth Sliding Animation on Product Card Hover
+ */
+export function startCardViewSlide(cardEl) {
+  if (!cardEl) return;
+  const slider = cardEl.querySelector('.hw-slider-track');
+  if (!slider) return;
+  const slides = slider.querySelectorAll('.hw-slide');
+  if (slides.length <= 1) return;
+
+  const indicators = cardEl.querySelectorAll('.hw-indicator-bar');
+  const captionLabel = cardEl.querySelector('.hw-caption-label');
+  const captionCounter = cardEl.querySelector('.hw-caption-counter');
+  const labelsData = cardEl.getAttribute('data-image-labels');
+  let labels = [];
+  try {
+    labels = JSON.parse(labelsData || '[]');
+  } catch (e) {
+    labels = [];
+  }
+
+  // Clear previous interval if any
+  stopCardViewSlide(cardEl);
+
+  let currentIdx = parseInt(cardEl.getAttribute('data-active-slide') || '0', 10);
+
+  cardEl.__slideInterval = window.setInterval(() => {
+    currentIdx = (currentIdx + 1) % slides.length;
+    cardEl.setAttribute('data-active-slide', currentIdx);
+    slider.style.transform = `translateX(-${currentIdx * 100}%)`;
+
+    indicators.forEach((ind, i) => {
+      if (i === currentIdx) ind.classList.add('active');
+      else ind.classList.remove('active');
+    });
+
+    if (captionLabel && labels[currentIdx]) {
+      captionLabel.textContent = labels[currentIdx];
+    }
+    if (captionCounter) {
+      captionCounter.textContent = `${currentIdx + 1}/${slides.length}`;
+    }
+  }, 1600);
+}
+
+export function stopCardViewSlide(cardEl) {
+  if (!cardEl) return;
+  if (cardEl.__slideInterval) {
+    clearInterval(cardEl.__slideInterval);
+    cardEl.__slideInterval = null;
+  }
+  const slider = cardEl.querySelector('.hw-slider-track');
+  if (!slider) return;
+  const indicators = cardEl.querySelectorAll('.hw-indicator-bar');
+  const captionLabel = cardEl.querySelector('.hw-caption-label');
+  const captionCounter = cardEl.querySelector('.hw-caption-counter');
+  const labelsData = cardEl.getAttribute('data-image-labels');
+  let labels = [];
+  try {
+    labels = JSON.parse(labelsData || '[]');
+  } catch (e) {
+    labels = [];
+  }
+
+  // Smoothly return to slide 0
+  cardEl.setAttribute('data-active-slide', '0');
+  slider.style.transform = 'translateX(0%)';
+
+  indicators.forEach((ind, i) => {
+    if (i === 0) ind.classList.add('active');
+    else ind.classList.remove('active');
+  });
+
+  if (captionLabel && labels[0]) {
+    captionLabel.textContent = labels[0];
+  }
+  if (captionCounter) {
+    const slides = slider.querySelectorAll('.hw-slide');
+    captionCounter.textContent = `1/${slides.length}`;
+  }
 }
 
 export function setProductPage(p) {
@@ -826,7 +1103,10 @@ export function setProductPage(p) {
 
 export function refreshProductsView() {
   const mainContent = document.getElementById('main-content');
-  if (mainContent && window.location.hash.startsWith('#/products')) {
+  const hash = window.location.hash || '';
+  const isProducts = hash === '#/products' || hash === '#products' ||
+                     hash.startsWith('#/products') || hash.startsWith('#products');
+  if (mainContent && isProducts) {
     mainContent.innerHTML = renderProductsView();
   }
 }

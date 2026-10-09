@@ -236,32 +236,44 @@ export function renderAboutView() {
         </div>
       </div>
 
-      <!-- Leadership Profiles & MD Pull Quote -->
-      <div style="margin-bottom: 6rem;">
-        <div style="max-width: 820px; margin-bottom: 3.5rem;">
-          <blockquote style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); line-height: 1.5; border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-            “Our antennas do not just transmit signals; they protect the platforms and personnel that safeguard national sovereignty. That mandate requires absolute engineering truth.”
+      <!-- Leadership & Engineering Section -->
+      <div id="leadership" style="margin-bottom: 6rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600;">
+          LEADERSHIP &amp; ENGINEERING
+        </div>
+        <div style="max-width: 840px; margin-bottom: 3.5rem;">
+          <blockquote style="font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 500; color: var(--text); line-height: 1.4; border-left: 3px solid var(--accent); padding-left: 1.5rem; margin-bottom: 1rem;">
+            &ldquo;We're a diverse team of thinkers and doers, united by a steadfast commitment to serving our customers and safeguarding national sovereignty.&rdquo;
           </blockquote>
-          <div style="margin-top: 1rem; padding-left: 1.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent);">
+          <div style="padding-left: 1.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent);">
             — Louis George, CEO &amp; Founder
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
           <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text);">Louis George</h3>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 1rem;">CEO · 30+ YRS COMPOSITE DESIGN</div>
-            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">Physics graduate from Mahatma Gandhi University with advanced composites engineering training at IIT Chennai. Leads composite aerodynamic structure synthesis and strategic manufacturing.</p>
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
+              LG
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Louis George</h3>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 1rem;">CHIEF EXECUTIVE OFFICER · 30+ YRS COMPOSITE DESIGN</div>
+            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">Physics graduate from Mahatma Gandhi University with advanced composites engineering training at IIT Chennai. 30+ years leading composite aerodynamic structure synthesis and strategic manufacturing.</p>
           </div>
 
           <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text);">Kuruvilla George</h3>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 1rem;">CTO · 30+ YRS RF &amp; SIMULATION</div>
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
+              KG
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Kuruvilla George</h3>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 1rem;">CHIEF TECHNOLOGY OFFICER · 30+ YRS RF &amp; SIMULATION</div>
             <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">Over three decades specializing in computational electromagnetics, high-frequency antenna synthesis, and MIL-STD compliance execution for airborne platforms.</p>
           </div>
 
           <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text);">Tony G. Thomas</h3>
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
+              TT
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Tony G. Thomas</h3>
             <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 1rem;">CHIEF MENTOR · EX-AT&amp;T BELL LABS</div>
             <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">Co-founder of AdventNet (Zoho Corporation). Alumnus of IIT Madras and Johns Hopkins University (PhD). Brings deep systems scaling and global technology leadership.</p>
           </div>

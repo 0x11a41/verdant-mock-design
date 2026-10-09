@@ -25,6 +25,7 @@ export const PRODUCTS = [
     featured: true,
     fallbackType: 'blade',
     images: [
+      '/assets/featured/JC-50.webp',
       '/assets/products/JC-50/1.webp',
       '/assets/products/JC-50/2.webp',
       '/assets/products/JC-50/3.webp',
@@ -36,7 +37,7 @@ export const PRODUCTS = [
       'Aerodynamic Elevation Profile',
       'Radome Leading Edge Sweep'
     ],
-    primaryImage: '/assets/products/JC-50/1.webp',
+    primaryImage: '/assets/featured/JC-50.webp',
     keySpecs: {
       'Frequency Range': '4.4 – 5.0 GHz (C-Band)',
       'VSWR': '≤ 1.8:1 max across band',
@@ -106,6 +107,7 @@ export const PRODUCTS = [
     featured: true,
     fallbackType: 'blade',
     images: [
+      '/assets/featured/JD-120-T1B.webp',
       '/assets/products/JD-120-T1B/1.webp',
       '/assets/products/JD-120-T1B/2.webp',
       '/assets/products/JD-120-T1B/3.webp',
@@ -117,7 +119,7 @@ export const PRODUCTS = [
       'Side Elevation & Sweep',
       'Bottom Port & Ground Interface'
     ],
-    primaryImage: '/assets/products/JD-120-T1B/1.webp',
+    primaryImage: '/assets/featured/JD-120-T1B.webp',
     keySpecs: {
       'Frequency Range': '30 – 512 MHz (V/UHF)',
       'VSWR': '≤ 2.5:1 across full band',
@@ -183,7 +185,7 @@ export const PRODUCTS = [
     connector: 'TNC Female Flush-Mount',
     weight: '340 g',
     dimensions: '16 mm (Profile Depth) × 140 mm × 140 mm',
-    featured: true,
+    featured: false,
     fallbackType: 'altimeter',
     images: [
       '/assets/products/JH-60/1.webp',
@@ -263,7 +265,7 @@ export const PRODUCTS = [
     connector: 'TNC Female with Viton Environmental Seal',
     weight: '820 g',
     dimensions: '220 mm (H) × 62 mm (W) × 245 mm (L)',
-    featured: true,
+    featured: false,
     fallbackType: 'blade',
     images: [
       '/assets/products/JD-401-S1G-A/1.webp',
@@ -419,9 +421,10 @@ export const PRODUCTS = [
     connector: 'Type-N Female',
     weight: '1,100 g',
     dimensions: '275 mm (H) × 74 mm (W) × 290 mm (L)',
-    featured: false,
+    featured: true,
     fallbackType: 'blade',
     images: [
+      '/assets/featured/JD-401-S1G-A.webp',
       '/assets/products/JD-401-S1G-A/1.webp',
       '/assets/products/JD-401-S1G-A/2.webp',
       '/assets/products/JD-401-S1G-A/3.webp',
@@ -433,7 +436,7 @@ export const PRODUCTS = [
       'Aerodynamic Blade Profile',
       'Internal Cavity Port Interface'
     ],
-    primaryImage: '/assets/products/JD-401-S1G-A/1.webp',
+    primaryImage: '/assets/featured/JD-401-S1G-A.webp',
     keySpecs: {
       'Frequency Range': '118 – 400 MHz V/UHF',
       'VSWR': '≤ 2.0:1 across spectrum',

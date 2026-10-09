@@ -21,24 +21,23 @@ export function renderHomeView() {
   return `
   <!-- HERO I: 100vh Full-Bleed WebGL Pinned Dot-Matrix Earth with Clean Typography -->
   <div class="hero-pinned-wrapper">
-    <section id="hero-section" class="hero-sticky-container" style="display: flex; align-items: center;">
+    <section id="hero-section" class="hero-sticky-container">
       <!-- Three.js Canvas Container -->
       <div id="globe-canvas-container" style="position: absolute; inset: 0; z-index: 1; pointer-events: auto; opacity: 1;"></div>
       <!-- Soft Ambient Globe Rim Glow -->
       <div class="globe-ambient-glow" aria-hidden="true"></div>
 
-      <!-- Directional Scrim: solid dark on left for text legibility, transparent on right for clean 3D globe -->
-      <div id="hero-scrim" style="position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(90deg, #05090D 0%, rgba(5,9,13,0.95) 30%, rgba(5,9,13,0.52) 46%, rgba(5,9,13,0) 62%);"></div>
-
-      <!-- Hero Content Overlay (Clean: only mainline + action CTAs) -->
-      <div class="container-wide" style="position: relative; z-index: 3; pointer-events: none; width: 100%;">
-        <div id="hero-text-content" style="max-width: 620px; will-change: transform, opacity;">
-          <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 6.2vw, 5.75rem); font-weight: 700; line-height: 1.04; letter-spacing: -0.035em; color: var(--text); margin-bottom: 2.25rem; text-wrap: balance;">
-            Signals that cross every <span style="color: var(--accent); text-shadow: 0 0 32px var(--accent-glow);">border</span>
+      <!-- Hero Content Overlay (Left-Aligned Aerospace Typography) -->
+      <div class="container-wide" style="position: relative; z-index: 3; pointer-events: none; height: 100%; display: flex; align-items: center;">
+        <div id="hero-text-content" style="max-width: 640px; will-change: transform, opacity;">
+          <!-- Hero Main Headline -->
+          <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 6.2vw, 5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; color: #FFFFFF; margin-bottom: 2rem; text-wrap: balance;">
+            Signals that cross every <span style="color: var(--accent); text-shadow: 0 0 36px var(--accent-glow);">border</span>
           </h1>
 
-          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.15rem; pointer-events: auto;">
-            <a href="#how" class="btn-secondary" style="border: 1.5px solid rgba(234, 242, 240, 0.45); background: rgba(5, 9, 13, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">Learn more</a>
+          <!-- Action CTAs -->
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; pointer-events: auto;">
+            <a href="#how" class="btn-secondary" style="min-height: 48px; padding: 0.75rem 1.6rem; font-size: 0.92rem; border-radius: 9999px; text-decoration: none;">Learn more</a>
           </div>
         </div>
       </div>
@@ -136,12 +135,18 @@ export function renderHomeView() {
         <section id="regimes-section" class="regimes-section-wrapper" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 4rem 0; background: #05090D; overflow: hidden; text-align: center; position: relative;">
           <div class="container-wide" style="position: relative; z-index: 2;">
             <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-              <h2 id="regime-motto-heading" style="font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.25rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.035em; color: var(--text); margin: 0 auto; text-wrap: balance; will-change: transform, letter-spacing;">
-                <span class="regime-word" data-word-idx="0" style="display: inline-block; will-change: opacity, transform, filter;">Engineered</span>
-                <span class="regime-word" data-word-idx="1" style="display: inline-block; will-change: opacity, transform, filter;">for</span>
-                <span class="regime-word" data-word-idx="2" style="display: inline-block; will-change: opacity, transform, filter;">extreme</span>
-                <span class="regime-word" data-word-idx="3" style="display: inline-block; will-change: opacity, transform, filter;">operating</span>
-                <span class="regime-word regime-accent" data-word-idx="4" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">regimes.</span>
+              <h2 id="regime-motto-heading" style="font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.25rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.035em; color: var(--text); margin: 0 auto; text-wrap: balance; will-change: transform, letter-spacing;">
+                <div>
+                  <span class="regime-word" data-word-idx="0" style="display: inline-block; will-change: opacity, transform, filter;">When</span>
+                  <span class="regime-word" data-word-idx="1" style="display: inline-block; will-change: opacity, transform, filter;">a</span>
+                  <span class="regime-word" data-word-idx="2" style="display: inline-block; will-change: opacity, transform, filter;">mission</span>
+                  <span class="regime-word" data-word-idx="3" style="display: inline-block; will-change: opacity, transform, filter;">is</span>
+                  <span class="regime-word" data-word-idx="4" style="display: inline-block; will-change: opacity, transform, filter;">calling,</span>
+                </div>
+                <div style="margin-top: 0.25rem;">
+                  <span class="regime-word regime-accent" data-word-idx="5" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">VERDANT</span>
+                  <span class="regime-word regime-accent" data-word-idx="6" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">delivers.</span>
+                </div>
               </h2>
               <!-- 1-to-1 dynamic scrubbed telemetry precision line -->
               <div style="margin: 2.5rem auto 0; width: 140px; height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; position: relative;">
@@ -154,78 +159,64 @@ export function renderHomeView() {
 
       <!-- POST-REGIMES SURFACE: Glides on top of pinned regimes motto -->
       <div id="post-regimes-panel" class="post-regimes-surface">
-      <!-- PRODUCTS: Featured Flagship Hardware Showcase (Horizontally Scrollable) -->
-      <section id="featured-products-section" style="padding: clamp(4.5rem, 10vh, 7.5rem) 0; background: #05090D; border-bottom: 1px solid var(--border);">
-      <div class="container-wide">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.25rem;">
-          <div>
-            <h2 style="font-family: var(--font-display); font-size: 29.1875px; font-weight: 700; color: var(--text); letter-spacing: -0.03em; margin: 0;">
-              Featured Products
-            </h2>
-          </div>
-          
-          <div style="display: flex; align-items: center; gap: 1rem;">
-            <!-- Scroll Arrow Controls for Horizontal Track -->
-            <div style="display: flex; gap: 0.5rem;">
-              <button id="feat-scroll-prev" aria-label="Scroll featured products left" class="btn-secondary" style="width: 40px; height: 40px; padding: 0; min-height: 40px; border-radius: 8px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button id="feat-scroll-next" aria-label="Scroll featured products right" class="btn-secondary" style="width: 40px; height: 40px; padding: 0; min-height: 40px; border-radius: 8px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
+      <!-- FEATURED PRODUCTS: TEKEVER-Style 3D Depth Atmospheric Stage -->
+      <section id="featured-products-section" class="featured-tekever-section" tabindex="0" aria-label="Featured antenna systems showcase">
+        <!-- Top Centered Header -->
+        <div class="stage-top-header">
+          <span class="stage-top-eyebrow">Meet our</span>
+          <h2 class="stage-top-title">Antenna Systems</h2>
+          <p class="stage-top-desc">
+            VERDANT offers mission-oriented RF product lines through its advanced antenna business unit, providing defense forces with superior telemetry and intelligence links.
+          </p>
+        </div>
 
-            <a href="#/products" class="btn-secondary" style="font-size: 0.8125rem;">
-              View all
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+        <!-- Main 3D Depth Stage Arena -->
+        <div class="stage-arena-wrap" id="stage-arena-wrap" role="region" aria-label="Interactive 3D Antenna Systems Showcase">
+          <!-- Giant Background Watermark (e.g. JC 50 / JD 120 / JD 401) -->
+          <div id="stage-giant-watermark" class="stage-giant-watermark" aria-hidden="true">JC 50</div>
+
+          <!-- Circular Frosted Navigation Arrows -->
+          <button id="stage-arrow-prev" class="stage-circle-nav-btn prev" aria-label="Previous system">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button id="stage-arrow-next" class="stage-circle-nav-btn next" aria-label="Next system">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+
+          <!-- 3 Hardware Items Track in 3D Depth -->
+          <div class="stage-hardware-item pos-center" id="stage-item-0" data-index="0" data-id="jc-50" role="button" tabindex="0" aria-label="JC 50 C-Band Blade Antenna">
+            <div class="stage-item-float-inner">
+              <img src="/assets/featured/JC-50.webp" alt="JC 50 C-Band Blade Antenna" class="stage-hardware-img" />
+            </div>
+          </div>
+
+          <div class="stage-hardware-item pos-right" id="stage-item-1" data-index="1" data-id="jd-120-t1b" role="button" tabindex="0" aria-label="JD 120 Tactical V/UHF Blade">
+            <div class="stage-item-float-inner">
+              <img src="/assets/featured/JD-120-T1B.webp" alt="JD 120 Tactical V/UHF Blade" class="stage-hardware-img" />
+            </div>
+          </div>
+
+          <div class="stage-hardware-item pos-left" id="stage-item-2" data-index="2" data-id="jd-401-s1g-a" role="button" tabindex="0" aria-label="JD 401-S1G-A High-Power Blade">
+            <div class="stage-item-float-inner">
+              <img src="/assets/featured/JD-401-S1G-A.webp" alt="JD 401-S1G-A High-Power Blade" class="stage-hardware-img" />
+            </div>
           </div>
         </div>
 
-        <!-- Horizontally Scrollable Featured Showcase with Uniform Normal Hardware Cards -->
-        <div id="featured-scroll-track" class="featured-horizontal-scroll" role="region" aria-label="Featured antenna systems carousel" tabindex="0">
-          ${PRODUCTS.filter(p => p.featured).map((p, idx) => `
-            <div class="featured-hw-card" data-product-id="${p.id}" role="button" tabindex="0" onclick="window.inspectProduct('${p.id}', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); window.inspectProduct('${p.id}', this);}">
-              <!-- 1:1 Hardware Image Frame with Corner Badges -->
-              <div class="hw-stage-square">
-                <div class="hw-corner-tag-tl">${p.code}</div>
-                <div class="hw-corner-tag-tr">${p.platformDomain.split('·')[0].trim()}</div>
-                <img src="${p.primaryImage}" alt="${p.name}" class="hw-stage-square-img" loading="lazy" onerror="this.onerror=null; this.src='${p.images[0] || '/assets/antina.webp'}';" />
-              </div>
+        <!-- Bottom Meta Typography & Frosted Pill Action -->
+        <div class="stage-bottom-meta">
+          <div id="stage-meta-eyebrow" class="stage-meta-eyebrow">JC 50</div>
+          <h3 id="stage-meta-title" class="stage-meta-title">The Game Changer</h3>
+          <button id="stage-meta-pill" class="stage-frosted-pill-btn" aria-label="Inspect specifications for active system">
+            Inspect Specifications
+          </button>
 
-              <!-- Card Body -->
-              <div class="hw-card-body">
-                <h3 class="hw-card-name" title="${p.name}">
-                  ${p.name}
-                </h3>
-                <div class="hw-card-location" title="${p.mountingLocation}">
-                  <span style="color: var(--accent); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;">LOC:</span>
-                  <span>${p.mountingLocation}</span>
-                </div>
-
-                <!-- Core Engineering Specs Strip -->
-                <div class="hw-specs-strip">
-                  <div class="hw-spec-row">
-                    <span class="hw-spec-key">BANDWIDTH</span>
-                    <span class="hw-spec-val" title="${p.freqBand}">${p.freqBand.split('(')[0].trim()}</span>
-                  </div>
-                  <div class="hw-spec-row">
-                    <span class="hw-spec-key">VSWR / POL</span>
-                    <span class="hw-spec-val">${p.vswr.split(' ')[0]} ${p.vswr.split(' ')[1] || ''} · ${p.polarisation.split(' ')[0]}</span>
-                  </div>
-                </div>
-
-                <!-- Action Cue -->
-                <div class="hw-inspect-bar">
-                  <span style="font-weight: 500;">Inspect Specifications</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </div>
-              </div>
-            </div>
-          `).join('')}
+          <!-- Minimal Subtle Slideshow Progress Line -->
+          <div class="stage-progress-bar-wrap" aria-hidden="true">
+            <div id="stage-progress-fill" class="stage-progress-bar-fill"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <!-- CAPABILITIES: 4 Cards with Domain Background Imagery (Fully Responsive) -->
     <section style="padding: clamp(5rem, 12vh, 8.5rem) 0; background: var(--bg); border-bottom: 1px solid var(--border);">
@@ -344,124 +335,77 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- MEET OUR LEADERSHIP & CONTACT SECTION -->
-    <section id="contact-section" style="padding: clamp(5rem, 12vh, 8.5rem) 0; background: var(--bg); border-bottom: 1px solid var(--border);">
+    <!-- CONTACT / GET IN TOUCH SECTION -->
+    <section id="contact-section" style="padding: clamp(3.5rem, 7vh, 5.5rem) 0 4.5rem; background: var(--bg); border-bottom: 1px solid var(--border); overflow: hidden;">
       <div class="container-wide">
-        <div style="margin-bottom: 4rem; text-align: center; max-width: 840px; margin-left: auto; margin-right: auto;">
-          <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; font-weight: 600;">
-            LEADERSHIP &amp; ENGINEERING
-          </div>
-          <blockquote style="font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; color: var(--text); line-height: 1.35; margin-bottom: 1rem; text-wrap: balance;">
-            &ldquo;We're a diverse team of thinkers and doers, united by a steadfast commitment to serving our customers.&rdquo;
-          </blockquote>
-        </div>
 
-        <!-- 3 Minimal Leadership Cards -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
-          <div class="card" style="padding: 2rem;">
-            <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
-              LG
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Louis George</h3>
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 1rem;">Chief Executive Officer</div>
-            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-              30+ years in composite structure and radome design. M.Sc. Physics (MGU), advanced composites engineering at IIT Chennai.
-            </p>
-          </div>
-
-          <div class="card" style="padding: 2rem;">
-            <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
-              KG
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Kuruvilla George</h3>
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 1rem;">Chief Technology Officer</div>
-            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-              30+ years leading precision RF simulation, broadband antenna geometry execution, and military environmental qualification.
-            </p>
-          </div>
-
-          <div class="card" style="padding: 2rem;">
-            <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--elevated); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-family: var(--font-mono); margin-bottom: 1.25rem;">
-              TT
-            </div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">Tony G. Thomas</h3>
-            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 1rem;">Chief Mentor</div>
-            <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6;">
-              Ex-AT&amp;T Bell Labs, Co-founder AdventNet / Zoho. B.Tech IIT Madras, Ph.D. Computer Science from Johns Hopkins University.
-            </p>
-          </div>
-        </div>
-
-        <!-- Contact Box & Address -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3.5rem; align-items: start;">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; font-weight: 600;">
-              GET IN TOUCH
-            </div>
-            <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--text); margin-bottom: 1.25rem;">
-              Talk to our antenna engineers.
+        <!-- GET IN TOUCH SHOWCASE (SEAMLESS INTEGRATION WITH NO BORDER) -->
+        <div class="contact-hero-banner" id="home-get-in-touch-banner">
+          <div class="contact-hero-content">
+            <h2 class="contact-hero-title">
+              Get in Touch
             </h2>
-            <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
-              Direct consultation on technical requirements, mechanical envelope integration, custom radome materials, or formal tenders.
+            <p class="contact-hero-desc">
+              The defence and aerospace operating landscape demands sovereign electromagnetic superiority. At Verdant Telemetry, partner directly with microwave engineers, radome aerodynamicists, and flight-qualification veterans on mission-critical technologies deployed and relied upon across frontline combat airframes, naval platforms, and tactical missiles.
             </p>
 
-            <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.9rem;">
-              <div>
-                <span style="color: var(--text-subtle); display: block; font-family: var(--font-mono); font-size: 0.75rem;">HEADQUARTERS</span>
-                <span style="color: var(--text);">26/411 A, Konthuruthy, Cochin – 682 013, Kerala, India</span>
-              </div>
-              <div>
-                <span style="color: var(--text-subtle); display: block; font-family: var(--font-mono); font-size: 0.75rem;">TELEPHONE</span>
-                <span style="color: var(--text);"><a href="tel:+914842663104" style="color: var(--text); text-decoration: none;">0091-484-2663104</a> / <a href="tel:+914842663576" style="color: var(--text); text-decoration: none;">2663576</a></span>
-              </div>
-              <div>
-                <span style="color: var(--text-subtle); display: block; font-family: var(--font-mono); font-size: 0.75rem;">DIRECT EMAIL</span>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.2rem;">
-                  <a href="mailto:info@verdanttelemetry.com" style="color: var(--accent); text-decoration: none; font-weight: 500;">info@verdanttelemetry.com</a>
-                  <button type="button" onclick="window.copyContactEmail('info@verdanttelemetry.com')" style="background: none; border: 1px solid var(--border); color: var(--text-muted); border-radius: 4px; padding: 0.15rem 0.4rem; font-size: 0.7rem; cursor: pointer;">Copy</button>
-                </div>
-              </div>
+            <div class="contact-hero-action-row">
+              <button type="button" class="contact-cta-pill" onclick="window.openEnquirySection()">
+                Get started
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
             </div>
           </div>
+        </div>
 
-          <!-- Contact Form Component -->
-          <div class="card" style="padding: 2.25rem;">
-            <div style="margin-bottom: 1.5rem;">
-              <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem;">
-                Send Technical Enquiry
+        <!-- DIRECT TECHNICAL ENQUIRY DIALOG (SIMPLIFIED & SLEEK) -->
+        <div id="enquiry-section" role="dialog" aria-modal="true" aria-labelledby="enquiry-dialog-title" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 999; align-items: center; justify-content: center; padding: 1.25rem; overflow-y: auto;" onclick="if(event.target === this) window.closeEnquirySection()">
+          <div style="background: #070D12; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 16px; width: 100%; max-width: 520px; padding: clamp(1.5rem, 3.5vw, 2.25rem); position: relative; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85); max-height: 92vh; overflow-y: auto;" onclick="event.stopPropagation()">
+            <button type="button" onclick="window.closeEnquirySection()" aria-label="Close dialog" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); color: var(--text-muted); cursor: pointer; width: 32px; height: 32px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.2rem; line-height: 1; transition: all 0.2s;">&times;</button>
+            
+            <div style="margin-bottom: 1.5rem; padding-right: 2rem;">
+              <h3 id="enquiry-dialog-title" style="font-size: 1.35rem; font-weight: 700; color: #EAF2F0; letter-spacing: -0.01em;">
+                Technical Enquiry
               </h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-                Direct channel to our antenna engineering and qualification team in Cochin.
+              <p style="font-size: 0.875rem; color: #8FA3A0; line-height: 1.5; margin-top: 0.35rem;">
+                Connect directly with our microwave &amp; radome engineering team.
               </p>
             </div>
 
             <form id="home-contact-form" onsubmit="window.handleContactSubmit(event, 'home-contact-form')" novalidate>
               <div id="form-feedback" style="display: none; margin-bottom: 1.25rem;"></div>
 
-              <div class="contact-fields-container" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                <div>
-                  <label for="c-name" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">NAME *</label>
-                  <input type="text" id="c-name" required placeholder="e.g. Commander R. K. Sharma" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
+              <div class="contact-fields-container" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.85rem;">
+                  <div>
+                    <label for="c-name" style="display: block; font-size: 0.78rem; font-weight: 500; color: #8FA3A0; margin-bottom: 0.35rem;">Name *</label>
+                    <input type="text" id="c-name" required placeholder="Your name" class="contact-input" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
+                  </div>
+
+                  <div>
+                    <label for="c-email" style="display: block; font-size: 0.78rem; font-weight: 500; color: #8FA3A0; margin-bottom: 0.35rem;">Work Email *</label>
+                    <input type="email" id="c-email" required placeholder="name@company.com" class="contact-input" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
+                  </div>
                 </div>
 
                 <div>
-                  <label for="c-email" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">WORK EMAIL *</label>
-                  <input type="email" id="c-email" required placeholder="name@organisation.com" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
+                  <label for="c-org" style="display: block; font-size: 0.78rem; font-weight: 500; color: #8FA3A0; margin-bottom: 0.35rem;">Organisation <span style="color: #5B6E6C; font-weight: 400;">(optional)</span></label>
+                  <input type="text" id="c-org" placeholder="e.g. HAL, DRDO, or Defence Integrator" class="contact-input" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
                 </div>
 
                 <div>
-                  <label for="c-org" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">ORGANISATION / DEFENCE UNIT</label>
-                  <input type="text" id="c-org" placeholder="e.g. HAL / DRDO / Procurement Agency" class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;" />
+                  <label for="c-msg" style="display: block; font-size: 0.78rem; font-weight: 500; color: #8FA3A0; margin-bottom: 0.35rem;">Requirements *</label>
+                  <textarea id="c-msg" required rows="3" placeholder="Specify platform envelope, frequency band, or antenna model..." class="contact-input" style="width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none; resize: vertical; line-height: 1.5; transition: border-color 0.2s, box-shadow 0.2s;"></textarea>
                 </div>
 
-                <div>
-                  <label for="c-msg" style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 0.4rem;">TECHNICAL REQUIREMENTS / QUERY *</label>
-                  <textarea id="c-msg" required rows="4" placeholder="Specify frequency band, platform type, mechanical constraints, or antenna model..." class="contact-input" style="width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-size: 0.9rem; outline: none; resize: vertical; line-height: 1.5; transition: border-color 0.2s, box-shadow 0.2s;"></textarea>
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.35rem; padding-top: 0.5rem;">
+                  <button type="submit" class="contact-cta-pill" style="padding: 0.7rem 1.6rem; font-size: 0.875rem;">
+                    Submit enquiry &rarr;
+                  </button>
+                  <div style="font-size: 0.78rem; color: #8FA3A0;">
+                    Direct: <a href="mailto:info@verdanttelemetry.com" style="color: var(--accent); text-decoration: none;">info@verdanttelemetry.com</a>
+                  </div>
                 </div>
-
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.35rem; justify-content: center; font-size: 0.925rem; padding: 0.8rem 1.5rem; border-radius: 8px;">
-                  Send Technical Enquiry
-                </button>
               </div>
             </form>
           </div>
@@ -722,22 +666,236 @@ export function initHomeView() {
   window.addEventListener('resize', handleHomeScroll, { passive: true });
   handleHomeScroll();
 
-  // Horizontal featured products track controls
-  const featTrack = document.getElementById('featured-scroll-track');
-  const featPrev = document.getElementById('feat-scroll-prev');
-  const featNext = document.getElementById('feat-scroll-next');
+  // ========================================================
+  // FEATURED PRODUCTS: TEKEVER-Style 3D Depth Stage & Slow Slideshow
+  // ========================================================
+  const STAGE_ITEMS = [
+    {
+      id: 'jc-50',
+      code: 'JC 50',
+      watermark: 'JC 50',
+      tagline: 'The Game Changer',
+      eyebrow: 'JC 50',
+      image: '/assets/featured/JC-50.webp',
+      alt: 'JC 50 C-Band Blade Antenna'
+    },
+    {
+      id: 'jd-120-t1b',
+      code: 'JD 120 T1B',
+      watermark: 'JD 120',
+      tagline: 'The Tactical Backbone',
+      eyebrow: 'JD 120 T1B',
+      image: '/assets/featured/JD-120-T1B.webp',
+      alt: 'JD 120 Tactical V/UHF Blade Antenna'
+    },
+    {
+      id: 'jd-401-s1g-a',
+      code: 'JD 401-S1G-A',
+      watermark: 'JD 401',
+      tagline: 'The High-Power Link',
+      eyebrow: 'JD 401-S1G-A',
+      image: '/assets/featured/JD-401-S1G-A.webp',
+      alt: 'JD 401-S1G-A High-Power Blade Antenna'
+    }
+  ];
 
-  if (featTrack) {
-    if (featPrev) {
-      featPrev.onclick = () => {
-        featTrack.scrollBy({ left: -340, behavior: 'smooth' });
-      };
+  const arenaWrap = document.getElementById('stage-arena-wrap');
+  const featuredSection = document.getElementById('featured-products-section');
+
+  if (arenaWrap && featuredSection) {
+    let activeStageIdx = 0;
+    const watermarkEl = document.getElementById('stage-giant-watermark');
+    const eyebrowEl = document.getElementById('stage-meta-eyebrow');
+    const titleEl = document.getElementById('stage-meta-title');
+    const pillBtn = document.getElementById('stage-meta-pill');
+    const prevArrow = document.getElementById('stage-arrow-prev');
+    const nextArrow = document.getElementById('stage-arrow-next');
+    const progressFill = document.getElementById('stage-progress-fill');
+
+    const itemElements = [
+      document.getElementById('stage-item-0'),
+      document.getElementById('stage-item-1'),
+      document.getElementById('stage-item-2')
+    ];
+
+    const SLIDESHOW_INTERVAL_MS = 18000;
+    let autoSlideshowTimer = null;
+    let progressTimer = null;
+    let progressStartTime = 0;
+    let isPaused = false;
+
+    const updateStagePositions = (newIdx) => {
+      const total = STAGE_ITEMS.length;
+      activeStageIdx = ((newIdx % total) + total) % total;
+      const currentItem = STAGE_ITEMS[activeStageIdx];
+
+      // Update 3D depth slots
+      itemElements.forEach((el, k) => {
+        if (!el) return;
+        el.classList.remove('pos-center', 'pos-left', 'pos-right', 'pos-hidden');
+        let diff = (k - activeStageIdx) % total;
+        if (diff === 2) diff = -1;
+        if (diff === -2) diff = 1;
+
+        if (diff === 0) {
+          el.classList.add('pos-center');
+          el.setAttribute('aria-hidden', 'false');
+          el.onclick = () => {
+            if (typeof window.inspectProduct === 'function') {
+              window.inspectProduct(currentItem.id, el);
+            }
+          };
+        } else if (diff === -1) {
+          el.classList.add('pos-left');
+          el.setAttribute('aria-hidden', 'true');
+          el.onclick = () => goToIndex(k);
+        } else if (diff === 1) {
+          el.classList.add('pos-right');
+          el.setAttribute('aria-hidden', 'true');
+          el.onclick = () => goToIndex(k);
+        } else {
+          el.classList.add('pos-hidden');
+          el.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      // Update giant watermark text with smooth fade/scale
+      if (watermarkEl) {
+        watermarkEl.style.opacity = '0';
+        watermarkEl.style.transform = 'translate(-50%, -50%) scale(0.92)';
+        setTimeout(() => {
+          watermarkEl.textContent = currentItem.watermark;
+          watermarkEl.style.opacity = '0.08';
+          watermarkEl.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 320);
+      }
+
+      // Update bottom meta text
+      if (eyebrowEl) {
+        eyebrowEl.style.opacity = '0.2';
+        setTimeout(() => {
+          eyebrowEl.textContent = currentItem.eyebrow;
+          eyebrowEl.style.opacity = '1';
+        }, 220);
+      }
+
+      if (titleEl) {
+        titleEl.style.opacity = '0.2';
+        titleEl.style.transform = 'translateY(6px)';
+        setTimeout(() => {
+          titleEl.textContent = currentItem.tagline;
+          titleEl.style.opacity = '1';
+          titleEl.style.transform = 'translateY(0)';
+        }, 220);
+      }
+
+      // Wire pill button
+      if (pillBtn) {
+        pillBtn.onclick = () => {
+          if (typeof window.inspectProduct === 'function') {
+            window.inspectProduct(currentItem.id, pillBtn);
+          }
+        };
+      }
+    };
+
+    const goToIndex = (targetIdx) => {
+      updateStagePositions(targetIdx);
+      restartAutoTimer();
+    };
+
+    // Auto slideshow timers
+    const tickProgress = () => {
+      if (isPaused) return;
+      const elapsed = Date.now() - progressStartTime;
+      const pct = Math.min(100, (elapsed / SLIDESHOW_INTERVAL_MS) * 100);
+      if (progressFill) {
+        progressFill.style.width = `${pct.toFixed(1)}%`;
+      }
+    };
+
+    const startAutoTimer = () => {
+      clearInterval(autoSlideshowTimer);
+      clearInterval(progressTimer);
+      progressStartTime = Date.now();
+      if (progressFill) progressFill.style.width = '0%';
+
+      progressTimer = setInterval(tickProgress, 50);
+
+      autoSlideshowTimer = setInterval(() => {
+        if (!isPaused) {
+          goToIndex(activeStageIdx + 1);
+        }
+      }, SLIDESHOW_INTERVAL_MS);
+    };
+
+    const restartAutoTimer = () => {
+      startAutoTimer();
+    };
+
+    // Arrow navigation
+    if (prevArrow) {
+      prevArrow.onclick = () => goToIndex(activeStageIdx - 1);
     }
-    if (featNext) {
-      featNext.onclick = () => {
-        featTrack.scrollBy({ left: 340, behavior: 'smooth' });
-      };
+    if (nextArrow) {
+      nextArrow.onclick = () => goToIndex(activeStageIdx + 1);
     }
+
+    // Keyboard support on featured section
+    featuredSection.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToIndex(activeStageIdx - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToIndex(activeStageIdx + 1);
+      }
+    });
+
+    // Pause slideshow on hover / resume on leave
+    featuredSection.addEventListener('mouseenter', () => {
+      isPaused = true;
+    });
+
+    featuredSection.addEventListener('mouseleave', () => {
+      isPaused = false;
+      progressStartTime = Date.now();
+    });
+
+    // Touch swipe support on arena
+    let touchStartX = 0;
+    arenaWrap.addEventListener('touchstart', (e) => {
+      isPaused = true;
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    arenaWrap.addEventListener('touchend', (e) => {
+      isPaused = false;
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchEndX - touchStartX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX < 0) {
+          goToIndex(activeStageIdx + 1);
+        } else {
+          goToIndex(activeStageIdx - 1);
+        }
+      } else {
+        restartAutoTimer();
+      }
+    }, { passive: true });
+
+    // Initialize first state
+    updateStagePositions(0);
+    startAutoTimer();
+
+    // Clean up timer on route unload if needed
+    if (window.__stageAutoCleanup) {
+      window.__stageAutoCleanup();
+    }
+    window.__stageAutoCleanup = () => {
+      clearInterval(autoSlideshowTimer);
+      clearInterval(progressTimer);
+    };
   }
 
   // Horizontal catalog preview controls

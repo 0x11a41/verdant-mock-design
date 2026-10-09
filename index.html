@@ -53,20 +53,20 @@
     <div class="container-wide" style="display: flex; align-items: center; justify-content: space-between;">
       <!-- Zone 1: Brand Wordmark / Logo -->
       <a href="#/" id="nav-brand" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;" aria-label="Verdant Telemetry Home">
-        <img src="/assets/logo-teal.webp" alt="Verdant Telemetry &amp; Antenna Systems" style="height: 48px; width: auto; max-width: 240px; object-fit: contain; display: block;" onerror="this.style.display='none'; document.getElementById('nav-fallback-logo').style.display='flex';" />
+        <img src="/assets/logo-teal.webp" alt="Verdant Telemetry &amp; Antenna Systems" style="height: 40px; width: auto; max-width: 220px; object-fit: contain; display: block;" onerror="this.style.display='none'; document.getElementById('nav-fallback-logo').style.display='flex';" />
         <div id="nav-fallback-logo" style="display: none; align-items: center; gap: 0.6rem;">
-          <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="20" cy="20" r="18" stroke="#03BC9F" stroke-width="2.5" stroke-dasharray="3 3"/>
             <path d="M7 26C14 10 26 10 33 26" stroke="#03BC9F" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="20" cy="14" r="3" fill="#03BC9F"/>
             <line x1="20" y1="14" x2="20" y2="28" stroke="#03BC9F" stroke-width="2"/>
           </svg>
-          <span style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #EAF2F0; letter-spacing: -0.02em;">VERDANT</span>
+          <span style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #EAF2F0; letter-spacing: -0.02em;">VERDANT</span>
         </div>
       </a>
 
-      <!-- Zone 2: 4-6 Nav links -->
-      <nav id="desktop-nav" style="display: flex; align-items: center; gap: 0.5rem;" aria-label="Primary Navigation">
+      <!-- Zone 2: Primary Nav links sticking to the right near Contact Us -->
+      <nav id="desktop-nav" style="display: flex; align-items: center; gap: 0.35rem; margin-left: auto; margin-right: 1.25rem;" aria-label="Primary Navigation">
         <div class="nav-item">
           <a href="#/products" class="nav-link" data-route="products">Products</a>
         </div>
@@ -79,26 +79,27 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="nav-dropdown" id="capabilities-dropdown" role="menu" aria-labelledby="capabilities-btn">
-            <a href="#/capabilities/design" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px; transition: background 0.15s ease;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Design & Development</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">Coimbatore R&D centre, EM simulation & composite radomes</div>
+            <a href="#/capabilities/design" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Design &amp; Development</div>
+              <div class="dropdown-item-desc">Coimbatore R&amp;D centre, EM simulation &amp; composite radomes</div>
             </a>
-            <a href="#/capabilities/manufacturing" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px; transition: background 0.15s ease;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Manufacturing</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">AS9100 Rev D facility in Cochin, micro-machining & autoclave</div>
+            <a href="#/capabilities/manufacturing" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Manufacturing</div>
+              <div class="dropdown-item-desc">AS9100 Rev D facility in Cochin, micro-machining &amp; autoclave</div>
             </a>
-            <a href="#/capabilities/customisation" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px; transition: background 0.15s ease;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Customisation</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">Platform-tailored conformal & tactical antenna geometries</div>
+            <a href="#/capabilities/customisation" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Customisation</div>
+              <div class="dropdown-item-desc">Platform-tailored conformal &amp; tactical antenna geometries</div>
             </a>
-            <a href="#/capabilities/testing" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px; transition: background 0.15s ease;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Testing & Qualification</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">Indoor anechoic chamber to 20 GHz, 32 ft ground plane</div>
+            <a href="#/capabilities/testing" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Testing &amp; Qualification</div>
+              <div class="dropdown-item-desc">Indoor anechoic chamber to 20 GHz, 32 ft ground plane</div>
+            </a>
+            <a href="#/infrastructure" role="menuitem" class="nav-dropdown-link" style="border-top: 1px solid rgba(255,255,255,0.08); margin-top: 0.3rem; padding-top: 0.65rem;">
+              <div class="dropdown-item-title" style="color: var(--accent);">Infrastructure &amp; Facilities</div>
+              <div class="dropdown-item-desc">Anechoic chambers, RF instrumentation to 40 GHz, Cochin &amp; Coimbatore</div>
             </a>
           </div>
-        </div>
-        <div class="nav-item">
-          <a href="#/infrastructure" class="nav-link" data-route="infrastructure">Infrastructure</a>
         </div>
         <div class="nav-item">
           <button class="nav-link" aria-haspopup="true" aria-expanded="false" id="career-btn" style="background: none; border: none; cursor: pointer;">
@@ -106,33 +107,30 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="nav-dropdown" id="career-dropdown" role="menu" aria-labelledby="career-btn">
-            <a href="#/careers#open-roles" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Open Roles</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">RF Engineering, Composites, Qualification</div>
+            <a href="#/careers#open-roles" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Open Roles</div>
+              <div class="dropdown-item-desc">RF Engineering, Composites, Qualification</div>
             </a>
-            <a href="#/careers#life-at-verdant" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Life at Verdant</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">Aerospace culture in Cochin & Coimbatore</div>
+            <a href="#/careers#life-at-verdant" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Life at Verdant</div>
+              <div class="dropdown-item-desc">Aerospace culture in Cochin &amp; Coimbatore</div>
             </a>
-            <a href="#/careers#internships" role="menuitem" style="display: block; padding: 0.6rem; text-decoration: none; border-radius: 6px;">
-              <div style="font-weight: 600; font-size: 0.85rem; color: #EAF2F0;">Internships</div>
-              <div style="font-size: 0.75rem; color: #8FA3A0;">Hands-on defence aerospace projects</div>
+            <a href="#/careers#internships" role="menuitem" class="nav-dropdown-link">
+              <div class="dropdown-item-title">Internships</div>
+              <div class="dropdown-item-desc">Hands-on defence aerospace projects</div>
             </a>
           </div>
         </div>
-        <div class="nav-item">
-          <a href="#/contact" class="nav-link" data-route="contact">Contact Us</a>
-        </div>
       </nav>
 
-      <!-- Zone 3: Search + CTA + Mobile Toggle -->
+      <!-- Zone 3: CTA + Mobile Toggle -->
       <div style="display: flex; align-items: center; gap: 0.65rem;">
-        <button id="search-trigger-btn" aria-label="Open search command palette (or press /)" style="background: none; border: 1px solid var(--border); color: var(--text-muted); width: 40px; height: 40px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <button type="button" class="nav-cta-pill" onclick="window.openEnquirySection()" aria-label="Contact Us for technical enquiry">
+          Contact Us
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
-        <a href="#/contact" class="btn-primary header-talk-cta" style="padding: 0.5rem 1.1rem; font-size: 0.8125rem;">Contact us</a>
-        <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" style="display: none; background: none; border: 1px solid var(--border); color: var(--text); width: 40px; height: 40px; border-radius: 8px; cursor: pointer; align-items: center; justify-content: center;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <button id="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="nav-icon-btn" style="display: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -177,7 +175,7 @@
       <!-- Capabilities Group with Aligned Sub-items -->
       <div class="mobile-nav-group">
         <div class="mobile-nav-group-header">
-          <span>Capabilities</span>
+          <span>Capabilities & Infrastructure</span>
           <span style="font-size: 0.65rem; color: #7B8F8C; font-family: var(--font-mono);">R&D & MFGR</span>
         </div>
         <div class="mobile-nav-sublinks-grid">
@@ -197,13 +195,12 @@
             <span>Testing & Qualification</span>
             <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">20 GHz</span>
           </a>
+          <a href="#/infrastructure" class="mobile-nav-sublink" style="grid-column: span 2;">
+            <span>Infrastructure & Test Ranges</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); opacity: 0.85;">Anechoic & Labs</span>
+          </a>
         </div>
       </div>
-
-      <a href="#/infrastructure" class="mobile-nav-link">
-        <span>Infrastructure</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;"><polyline points="9 18 15 12 9 6"/></svg>
-      </a>
 
       <!-- Careers Group -->
       <div class="mobile-nav-group">
@@ -235,7 +232,10 @@
 
     <!-- Aligned Footer Section -->
     <div class="mobile-menu-footer">
-      <a href="#/contact" class="btn-primary" style="width: 100%; justify-content: center; min-height: 44px; font-size: 0.875rem;">Contact Technical Sales</a>
+      <button type="button" class="nav-cta-pill" style="width: 100%; justify-content: center; min-height: 44px; font-size: 0.875rem;" onclick="closeMobileMenu(); window.openEnquirySection();">
+        Contact Us
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
       <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.72rem; color: var(--text-subtle); font-family: var(--font-mono);">
         <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block;"></span>
         AS9100 Rev D & CEMILAC Approved
@@ -341,20 +341,22 @@
   <div id="inspection-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-product-title"></div>
 
   <!-- General Technical Enquiry Modal -->
-  <div id="general-enquiry-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 200; align-items: center; justify-content: center; padding: 1.5rem;">
-    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 540px; padding: 2.25rem; position: relative;">
-      <button onclick="window.closeEnquiryModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.35rem; line-height: 1;">&times;</button>
-      <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 0.5rem; text-transform: uppercase;">AEROSPACE PROCUREMENT &amp; ICD REQUEST</div>
-      <h3 style="font-size: 1.35rem; color: var(--text); margin-bottom: 0.5rem;" id="enquiry-modal-title">Request Technical ICD &amp; Specs</h3>
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Receive complete engineering interface drawings, STEP 3D envelopes, and formal qualification test reports.</p>
+  <div id="general-enquiry-modal" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 999; align-items: center; justify-content: center; padding: 1.25rem;">
+    <div style="background: #070D12; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 16px; width: 100%; max-width: 500px; padding: clamp(1.5rem, 3.5vw, 2rem); position: relative; box-shadow: 0 24px 60px rgba(0,0,0,0.85);">
+      <button onclick="window.closeEnquiryModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); color: var(--text-muted); cursor: pointer; width: 32px; height: 32px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.2rem; line-height: 1;">&times;</button>
+      <h3 style="font-size: 1.35rem; font-weight: 700; color: #EAF2F0; margin-bottom: 0.35rem; letter-spacing: -0.01em;" id="enquiry-modal-title">Technical Enquiry</h3>
+      <p style="font-size: 0.85rem; color: #8FA3A0; margin-bottom: 1.25rem; line-height: 1.5;">Direct channel to our microwave &amp; radome engineering team.</p>
       <form onsubmit="window.handleContactSubmit(event, 'modal-enquiry-form')" id="modal-enquiry-form">
         <input type="hidden" id="modal-product-ref" value="" />
         <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-          <input type="text" id="m-name" required placeholder="Engineer / Officer Name" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
-          <input type="email" id="m-email" required placeholder="Official Work Email (@hal-india / @drdo / corporate)" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
-          <input type="text" id="m-org" required placeholder="Defence Entity / Aerospace Agency" style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;" />
-          <textarea id="m-msg" rows="3" required placeholder="Specify platform mounting envelope, connector type, RF power requirements, or tender ref..." style="background: var(--elevated); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.85rem; color: var(--text); font-size: 0.85rem;"></textarea>
-          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Submit Technical Request</button>
+          <input type="text" id="m-name" required placeholder="Your name *" class="contact-input" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none;" />
+          <input type="email" id="m-email" required placeholder="Work email *" class="contact-input" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none;" />
+          <input type="text" id="m-org" placeholder="Organisation (optional)" class="contact-input" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none;" />
+          <textarea id="m-msg" rows="3" required placeholder="Requirements or questions..." class="contact-input" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.7rem 0.85rem; color: #EAF2F0; font-size: 0.875rem; outline: none; resize: vertical; line-height: 1.5;"></textarea>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+            <button type="submit" class="nav-cta-pill" style="padding: 0.65rem 1.5rem; font-size: 0.875rem;">Submit enquiry &rarr;</button>
+            <span style="font-size: 0.75rem; color: #8FA3A0;">info@verdanttelemetry.com</span>
+          </div>
         </div>
       </form>
     </div>

@@ -28,7 +28,10 @@ import {
   switchInspectionView,
   switchSpecsTab,
   handleImageZoom,
-  resetImageZoom
+  resetImageZoom,
+  selectProductCategory,
+  startCardViewSlide,
+  stopCardViewSlide
 } from './views/products.js';
 
 // Import About Handlers
@@ -38,7 +41,12 @@ import { setTimelineFilter } from './views/about.js';
 import {
   handleContactSubmit,
   resetContactForm,
-  copyContactEmail
+  copyContactEmail,
+  selectContactDomain,
+  getCurrentContactDomain,
+  toggleInlineEnquiryForm,
+  openEnquirySection,
+  closeEnquirySection
 } from './views/contact.js';
 
 // Expose handlers globally on window for inline HTML template compatibility
@@ -48,6 +56,9 @@ window.switchInspectionView = switchInspectionView;
 window.switchSpecsTab = switchSpecsTab;
 window.handleImageZoom = handleImageZoom;
 window.resetImageZoom = resetImageZoom;
+window.selectProductCategory = selectProductCategory;
+window.startCardViewSlide = startCardViewSlide;
+window.stopCardViewSlide = stopCardViewSlide;
 window.openProductDrawer = inspectProduct;
 window.closeProductDrawer = closeInspectionModal;
 window.openEnquiryModal = openEnquiryModal;
@@ -65,6 +76,11 @@ window.setTimelineFilter = setTimelineFilter;
 window.handleContactSubmit = handleContactSubmit;
 window.resetContactForm = resetContactForm;
 window.copyContactEmail = copyContactEmail;
+window.selectContactDomain = selectContactDomain;
+window.getCurrentContactDomain = getCurrentContactDomain;
+window.toggleInlineEnquiryForm = toggleInlineEnquiryForm;
+window.openEnquirySection = openEnquirySection;
+window.closeEnquirySection = closeEnquirySection;
 window.showToast = showToast;
 window.openMobileMenu = openMobileMenu;
 window.closeMobileMenu = closeMobileMenu;
@@ -74,6 +90,7 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeInspectionModal();
     closeEnquiryModal();
+    closeEnquirySection();
     closeMobileMenu();
   }
 });
@@ -82,7 +99,7 @@ window.addEventListener('keydown', (e) => {
  * Bootstrap Application
  */
 export function bootstrap() {
-  initNavigation();
+  initNavigation(route);
   initCommandPalette();
   window.addEventListener('hashchange', route);
   route();
