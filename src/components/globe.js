@@ -66,7 +66,12 @@ export class DotMatrixGlobe {
     // Scene & Camera
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    this.camera.position.z = 245;
+    // Landing animation: start slightly closer (z: 198) and smoothly zoom out to original position (z: 245)
+    this.targetCameraZ = 245;
+    this.introStartZ = 198;
+    this.camera.position.z = this.introStartZ;
+    this.introStartTime = performance.now();
+    this.introDuration = 2200; // 2.2s silky smooth deceleration ease
 
     // WebGL Renderer with High-Performance Settings
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -99,15 +104,15 @@ export class DotMatrixGlobe {
     if (!this.globeGroup) return;
     const w = window.innerWidth;
     if (w >= 1024) {
-      this.globeGroup.position.x = 35;
+      this.globeGroup.position.x = 54;
       this.globeGroup.position.y = 0;
       this.globeGroup.position.z = 0;
     } else if (w >= 768) {
-      this.globeGroup.position.x = 18;
+      this.globeGroup.position.x = 30;
       this.globeGroup.position.y = -4;
       this.globeGroup.position.z = 0;
     } else {
-      this.globeGroup.position.x = 0;
+      this.globeGroup.position.x = 14;
       this.globeGroup.position.y = 8;
       this.globeGroup.position.z = 0;
     }
@@ -688,6 +693,17 @@ export class DotMatrixGlobe {
     window.addEventListener('resize', this.onResize);
   }
 
+  pause() {
+    this.isPaused = true;
+  }
+
+  resume() {
+    if (this.isPaused) {
+      this.isPaused = false;
+      this.lastTime = performance.now();
+    }
+  }
+
   onScrollUpdate(scrollFraction) {
     this.scrollRotationBoost = scrollFraction * 1.2;
     if (this.globeGroup) {
@@ -706,6 +722,19 @@ export class DotMatrixGlobe {
     const now = performance.now();
     const dt = Math.min((now - this.lastTime) / 1000, 0.1);
     this.lastTime = now;
+
+    // Smooth landing zoom-out transition on initial site load
+    if (this.introStartTime) {
+      const elapsed = now - this.introStartTime;
+      const t = Math.min(1.0, elapsed / this.introDuration);
+      // Cubic ease-out: 1 - (1 - t)^3
+      const ease = 1 - Math.pow(1 - t, 3);
+      this.camera.position.z = this.introStartZ + (this.targetCameraZ - this.introStartZ) * ease;
+      if (t >= 1.0) {
+        this.camera.position.z = this.targetCameraZ;
+        this.introStartTime = null;
+      }
+    }
 
     if (!this.isDragging) {
       this.targetRotationY += 0.00085;

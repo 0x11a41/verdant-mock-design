@@ -67,39 +67,39 @@ export function renderCapabilitiesView(subview = 'overview') {
   return `
   <section style="padding: 120px 0 80px; background: var(--bg); min-height: 85vh;">
     <div class="container-wide">
-      <!-- Breadcrumb & Back -->
-      <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 2rem;">
+      <!-- Clean Uncluttered Breadcrumb -->
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.5rem;">
         <a href="#/" style="color: var(--text-muted); text-decoration: none;">Home</a>
-        <span>/</span>
+        <span aria-hidden="true" style="opacity: 0.4;">·</span>
         <a href="#/capabilities" style="color: ${subview === 'overview' ? 'var(--accent)' : 'var(--text-muted)'}; text-decoration: none;">Capabilities</a>
-        ${subview !== 'overview' ? `<span>/</span><span style="color: var(--accent);">${active.title}</span>` : ''}
+        ${subview !== 'overview' ? `<span aria-hidden="true" style="opacity: 0.4;">·</span><span style="color: var(--accent); font-weight: 600;">${active.title}</span>` : ''}
       </div>
 
-      <!-- Header -->
-      <div style="max-width: 820px; margin-bottom: 3.5rem;">
-        <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+      <!-- Refined Header -->
+      <div style="max-width: 800px; margin-bottom: 2.25rem;">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-weight: 600;">
           ${active.tag}
         </div>
-        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.5rem); font-weight: 700; color: var(--text); margin-bottom: 1.25rem;">
+        <h1 style="font-family: var(--font-display); font-size: clamp(2.25rem, 4.2vw, 3.25rem); font-weight: 700; color: #FFFFFF; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.025em;">
           ${active.title}
         </h1>
-        <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.6; text-wrap: balance;">
+        <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin: 0; text-wrap: balance;">
           ${active.headline}
         </p>
       </div>
 
-      <!-- Subview Navigation Tabs -->
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
-        <a href="#/capabilities" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'overview' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Overview</a>
-        <a href="#/capabilities/design" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'design' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Design &amp; Development</a>
-        <a href="#/capabilities/manufacturing" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'manufacturing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Manufacturing</a>
-        <a href="#/capabilities/customisation" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'customisation' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Customisation</a>
-        <a href="#/capabilities/testing" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; ${subview === 'testing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Testing &amp; Qualification</a>
-        <a href="#/infrastructure" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.85rem; min-height: 34px; color: var(--accent); border-color: rgba(3,188,159,0.35);">Infrastructure &amp; Ranges &rarr;</a>
+      <!-- Sleek Segmented Subview Navigation -->
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 1rem;">
+        <a href="#/capabilities" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; ${subview === 'overview' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Overview</a>
+        <a href="#/capabilities/design" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; ${subview === 'design' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Design &amp; Development</a>
+        <a href="#/capabilities/manufacturing" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; ${subview === 'manufacturing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Manufacturing</a>
+        <a href="#/capabilities/customisation" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; ${subview === 'customisation' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Customisation</a>
+        <a href="#/capabilities/testing" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; ${subview === 'testing' ? 'background: var(--accent); color: #05090D; font-weight: 700; border-color: var(--accent);' : ''}">Testing &amp; Qualification</a>
+        <a href="#/infrastructure" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.9rem; min-height: 36px; color: var(--accent); border-color: rgba(3,188,159,0.35);">Facilities &rarr;</a>
       </div>
 
       <!-- Main Content Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: start; margin-bottom: 4rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; align-items: start; margin-bottom: 3.5rem;">
         <div class="card" style="padding: 2.25rem;">
           <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 1.5rem;">Factual Deliverables</h3>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
@@ -112,26 +112,26 @@ export function renderCapabilitiesView(subview = 'overview') {
           </ul>
         </div>
 
-        <!-- Real Facility/Domain Visual Asset according to subview -->
-        <div class="card" style="padding: 1.25rem; background: #070D12; display: flex; flex-direction: column; overflow: hidden;">
-          <div style="height: 220px; width: 100%; border-radius: 8px; overflow: hidden; background: #05090D; margin-bottom: 1rem;">
+        <!-- Lineart Visual Asset Matching Subview -->
+        <div class="card" style="padding: 1.25rem; background: #070D12; display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(3,188,159,0.25);">
+          <div style="height: 240px; width: 100%; border-radius: 8px; overflow: hidden; background: #05090D; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; padding: 1rem;">
             ${subview === 'overview' ? `
-              <img src="/assets/003.png" alt="Anechoic Chamber" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/system-methodology-cover.webp" alt="System Methodology" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
             ` : subview === 'design' ? `
-              <img src="/assets/005.png" alt="Coimbatore R&D Design Centre" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/design-and-development.webp" alt="Design &amp; Development" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
             ` : subview === 'manufacturing' ? `
-              <img src="/assets/004.jpg" alt="Composite Autoclave & CNC Facility" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/precision-manufacturing.webp" alt="Precision Manufacturing" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
             ` : subview === 'customisation' ? `
-              <img src="/assets/jet.webp" alt="Aerospace Platform Customisation" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/tactical-customization.webp" alt="Tactical Customisation" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
             ` : `
-              <img src="/assets/002.png" alt="RF Instrumentation Lab 40 GHz" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="/assets/testing-and-qualification.webp" alt="Testing &amp; Qualification" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
             `}
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.75rem;">
             <span style="color: var(--text-muted); text-transform: uppercase;">
-              ${subview === 'overview' ? 'ANECHOIC CHAMBER (20 GHz)' : subview === 'design' ? 'COIMBATORE R&D (2023)' : subview === 'manufacturing' ? 'COCHIN AUTOCLAVE & CNC' : subview === 'customisation' ? 'LCA TEJAS & TACTICAL JETS' : 'RF BENCHES TO 40 GHz'}
+              ${subview === 'overview' ? 'SYSTEM METHODOLOGY' : subview === 'design' ? 'COIMBATORE R&D (2023)' : subview === 'manufacturing' ? 'COCHIN AUTOCLAVE & CNC' : subview === 'customisation' ? 'LCA TEJAS & TACTICAL JETS' : 'ANECHOIC CHAMBER (20 GHz)'}
             </span>
-            <span style="color: var(--accent);">VERDANT FACILITY</span>
+            <span style="color: var(--accent);">VERDANT ARCHITECTURE</span>
           </div>
         </div>
       </div>

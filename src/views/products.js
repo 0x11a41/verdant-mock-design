@@ -199,30 +199,36 @@ export function renderProductsView(detailProductId = null) {
   const paginated = filtered.slice(startIdx, startIdx + productFilterState.perPage);
 
   return `
-  <section style="padding: 110px 0 80px; background: var(--bg); min-height: 85vh;">
-    <div class="container-wide">
-      <!-- Products Header -->
-      <div class="products-page-header" style="margin-bottom: 2rem;">
-        <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); font-weight: 700; color: var(--text); margin-bottom: 0; letter-spacing: -0.03em;">
-          Products
+  <!-- Products Top Banner Hero (Expands to ~1/3 of screen height, anchored to image bottom) -->
+  <section class="products-hero-banner" style="position: relative; height: clamp(280px, 33.33vh, 380px); min-height: 280px; width: 100%; display: flex; align-items: flex-end; padding-top: 80px; padding-bottom: clamp(2rem, 4vh, 2.75rem); overflow: hidden; background: #05090D; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div style="position: absolute; inset: 0; background-image: url('/assets/products-banner.webp'); background-size: cover; background-position: center bottom; background-repeat: no-repeat; opacity: 0.72; mix-blend-mode: screen; filter: brightness(1.18) contrast(1.12);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(5,9,13,0.92) 0%, rgba(5,9,13,0.55) 50%, rgba(5,9,13,0.88) 100%), linear-gradient(to top, #05090D 0%, rgba(5,9,13,0.3) 50%, transparent 100%), linear-gradient(to bottom, #05090D 0%, transparent 35%);"></div>
+    <div class="container-wide" style="position: relative; z-index: 2; width: 100%;">
+      <div>
+        <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5.2vw, 4rem); font-weight: 700; color: #FFFFFF; margin: 0; line-height: 1.05; letter-spacing: -0.03em;">
+          <span style="color: var(--accent); font-weight: 500; margin-right: 0.08em;">#</span>Products
         </h1>
       </div>
+    </div>
+  </section>
 
-      <!-- SYSTEM FILTERS TOOLBAR -->
+  <section style="padding: 2rem 0 80px; background: var(--bg); min-height: 70vh;">
+    <div class="container-wide">
+      <!-- SYSTEM FILTERS TOOLBAR: Optimized for Desktop and Mobile Screens -->
       <div class="products-filter-toolbar">
-        <!-- Top Row: Search Input + Sort & Per-Page Controls -->
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem; flex: 1; min-width: 260px; max-width: 480px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 0.5rem 0.85rem;">
+        <!-- Top Row: Full-width search on mobile + Dropdowns side-by-side -->
+        <div class="products-filter-row-top">
+          <div class="products-search-box">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
             <input type="text" id="prod-search-input" value="${productFilterState.search}" placeholder="Search model code, band, or platform..." oninput="window.handleProductSearch(this.value)" style="background: none; border: none; color: var(--text); outline: none; width: 100%; font-size: 0.875rem;" />
-            ${productFilterState.search ? `<button onclick="window.handleProductSearch(''); document.getElementById('prod-search-input').value='';" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.9rem;">&times;</button>` : ''}
+            ${productFilterState.search ? `<button onclick="window.handleProductSearch(''); document.getElementById('prod-search-input').value='';" aria-label="Clear search" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.1rem; padding: 0 4px;">&times;</button>` : ''}
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; font-size: 0.8125rem;">
+          <div class="products-selects-group">
             <!-- Antenna Structural Form Filter Dropdown -->
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <label for="type-select" style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem;">TYPE:</label>
-              <select id="type-select" onchange="window.handleProductTypeSelect(this.value)" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); color: var(--text); border-radius: 6px; padding: 0.45rem 0.75rem; font-size: 0.8125rem; outline: none;">
+            <div class="filter-select-wrap">
+              <label for="type-select" class="filter-select-label">TYPE:</label>
+              <select id="type-select" onchange="window.handleProductTypeSelect(this.value)" class="filter-select-el">
                 <option value="">All Antenna Types (${PRODUCTS.length})</option>
                 ${types.map(t => {
                   const count = PRODUCTS.filter(p => p.type === t).length;
@@ -233,9 +239,9 @@ export function renderProductsView(detailProductId = null) {
             </div>
 
             <!-- Sort Select -->
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <label for="sort-select" style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem;">SORT:</label>
-              <select id="sort-select" onchange="window.handleProductSort(this.value)" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); color: var(--text); border-radius: 6px; padding: 0.45rem 0.75rem; font-size: 0.8125rem; outline: none; font-family: var(--font-mono);">
+            <div class="filter-select-wrap">
+              <label for="sort-select" class="filter-select-label">SORT:</label>
+              <select id="sort-select" onchange="window.handleProductSort(this.value)" class="filter-select-el">
                 <option value="default" ${productFilterState.sortBy === 'default' ? 'selected' : ''}>Standard Order</option>
                 <option value="code-asc" ${productFilterState.sortBy === 'code-asc' ? 'selected' : ''}>Part Code (A–Z)</option>
                 <option value="name-asc" ${productFilterState.sortBy === 'name-asc' ? 'selected' : ''}>Model Name (A–Z)</option>
@@ -243,17 +249,17 @@ export function renderProductsView(detailProductId = null) {
             </div>
 
             ${(productFilterState.apps.length > 0 || productFilterState.types.length > 0 || productFilterState.search || productFilterState.selectedCategory !== 'all') ? `
-              <button onclick="window.clearAllProductFilters()" class="btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; min-height: 32px;">
-                Reset all filters &times;
+              <button onclick="window.clearAllProductFilters()" class="btn-secondary filter-reset-btn">
+                Reset &times;
               </button>
             ` : ''}
           </div>
         </div>
 
-        <!-- Bottom Row: Mission Domain Filter Tabs -->
-        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem;">
+        <!-- Bottom Row: Mission Domain Filter Horizontal Scroll on Mobile -->
+        <div class="products-filter-row-bottom">
           <div class="filter-domain-chips">
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-right: 0.35rem;">MISSION:</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; margin-right: 0.35rem; white-space: nowrap; align-self: center;">MISSION:</span>
             <button class="filter-chip-btn ${productFilterState.apps.length === 0 ? 'active' : ''}" onclick="window.clearProductAppFilters()">
               All Missions (${PRODUCTS.length})
             </button>
@@ -268,7 +274,7 @@ export function renderProductsView(detailProductId = null) {
             }).join('')}
           </div>
 
-          <div style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--text-muted);">
+          <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); white-space: nowrap; margin-top: 0.25rem;">
             Showing <strong style="color: var(--accent);">${paginated.length}</strong> of <strong style="color: var(--text);">${totalResults}</strong> systems
           </div>
         </div>
@@ -451,14 +457,23 @@ export function renderInspectionDialogContent(p, activeImgIdx = 0) {
     : [];
 
   return `
-  <!-- Top Inspection Bar: Clean Title, Single Inquire Action & Simple X Button -->
+  <!-- Top Inspection Bar: Clean, Spacious, Uncluttered Aerospace Layout -->
   <div class="inspection-header">
     <div class="inspection-header-title-box">
-      <h2 id="dialog-product-title" class="inspection-header-title">
-        ${p.name}
-      </h2>
-      <div class="inspection-header-subtitle">
-        ${p.code} · ${p.platformDomain} · ${p.mountingLocation}
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent); background: rgba(3,188,159,0.1); border: 1px solid rgba(3,188,159,0.3); border-radius: 4px; padding: 0.15rem 0.55rem; letter-spacing: 0.04em;">
+          ${p.code}
+        </span>
+        <h2 id="dialog-product-title" class="inspection-header-title" style="margin: 0; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; color: #FFFFFF;">
+          ${p.name}
+        </h2>
+      </div>
+      <div class="inspection-header-subtitle" style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">
+        <span>${p.category}</span>
+        <span aria-hidden="true" style="opacity: 0.4;">·</span>
+        <span>${p.freqBand}</span>
+        <span aria-hidden="true" style="opacity: 0.4;">·</span>
+        <span style="color: var(--accent);">${p.platformDomain.split('·')[0].trim()}</span>
       </div>
     </div>
 

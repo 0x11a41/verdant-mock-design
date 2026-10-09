@@ -30,6 +30,10 @@ export function route() {
     window.__trustScrollCleanup();
     window.__trustScrollCleanup = null;
   }
+  if (window.__stageAutoCleanup) {
+    window.__stageAutoCleanup();
+    window.__stageAutoCleanup = null;
+  }
 
   const globeInstance = getGlobeInstance();
   if (globeInstance && cleanHash !== '#/' && cleanHash !== '') {

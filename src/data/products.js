@@ -25,7 +25,6 @@ export const PRODUCTS = [
     featured: true,
     fallbackType: 'blade',
     images: [
-      '/assets/featured/JC-50.webp',
       '/assets/products/JC-50/1.webp',
       '/assets/products/JC-50/2.webp',
       '/assets/products/JC-50/3.webp',
@@ -37,7 +36,7 @@ export const PRODUCTS = [
       'Aerodynamic Elevation Profile',
       'Radome Leading Edge Sweep'
     ],
-    primaryImage: '/assets/featured/JC-50.webp',
+    primaryImage: '/assets/products/JC-50/1.webp',
     keySpecs: {
       'Frequency Range': '4.4 – 5.0 GHz (C-Band)',
       'VSWR': '≤ 1.8:1 max across band',
@@ -107,7 +106,6 @@ export const PRODUCTS = [
     featured: true,
     fallbackType: 'blade',
     images: [
-      '/assets/featured/JD-120-T1B.webp',
       '/assets/products/JD-120-T1B/1.webp',
       '/assets/products/JD-120-T1B/2.webp',
       '/assets/products/JD-120-T1B/3.webp',
@@ -119,7 +117,7 @@ export const PRODUCTS = [
       'Side Elevation & Sweep',
       'Bottom Port & Ground Interface'
     ],
-    primaryImage: '/assets/featured/JD-120-T1B.webp',
+    primaryImage: '/assets/products/JD-120-T1B/1.webp',
     keySpecs: {
       'Frequency Range': '30 – 512 MHz (V/UHF)',
       'VSWR': '≤ 2.5:1 across full band',
@@ -424,7 +422,6 @@ export const PRODUCTS = [
     featured: true,
     fallbackType: 'blade',
     images: [
-      '/assets/featured/JD-401-S1G-A.webp',
       '/assets/products/JD-401-S1G-A/1.webp',
       '/assets/products/JD-401-S1G-A/2.webp',
       '/assets/products/JD-401-S1G-A/3.webp',
@@ -436,7 +433,7 @@ export const PRODUCTS = [
       'Aerodynamic Blade Profile',
       'Internal Cavity Port Interface'
     ],
-    primaryImage: '/assets/featured/JD-401-S1G-A.webp',
+    primaryImage: '/assets/products/JD-401-S1G-A/1.webp',
     keySpecs: {
       'Frequency Range': '118 – 400 MHz V/UHF',
       'VSWR': '≤ 2.0:1 across spectrum',

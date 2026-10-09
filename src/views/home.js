@@ -31,7 +31,7 @@ export function renderHomeView() {
       <div class="container-wide" style="position: relative; z-index: 3; pointer-events: none; height: 100%; display: flex; align-items: center;">
         <div id="hero-text-content" style="max-width: 640px; will-change: transform, opacity;">
           <!-- Hero Main Headline -->
-          <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 6.2vw, 5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; color: #FFFFFF; margin-bottom: 2rem; text-wrap: balance;">
+          <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 6.2vw, 5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.04em; color: #FFFFFF; margin-bottom: 2rem; text-wrap: balance; outline: none;">
             Signals that cross every <span style="color: var(--accent); text-shadow: 0 0 36px var(--accent-glow);">border</span>
           </h1>
 
@@ -137,20 +137,18 @@ export function renderHomeView() {
             <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
               <h2 id="regime-motto-heading" style="font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.25rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.035em; color: var(--text); margin: 0 auto; text-wrap: balance; will-change: transform, letter-spacing;">
                 <div>
-                  <span class="regime-word" data-word-idx="0" style="display: inline-block; will-change: opacity, transform, filter;">When</span>
-                  <span class="regime-word" data-word-idx="1" style="display: inline-block; will-change: opacity, transform, filter;">a</span>
-                  <span class="regime-word" data-word-idx="2" style="display: inline-block; will-change: opacity, transform, filter;">mission</span>
-                  <span class="regime-word" data-word-idx="3" style="display: inline-block; will-change: opacity, transform, filter;">is</span>
-                  <span class="regime-word" data-word-idx="4" style="display: inline-block; will-change: opacity, transform, filter;">calling,</span>
+                  <span class="regime-word" data-word-idx="0" style="display: inline-block; will-change: opacity, transform, filter;">Engineered</span>
+                  <span class="regime-word" data-word-idx="1" style="display: inline-block; will-change: opacity, transform, filter;">for</span>
+                  <span class="regime-word" data-word-idx="2" style="display: inline-block; will-change: opacity, transform, filter;">extreme</span>
                 </div>
                 <div style="margin-top: 0.25rem;">
-                  <span class="regime-word regime-accent" data-word-idx="5" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">VERDANT</span>
-                  <span class="regime-word regime-accent" data-word-idx="6" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">delivers.</span>
+                  <span class="regime-word regime-accent" data-word-idx="3" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">operating</span>
+                  <span class="regime-word regime-accent" data-word-idx="4" style="display: inline-block; color: var(--accent); will-change: opacity, transform, filter, text-shadow;">regimes.</span>
                 </div>
               </h2>
-              <!-- 1-to-1 dynamic scrubbed telemetry precision line -->
-              <div style="margin: 2.5rem auto 0; width: 140px; height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; position: relative;">
-                <div id="regime-scroll-bar" style="width: 100%; height: 100%; background: linear-gradient(90deg, transparent, var(--accent), transparent); transform-origin: center; transform: scaleX(0.2); will-change: transform, opacity;"></div>
+              <!-- Premium Sine Wave Line with Subtle Random Amplitude Variations (No borders, boxes, or surrounding text) -->
+              <div style="margin: 2.25rem auto 0; width: 180px; max-width: 80vw; display: flex; justify-content: center; align-items: center; pointer-events: none;">
+                <canvas id="regime-sine-wave-canvas" width="360" height="48" style="width: 180px; height: 24px; display: block; will-change: transform, opacity;"></canvas>
               </div>
             </div>
           </div>
@@ -161,6 +159,10 @@ export function renderHomeView() {
       <div id="post-regimes-panel" class="post-regimes-surface">
       <!-- FEATURED PRODUCTS: TEKEVER-Style 3D Depth Atmospheric Stage -->
       <section id="featured-products-section" class="featured-tekever-section" tabindex="0" aria-label="Featured antenna systems showcase">
+        <!-- Interactive Ambient Cursor Light & Accent Glow Follower -->
+        <div class="stage-cursor-light" aria-hidden="true"></div>
+        <div class="stage-cursor-core" aria-hidden="true"></div>
+
         <!-- Top Centered Header -->
         <div class="stage-top-header">
           <span class="stage-top-eyebrow">Meet our</span>
@@ -207,8 +209,8 @@ export function renderHomeView() {
         <div class="stage-bottom-meta">
           <div id="stage-meta-eyebrow" class="stage-meta-eyebrow">JC 50</div>
           <h3 id="stage-meta-title" class="stage-meta-title">The Game Changer</h3>
-          <button id="stage-meta-pill" class="stage-frosted-pill-btn" aria-label="Inspect specifications for active system">
-            Inspect Specifications
+          <button id="stage-meta-pill" class="stage-frosted-pill-btn" aria-label="Explore products" onclick="window.location.hash='#/products'">
+            Explore &rarr;
           </button>
 
           <!-- Minimal Subtle Slideshow Progress Line -->
@@ -218,117 +220,129 @@ export function renderHomeView() {
         </div>
       </section>
 
-    <!-- CAPABILITIES: 4 Cards with Domain Background Imagery (Fully Responsive) -->
-    <section style="padding: clamp(5rem, 12vh, 8.5rem) 0; background: var(--bg); border-bottom: 1px solid var(--border);">
+    <!-- SHORT INTRO SECTION BEFORE SLIDESHOW (OUR CAPABILITIES) -->
+    <section class="capabilities-intro-header" aria-label="Our Capabilities" style="padding: clamp(3.5rem, 7vh, 5rem) 0 clamp(2.5rem, 5vh, 3.5rem); background: #05090D; display: flex; align-items: center; justify-content: center; text-align: center;">
       <div class="container-wide">
-        <div class="capabilities-layout-grid">
-          <!-- Left: Sticky Title Column on Desktop, Natural Stack on Mobile -->
-          <div class="capabilities-sticky-col" style="position: sticky; top: 100px; height: fit-content;">
-            <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; font-weight: 600;">
-              SYSTEM CAPABILITIES
-            </div>
-            <h2 style="font-size: clamp(2.2rem, 3.8vw, 3.25rem); font-weight: 700; line-height: 1.12; color: var(--text); letter-spacing: -0.03em; margin-bottom: 1.25rem; text-wrap: balance;">
-              End-to-end RF &amp; structural engineering.
-            </h2>
-            <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 2rem;">
-              From computational electromagnetics and aerodynamic radome synthesis to autoclave composite curing and anechoic chamber qualification up to 20 GHz.
-            </p>
-            <a href="#/capabilities" class="btn-secondary">Explore all capabilities</a>
-          </div>
-
-          <!-- Right: 4 Capability Cards with Background Images from Domains -->
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <a href="#/capabilities/design" class="capability-card">
-              <img src="/assets/rf-engineering.webp" alt="Design &amp; Development" class="capability-bg-img" />
-              <div class="capability-scrim"></div>
-              <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); font-weight: 600;">01</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-                <h3 style="font-size: 1.35rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem;">Design &amp; Development</h3>
-                <p style="font-size: 0.875rem; color: #EAF2F0; opacity: 0.95; line-height: 1.55; margin-bottom: 1.25rem;">
-                  Coimbatore R&amp;D centre. High-fidelity EM simulation, pattern synthesis, custom RF matching and advanced composite radome co-simulation.
-                </p>
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: auto; display: flex; align-items: center; gap: 0.4rem;">
-                  <span>Coimbatore Design Centre</span> &rarr;
-                </div>
-              </div>
-            </a>
-
-            <a href="#/capabilities/manufacturing" class="capability-card">
-              <img src="/assets/hero/rf-engineering.webp" alt="Precision Manufacturing" class="capability-bg-img" />
-              <div class="capability-scrim"></div>
-              <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); font-weight: 600;">02</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-                <h3 style="font-size: 1.35rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem;">Precision Manufacturing</h3>
-                <p style="font-size: 0.875rem; color: #EAF2F0; opacity: 0.95; line-height: 1.55; margin-bottom: 1.25rem;">
-                  AS9100 Rev D facility in Cochin. Micro-machining, pre-preg autoclave composite curing, environmental sealing and RF integration.
-                </p>
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: auto; display: flex; align-items: center; gap: 0.4rem;">
-                  <span>AS9100 Rev D Certified</span> &rarr;
-                </div>
-              </div>
-            </a>
-
-            <a href="#/capabilities/customisation" class="capability-card">
-              <img src="/assets/jet.webp" alt="Customisation" class="capability-bg-img" />
-              <div class="capability-scrim"></div>
-              <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); font-weight: 600;">03</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-                <h3 style="font-size: 1.35rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem;">Tactical Customisation</h3>
-                <p style="font-size: 0.875rem; color: #EAF2F0; opacity: 0.95; line-height: 1.55; margin-bottom: 1.25rem;">
-                  Aerodynamic and conformal geometry tailored to fighter aircraft, transport planes, helicopters, naval masts and armoured platforms.
-                </p>
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: auto; display: flex; align-items: center; gap: 0.4rem;">
-                  <span>Platform-Specific Geometry</span> &rarr;
-                </div>
-              </div>
-            </a>
-
-            <a href="#/capabilities/testing" class="capability-card">
-              <img src="/assets/003.png" alt="Anechoic &amp; Range Testing" class="capability-bg-img" />
-              <div class="capability-scrim"></div>
-              <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); font-weight: 600;">04</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </div>
-                <h3 style="font-size: 1.35rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.6rem;">Testing &amp; Qualification</h3>
-                <p style="font-size: 0.875rem; color: #EAF2F0; opacity: 0.95; line-height: 1.55; margin-bottom: 1.25rem;">
-                  Indoor anechoic chamber testing up to 20 GHz, outdoor ranges 20–500 MHz, 32 ft ground plane, and RF instrumentation extending to 40 GHz.
-                </p>
-                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-top: auto; display: flex; align-items: center; gap: 0.4rem;">
-                  <span>Chamber to 20 GHz · 32ft Ground Plane</span> &rarr;
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <h2 style="font-family: var(--font-mono); font-size: clamp(0.75rem, 1.1vw, 0.8125rem); color: var(--accent); text-transform: uppercase; letter-spacing: 0.16em; font-weight: 600; margin: 0;">
+          Our Capabilities
+        </h2>
       </div>
     </section>
 
-    <!-- ABOUT TEASER SECTION -->
-    <section style="padding: clamp(5rem, 12vh, 8rem) 0; background: var(--surface); border-bottom: 1px solid var(--border);">
-      <div class="container-wide">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <!-- FULLSCREEN SYSTEM CAPABILITIES SLIDESHOW (STILL STAGE WITH DYNAMIC CONTENT) -->
+    <section id="capabilities-scroll-track" class="capabilities-scroll-track" aria-label="System Capabilities">
+      <div id="capabilities-sticky-stage" class="capabilities-sticky-stage">
+
+        <!-- SLIDE 0: Design & Development -->
+        <article class="cap-slide active" data-slide-idx="0" style="opacity: 1; pointer-events: auto; z-index: 2;">
+          <div class="cap-slide-bg-wrap">
+            <div class="cap-slide-bg" style="background-image: url('/assets/design-and-development.webp'); --cap-scale: 1;"></div>
+            <div class="cap-slide-gradient"></div>
+            <div class="cap-slide-accent-glow"></div>
+          </div>
+          <div class="container-wide cap-slide-container">
+            <div class="cap-slide-content">
+              <div class="cap-slide-kicker">ELECTROMAGNETIC SYNTHESIS</div>
+              <h2 class="cap-slide-title">Design &amp; Development</h2>
+              <p class="cap-slide-desc">
+                High-fidelity 3D computational electromagnetic modeling, aperture synthesis, radiation pattern optimisation, and composite radome co-simulation under dynamic transonic pressures.
+              </p>
+              <a href="#/capabilities/design" class="cap-slide-link">
+                <span>Explore Design &amp; Simulation</span>
+                <span class="cap-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 1: Precision Manufacturing -->
+        <article class="cap-slide" data-slide-idx="1" style="opacity: 0; pointer-events: none; z-index: 1;">
+          <div class="cap-slide-bg-wrap">
+            <div class="cap-slide-bg" style="background-image: url('/assets/precision-manufacturing.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-gradient"></div>
+            <div class="cap-slide-accent-glow"></div>
+          </div>
+          <div class="container-wide cap-slide-container">
+            <div class="cap-slide-content">
+              <div class="cap-slide-kicker">AEROSPACE COMPOSITES</div>
+              <h2 class="cap-slide-title">Precision Manufacturing</h2>
+              <p class="cap-slide-desc">
+                AS9100 Rev D facility in Cochin. Cleanroom pre-preg lay-up, high-pressure autoclave consolidation, CNC micro-machining, and hermetic environmental sealing for mission-critical flight hardware.
+              </p>
+              <a href="#/capabilities/manufacturing" class="cap-slide-link">
+                <span>Explore Manufacturing Facility</span>
+                <span class="cap-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 2: Tactical Customisation -->
+        <article class="cap-slide" data-slide-idx="2" style="opacity: 0; pointer-events: none; z-index: 1;">
+          <div class="cap-slide-bg-wrap">
+            <div class="cap-slide-bg" style="background-image: url('/assets/tactical-customization.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-gradient"></div>
+            <div class="cap-slide-accent-glow"></div>
+          </div>
+          <div class="container-wide cap-slide-container">
+            <div class="cap-slide-content">
+              <div class="cap-slide-kicker">PLATFORM ADAPTATION</div>
+              <h2 class="cap-slide-title">Tactical Customisation</h2>
+              <p class="cap-slide-desc">
+                Bespoke mechanical baseplates and low-profile conformal radomes tailored to fighter fuselages, helicopter tail booms, naval masts, and armoured tactical vehicle hulls.
+              </p>
+              <a href="#/capabilities/customisation" class="cap-slide-link">
+                <span>Explore Platform Customisation</span>
+                <span class="cap-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 3: Testing & Qualification -->
+        <article class="cap-slide" data-slide-idx="3" style="opacity: 0; pointer-events: none; z-index: 1;">
+          <div class="cap-slide-bg-wrap">
+            <div class="cap-slide-bg" style="background-image: url('/assets/testing-and-qualification.webp'); --cap-scale: 1.045;"></div>
+            <div class="cap-slide-gradient"></div>
+            <div class="cap-slide-accent-glow"></div>
+          </div>
+          <div class="container-wide cap-slide-container">
+            <div class="cap-slide-content">
+              <div class="cap-slide-kicker">FULL-SPECTRUM METROLOGY</div>
+              <h2 class="cap-slide-title">Testing &amp; Qualification</h2>
+              <p class="cap-slide-desc">
+                Indoor anechoic chamber testing up to 20 GHz, outdoor open-air ranges 20–500 MHz, 32-foot reference ground plane compliant with MIL-DTL-85670C, and environmental qualification.
+              </p>
+              <a href="#/capabilities/testing" class="cap-slide-link">
+                <span>Explore Test Protocols</span>
+                <span class="cap-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- THE VERDANT STORY SECTION -->
+    <section id="verdant-story-section" class="verdant-story-section" style="position: relative; padding: clamp(6.5rem, 15vh, 9.5rem) 0; overflow: hidden; background: #05090D; border-bottom: 1px solid var(--border);">
+      <div class="verdant-story-bg-wrap" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden;">
+        <div class="verdant-story-bg-img" style="position: absolute; inset: -60px -40px; background-image: url('/assets/verdant-story-section-background.webp'); background-size: cover; background-repeat: no-repeat; background-position: center; opacity: 0.82; mix-blend-mode: screen; filter: brightness(1.22) contrast(1.1); -webkit-mask-image: radial-gradient(ellipse 72% 65% at 50% 50%, black 25%, rgba(0,0,0,0.85) 55%, transparent 85%); mask-image: radial-gradient(ellipse 72% 65% at 50% 50%, black 25%, rgba(0,0,0,0.85) 55%, transparent 85%); will-change: transform; transition: transform 0.15s ease-out;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, #05090D 0%, transparent 22%, transparent 78%, #05090D 100%), linear-gradient(to right, #05090D 0%, transparent 18%, transparent 82%, #05090D 100%);"></div>
+      </div>
+      <div class="container-wide" style="position: relative; z-index: 2;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center; text-shadow: 0 2px 14px rgba(0,0,0,0.85);">
           <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.25rem; font-weight: 600;">
             THE VERDANT STORY
           </div>
           <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 1.75rem; text-wrap: balance;">
             From a Cochin workshop to mission-critical defence systems worldwide.
           </h2>
-          <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2.5rem;">
+          <p style="font-size: 1.125rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2.5rem; text-wrap: balance;">
             Founded in 1997 with an unyielding commitment to precision RF engineering. Today Verdant is CEMILAC approved, AS9100 Rev D certified, and the trusted partner for HAL, ISRO, and DRDO.
           </p>
-          <a href="#/about" class="btn-primary">
-            Read our story
+          <a href="#/about" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>Read our story</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
@@ -413,59 +427,109 @@ export function renderHomeView() {
       </div>
     </section>
 
-    <!-- NEWSROOM / MILESTONES -->
-    <section style="padding: clamp(5rem, 12vh, 8rem) 0; background: var(--surface);">
+    <!-- NEWSROOM / MILESTONES (Reimagined Horizontal Vertical Rectangles) -->
+    <section id="news-section" style="padding: clamp(5rem, 10vh, 7.5rem) 0; background: var(--surface); border-bottom: 1px solid var(--border); overflow: hidden;">
       <div class="container-wide">
-        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 3rem;">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-weight: 600;">
-              RECOGNITION &amp; UPDATES
-            </div>
-            <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--text);">
-              Newsroom
-            </h2>
-          </div>
+        <div style="margin-bottom: 2.5rem;">
+          <h2 style="font-size: clamp(2rem, 3.5vw, 2.75rem); font-weight: 700; color: var(--text); margin: 0; letter-spacing: -0.02em;">
+            News
+          </h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-subtle); margin-bottom: 0.75rem;">
-              <span>DEFENCE RECOGNITION</span>
-              <span>2001 &amp; 2016</span>
+        <!-- Horizontally Scrollable Cards Row -->
+        <div class="news-horizontal-track" id="news-horizontal-track" onscroll="window.handleNewsScroll(this)">
+          
+          <div class="news-vertical-card active" data-news-id="siati" onmouseenter="window.handleNewsCardHover(this)" onclick="window.openNewsArticle('siati')" role="button" tabindex="0">
+            <img src="/assets/award.jpeg" alt="SIATI Indigenisation Award" class="news-card-img" />
+            <div class="news-card-overlay"></div>
+            <div class="news-card-content">
+              <div class="news-card-date">2001 &amp; 2016</div>
+              <h3 class="news-card-title">SIATI Award for Aerospace Indigenisation</h3>
+              <p class="news-card-peek">
+                Conferred twice by Society of Indian Aerospace Technologies &amp; Industries for indigenous airborne antennas and radomes on LCA Tejas and combat aircraft.
+              </p>
+              <div class="news-card-prompt">
+                <span>Read Full Article</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
             </div>
-            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;">SIATI Award for Aerospace Indigenisation</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              Conferred twice by Society of Indian Aerospace Technologies &amp; Industries for indigenous development of critical airborne antennas and RF radomes.
-            </p>
-            <a href="#/about" style="color: var(--accent); font-size: 0.8125rem; text-decoration: none; font-weight: 500;">Read milestone details &rarr;</a>
           </div>
 
-          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-subtle); margin-bottom: 0.75rem;">
-              <span>MEDIA COVERAGE</span>
-              <span>TELEVISION FEATURE</span>
+          <div class="news-vertical-card" data-news-id="media" onmouseenter="window.handleNewsCardHover(this)" onclick="window.openNewsArticle('media')" role="button" tabindex="0">
+            <img src="/assets/collage.png" alt="Verdant Media Documentary" class="news-card-img" />
+            <div class="news-card-overlay"></div>
+            <div class="news-card-content">
+              <div class="news-card-date">OCTOBER 2023</div>
+              <h3 class="news-card-title">Verdant Featured on National Television</h3>
+              <p class="news-card-peek">
+                Television feature highlighting Verdant's high-technology journey from Cochin to international defence supply chains and fighter jet integration.
+              </p>
+              <div class="news-card-prompt">
+                <span>Read Full Article</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
             </div>
-            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;">Verdant Featured on Manorama Channel</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              Television feature highlighting Verdant's high-technology journey from Cochin to international defence supply chains and fighter jet integration.
-            </p>
-            <a href="#/about" style="color: var(--accent); font-size: 0.8125rem; text-decoration: none; font-weight: 500;">Learn about our journey &rarr;</a>
           </div>
 
-          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-subtle); margin-bottom: 0.75rem;">
-              <span>QUALITY MILESTONE</span>
-              <span>JUNE 2009 – PRESENT</span>
+          <div class="news-vertical-card" data-news-id="as9100" onmouseenter="window.handleNewsCardHover(this)" onclick="window.openNewsArticle('as9100')" role="button" tabindex="0">
+            <img src="/assets/as9100d-certified-logo.png" alt="AS9100 Rev D Quality Certification" class="news-card-img" />
+            <div class="news-card-overlay"></div>
+            <div class="news-card-content">
+              <div class="news-card-date">JUNE 2024</div>
+              <h3 class="news-card-title">AS 9100 Rev D &amp; ISO 9001:2015 Recertification</h3>
+              <p class="news-card-peek">
+                Certified to AS9100 since June 2009 with continuous renewal to Rev D. Rigorous audit cycles upholding international aerospace and defence quality standards.
+              </p>
+              <div class="news-card-prompt">
+                <span>Read Full Article</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
             </div>
-            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;">AS 9100 Rev D &amp; ISO 9001:2015 Certification</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.25rem; flex: 1;">
-              Certified to AS9100 since June 2009 with continuous renewal to Rev D. Rigorous audit cycles upholding international aerospace and defence quality standards.
-            </p>
-            <a href="#/capabilities/testing" style="color: var(--accent); font-size: 0.8125rem; text-decoration: none; font-weight: 500;">View quality standards &rarr;</a>
           </div>
+
+          <div class="news-vertical-card" data-news-id="satcom" onmouseenter="window.handleNewsCardHover(this)" onclick="window.openNewsArticle('satcom')" role="button" tabindex="0">
+            <img src="/assets/hero/space.webp" alt="Next-Gen Airborne Satcom" class="news-card-img" />
+            <div class="news-card-overlay"></div>
+            <div class="news-card-content">
+              <div class="news-card-date">JANUARY 2025</div>
+              <h3 class="news-card-title">Next-Gen Airborne Satcom &amp; UAV Antennas</h3>
+              <p class="news-card-peek">
+                Coimbatore R&amp;D centre unveils ultra-low-profile conformal SATCOM apertures and lightweight UAV telemetry antennas entering flight qualification.
+              </p>
+              <div class="news-card-prompt">
+                <span>Read Full Article</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-vertical-card" data-news-id="tejas" onmouseenter="window.handleNewsCardHover(this)" onclick="window.openNewsArticle('tejas')" role="button" tabindex="0">
+            <img src="/assets/jet.webp" alt="LCA Tejas Combat Jet" class="news-card-img" />
+            <div class="news-card-overlay"></div>
+            <div class="news-card-content">
+              <div class="news-card-date">NOVEMBER 2025</div>
+              <h3 class="news-card-title">Multiband Conformal Arrays for Fighter Aircraft</h3>
+              <p class="news-card-peek">
+                Flush-mounted composite antenna radomes successfully completing Mach 1.8 thermal shock and high-g aerodynamic flight validation trials.
+              </p>
+              <div class="news-card-prompt">
+                <span>Read Full Article</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- News Article Dialog Modal -->
+    <div id="news-article-modal" class="news-article-overlay" role="dialog" aria-modal="true" style="display: none;" onclick="if(event.target===this) window.closeNewsArticle()">
+      <div class="news-article-dialog" onclick="event.stopPropagation()">
+        <button onclick="window.closeNewsArticle()" class="news-article-close-btn" aria-label="Close article">&times;</button>
+        <div id="news-article-content"></div>
+      </div>
+    </div>
     </div> <!-- /post-regimes-panel -->
     </div> <!-- /middle-scroll-container -->
   </div> <!-- /hero-pinned-wrapper -->
@@ -504,14 +568,23 @@ export function initHomeView() {
       heroScrollCue.style.opacity = scrollY > 30 ? '0' : '1';
     }
 
-    // 2. Globe 1:1 scroll synchronization
+    // 2. Globe 1:1 scroll synchronization & performance optimization (pause when scrolled past regimes section)
+    const regimesSec = document.getElementById('regimes-section');
+    const regimesRect = regimesSec ? regimesSec.getBoundingClientRect() : null;
+    const isPastRegimes = regimesRect ? (regimesRect.bottom < -40) : (scrollY > vh * 3.5);
+
     if (globeInstance) {
-      const globeProgress = Math.min(2.5, scrollY / vh);
-      globeInstance.onScrollUpdate(globeProgress);
+      if (isPastRegimes) {
+        globeInstance.pause();
+      } else {
+        globeInstance.resume();
+        const globeProgress = Math.min(2.5, scrollY / vh);
+        globeInstance.onScrollUpdate(globeProgress);
+      }
     }
 
     if (canvasContainer) {
-      canvasContainer.style.opacity = '1';
+      canvasContainer.style.opacity = isPastRegimes ? '0' : '1';
     }
 
     // 3. Purpose Statement Word-by-Word Scroll Reveal
@@ -556,7 +629,7 @@ export function initHomeView() {
     // 4. Middle Stage & Operational Regimes Centered Background Pinning
     const midLayer = document.getElementById('middle-pinned-layer');
     const midContainer = document.getElementById('middle-scroll-container');
-    const regimesSec = document.getElementById('regimes-section');
+    const postRegimesPanel = document.getElementById('post-regimes-panel');
 
     if (midLayer && regimesSec && midContainer) {
       const regimesOffsetTop = regimesSec.offsetTop;
@@ -582,6 +655,16 @@ export function initHomeView() {
 
       if (prefersReduced) regimeProgress = 1;
 
+      // Scroll-away animation: as user scrolls further and post-regimes-panel glides over or moves past
+      let scrollAwayProgress = 0;
+      if (postRegimesPanel) {
+        const panelRect = postRegimesPanel.getBoundingClientRect();
+        // As postRegimesPanel top moves from bottom of screen towards center
+        if (panelRect.top < vh) {
+          scrollAwayProgress = Math.min(1, Math.max(0, (vh - panelRect.top) / (vh * 0.75)));
+        }
+      }
+
       const words = regimesSec.querySelectorAll('.regime-word');
       const totalWords = words.length;
       words.forEach((w, idx) => {
@@ -590,72 +673,89 @@ export function initHomeView() {
         const startW = threshold * (1 - wordSpread);
         const wProgress = Math.min(1, Math.max(0, (regimeProgress - startW) / wordSpread));
 
-        const op = 0.20 + wProgress * 0.80;
-        const ty = (1 - wProgress) * 20;
-        const blur = (1 - wProgress) * 5;
+        // When scrolling away: stagger words fading out, lifting, and dispersing
+        const exitStagger = (totalWords - 1 - idx) / (totalWords - 1);
+        const exitProgress = Math.min(1, Math.max(0, (scrollAwayProgress - exitStagger * 0.3) / 0.7));
 
-        w.style.opacity = op.toFixed(3);
-        w.style.transform = `translateY(${ty.toFixed(1)}px)`;
-        w.style.filter = blur > 0.3 ? `blur(${blur.toFixed(1)}px)` : 'none';
+        const baseOp = 0.20 + wProgress * 0.80;
+        const finalOp = Math.max(0, baseOp * (1 - exitProgress * 0.95));
+
+        const entryTy = (1 - wProgress) * 20;
+        const exitTy = -exitProgress * 48;
+        const totalTy = entryTy + exitTy;
+
+        const entryBlur = (1 - wProgress) * 5;
+        const exitBlur = exitProgress * 8;
+        const totalBlur = entryBlur + exitBlur;
+
+        w.style.opacity = finalOp.toFixed(3);
+        w.style.transform = `translateY(${totalTy.toFixed(1)}px) scale(${(1 - exitProgress * 0.08).toFixed(3)})`;
+        w.style.filter = totalBlur > 0.3 ? `blur(${totalBlur.toFixed(1)}px)` : 'none';
 
         if (w.classList.contains('regime-accent')) {
-          const glow = wProgress * 36;
-          w.style.textShadow = `0 0 ${glow.toFixed(1)}px var(--accent-glow)`;
+          const glow = Math.max(0, (wProgress * 36) * (1 - exitProgress));
+          w.style.textShadow = glow > 0.5 ? `0 0 ${glow.toFixed(1)}px var(--accent-glow)` : 'none';
         }
       });
 
-      const bar = document.getElementById('regime-scroll-bar');
-      if (bar) {
-        bar.style.transform = `scaleX(${Math.max(0.12, regimeProgress).toFixed(3)})`;
-        bar.style.opacity = (0.25 + regimeProgress * 0.75).toFixed(2);
+      const sineCanvas = document.getElementById('regime-sine-wave-canvas');
+      if (sineCanvas) {
+        const lineOpacity = Math.max(0, (0.25 + regimeProgress * 0.75) * (1 - scrollAwayProgress)).toFixed(2);
+        sineCanvas.style.opacity = lineOpacity;
+        const lineScale = Math.max(0.7, (0.85 + regimeProgress * 0.15) * (1 - scrollAwayProgress * 0.15)).toFixed(3);
+        sineCanvas.style.transform = `scale(${lineScale})`;
       }
 
       const heading = document.getElementById('regime-motto-heading');
       if (heading) {
-        const s = 0.93 + regimeProgress * 0.07;
-        const ls = -0.012 - regimeProgress * 0.023;
+        const s = (0.93 + regimeProgress * 0.07) * (1 - scrollAwayProgress * 0.05);
+        const ls = (-0.012 - regimeProgress * 0.023) + (scrollAwayProgress * 0.04);
         heading.style.transform = `scale(${s.toFixed(3)})`;
         heading.style.letterSpacing = `${ls.toFixed(4)}em`;
       }
     }
 
-    // 5. System Capabilities Cards Scrolling Animation
-    const capCards = document.querySelectorAll('.capability-card');
-    if (capCards.length > 0) {
-      capCards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const centerY = rect.top + rect.height * 0.5;
-        const screenFraction = centerY / vh;
-
-        const enterProgress = Math.min(1, Math.max(0, (vh * 0.98 - rect.top) / (vh * 0.35)));
-
-        if (prefersReduced) {
-          card.style.transform = 'none';
-          card.style.opacity = '1';
-        } else {
-          const ty = (1 - enterProgress) * 36;
-          const rotX = (1 - enterProgress) * 4.5;
-          const scale = 0.965 + enterProgress * 0.035;
-          const opacity = 0.35 + enterProgress * 0.65;
-
-          card.style.transform = `translateY(${ty.toFixed(1)}px) scale(${scale.toFixed(3)}) perspective(900px) rotateX(${rotX.toFixed(1)}deg)`;
-          card.style.opacity = opacity.toFixed(3);
-
-          const bgImg = card.querySelector('.capability-bg-img');
-          if (bgImg) {
-            const parallaxOffset = (screenFraction - 0.5) * -30;
-            bgImg.style.transform = `translateY(${parallaxOffset.toFixed(1)}px) scale(1.08)`;
-          }
-
-          if (screenFraction >= 0.32 && screenFraction <= 0.68) {
-            card.style.borderColor = 'rgba(3, 188, 159, 0.45)';
-            card.style.boxShadow = '0 12px 35px rgba(3, 188, 159, 0.09), 0 16px 36px rgba(0, 0, 0, 0.6)';
-          } else {
-            card.style.borderColor = 'var(--border)';
-            card.style.boxShadow = 'none';
-          }
+    // 5. System Capabilities Fullscreen Scroll Slideshow & Parallax Exit
+    const capTrack = document.getElementById('capabilities-scroll-track');
+    const capStage = document.getElementById('capabilities-sticky-stage');
+    const storySection = document.getElementById('verdant-story-section');
+    if (capTrack) {
+      const rect = capTrack.getBoundingClientRect();
+      const trackHeight = capTrack.offsetHeight - window.innerHeight;
+      if (trackHeight > 0) {
+        const scrolled = -rect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / trackHeight));
+        if (typeof window.updateCapSlideshowProgress === 'function') {
+          window.updateCapSlideshowProgress(progress);
         }
-      });
+      }
+
+      // Parallax effect when leaving capabilities section into the next section
+      if (capStage) {
+        const exitScrolled = window.innerHeight - rect.bottom;
+        if (exitScrolled > 0) {
+          const exitProgress = Math.min(1, exitScrolled / window.innerHeight);
+          capStage.style.transform = `translate3d(0, ${exitProgress * -45}px, 0) scale(${(1 - exitProgress * 0.04).toFixed(3)})`;
+          capStage.style.opacity = Math.max(0, 1 - exitProgress * 0.75).toFixed(3);
+        } else {
+          capStage.style.transform = 'translate3d(0, 0, 0) scale(1)';
+          capStage.style.opacity = '1';
+        }
+      }
+    }
+
+    // Parallax on Verdant Story section background
+    if (storySection) {
+      const storyRect = storySection.getBoundingClientRect();
+      if (storyRect.top < window.innerHeight && storyRect.bottom > 0) {
+        const totalDist = window.innerHeight + storySection.offsetHeight;
+        const storyProgress = (window.innerHeight - storyRect.top) / totalDist;
+        const storyBg = storySection.querySelector('.verdant-story-bg-img');
+        if (storyBg) {
+          const parallaxOffset = (storyProgress - 0.5) * -45;
+          storyBg.style.transform = `translate3d(0, ${parallaxOffset.toFixed(1)}px, 0)`;
+        }
+      }
     }
   }
 
@@ -676,7 +776,7 @@ export function initHomeView() {
       watermark: 'JC 50',
       tagline: 'The Game Changer',
       eyebrow: 'JC 50',
-      image: '/assets/featured/JC-50.webp',
+      image: '/assets/products/JC-50/1.webp',
       alt: 'JC 50 C-Band Blade Antenna'
     },
     {
@@ -685,7 +785,7 @@ export function initHomeView() {
       watermark: 'JD 120',
       tagline: 'The Tactical Backbone',
       eyebrow: 'JD 120 T1B',
-      image: '/assets/featured/JD-120-T1B.webp',
+      image: '/assets/products/JD-120-T1B/1.webp',
       alt: 'JD 120 Tactical V/UHF Blade Antenna'
     },
     {
@@ -694,7 +794,7 @@ export function initHomeView() {
       watermark: 'JD 401',
       tagline: 'The High-Power Link',
       eyebrow: 'JD 401-S1G-A',
-      image: '/assets/featured/JD-401-S1G-A.webp',
+      image: '/assets/products/JD-401-S1G-A/1.webp',
       alt: 'JD 401-S1G-A High-Power Blade Antenna'
     }
   ];
@@ -732,6 +832,11 @@ export function initHomeView() {
       // Update 3D depth slots
       itemElements.forEach((el, k) => {
         if (!el) return;
+        const inner = el.querySelector('.stage-item-float-inner');
+        if (inner) {
+          inner.style.transform = '';
+          inner.style.filter = '';
+        }
         el.classList.remove('pos-center', 'pos-left', 'pos-right', 'pos-hidden');
         let diff = (k - activeStageIdx) % total;
         if (diff === 2) diff = -1;
@@ -789,12 +894,10 @@ export function initHomeView() {
         }, 220);
       }
 
-      // Wire pill button
+      // Wire pill button to Explore / products page
       if (pillBtn) {
         pillBtn.onclick = () => {
-          if (typeof window.inspectProduct === 'function') {
-            window.inspectProduct(currentItem.id, pillBtn);
-          }
+          window.location.hash = '#/products';
         };
       }
     };
@@ -852,14 +955,85 @@ export function initHomeView() {
       }
     });
 
-    // Pause slideshow on hover / resume on leave
-    featuredSection.addEventListener('mouseenter', () => {
+    // Interactive Ambient Cursor Light & Accent Glow Follower
+    const cursorLight = featuredSection.querySelector('.stage-cursor-light');
+    const cursorCore = featuredSection.querySelector('.stage-cursor-core');
+    let cursorRaf = null;
+    let targetX = -999;
+    let targetY = -999;
+    let currentX = -999;
+    let currentY = -999;
+    let isHoveringSection = false;
+
+    const renderCursorLight = () => {
+      if (isHoveringSection && targetX > -500) {
+        currentX += (targetX - currentX) * 0.18;
+        currentY += (targetY - currentY) * 0.18;
+
+        if (cursorLight) {
+          cursorLight.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        }
+        if (cursorCore) {
+          cursorCore.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+        }
+      }
+      cursorRaf = requestAnimationFrame(renderCursorLight);
+    };
+    cursorRaf = requestAnimationFrame(renderCursorLight);
+
+    featuredSection.addEventListener('mouseenter', (e) => {
       isPaused = true;
+      isHoveringSection = true;
+      const rect = featuredSection.getBoundingClientRect();
+      targetX = e.clientX - rect.left;
+      targetY = e.clientY - rect.top;
+      currentX = targetX;
+      currentY = targetY;
+      if (cursorLight) cursorLight.style.opacity = '1';
+      if (cursorCore) cursorCore.style.opacity = '0.9';
+    });
+
+    featuredSection.addEventListener('mousemove', (e) => {
+      const rect = featuredSection.getBoundingClientRect();
+      targetX = e.clientX - rect.left;
+      targetY = e.clientY - rect.top;
+
+      if (!isHoveringSection) {
+        isHoveringSection = true;
+        if (cursorLight) cursorLight.style.opacity = '1';
+        if (cursorCore) cursorCore.style.opacity = '0.9';
+      }
+
+      // 3D Parallax & specular tilt on active center product
+      const activeCenterItem = featuredSection.querySelector('.stage-hardware-item.pos-center .stage-item-float-inner');
+      if (activeCenterItem) {
+        const itemRect = activeCenterItem.getBoundingClientRect();
+        const itemCenterX = itemRect.left + itemRect.width / 2;
+        const itemCenterY = itemRect.top + itemRect.height / 2;
+        const dx = (e.clientX - itemCenterX) / (window.innerWidth * 0.45);
+        const dy = (e.clientY - itemCenterY) / (window.innerHeight * 0.45);
+        const clampDx = Math.max(-1, Math.min(1, dx));
+        const clampDy = Math.max(-1, Math.min(1, dy));
+
+        const rotX = -clampDy * 12;
+        const rotY = clampDx * 15;
+        activeCenterItem.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.03, 1.03, 1.03)`;
+        activeCenterItem.style.filter = `drop-shadow(0 24px 38px rgba(0, 0, 0, 0.9)) drop-shadow(${(-clampDx * 14).toFixed(1)}px ${(-clampDy * 14).toFixed(1)}px 30px rgba(3, 188, 159, 0.42))`;
+      }
     });
 
     featuredSection.addEventListener('mouseleave', () => {
       isPaused = false;
+      isHoveringSection = false;
       progressStartTime = Date.now();
+      if (cursorLight) cursorLight.style.opacity = '0';
+      if (cursorCore) cursorCore.style.opacity = '0';
+
+      const activeCenterItem = featuredSection.querySelector('.stage-hardware-item.pos-center .stage-item-float-inner');
+      if (activeCenterItem) {
+        activeCenterItem.style.transform = '';
+        activeCenterItem.style.filter = '';
+      }
     });
 
     // Touch swipe support on arena
@@ -895,6 +1069,7 @@ export function initHomeView() {
     window.__stageAutoCleanup = () => {
       clearInterval(autoSlideshowTimer);
       clearInterval(progressTimer);
+      if (cursorRaf) cancelAnimationFrame(cursorRaf);
     };
   }
 
@@ -1116,4 +1291,343 @@ export function initHomeView() {
       existingClones.forEach(el => el.remove());
     };
   }
+
+  // Cursor interaction on capabilities background images
+  if (window.__capMouseCleanup) {
+    window.__capMouseCleanup();
+    window.__capMouseCleanup = null;
+  }
+  const capStickyStage = document.getElementById('capabilities-sticky-stage');
+  if (capStickyStage) {
+    let capMouseX = 0;
+    let capMouseY = 0;
+    let capTargetMouseX = 0;
+    let capTargetMouseY = 0;
+    let capMouseRaf = null;
+
+    const onCapMouseMove = (e) => {
+      const rect = capStickyStage.getBoundingClientRect();
+      const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      // Subtle parallax: +/- 16px horizontal, +/- 12px vertical
+      capTargetMouseX = nx * -16;
+      capTargetMouseY = ny * -12;
+    };
+
+    const onCapMouseLeave = () => {
+      capTargetMouseX = 0;
+      capTargetMouseY = 0;
+    };
+
+    capStickyStage.addEventListener('mousemove', onCapMouseMove, { passive: true });
+    capStickyStage.addEventListener('mouseleave', onCapMouseLeave, { passive: true });
+
+    const updateCapMouse = () => {
+      capMouseX += (capTargetMouseX - capMouseX) * 0.08;
+      capMouseY += (capTargetMouseY - capMouseY) * 0.08;
+      capStickyStage.style.setProperty('--cap-mouse-x', `${capMouseX.toFixed(2)}px`);
+      capStickyStage.style.setProperty('--cap-mouse-y', `${capMouseY.toFixed(2)}px`);
+      capMouseRaf = requestAnimationFrame(updateCapMouse);
+    };
+    capMouseRaf = requestAnimationFrame(updateCapMouse);
+
+    window.__capMouseCleanup = () => {
+      if (capMouseRaf) cancelAnimationFrame(capMouseRaf);
+      capStickyStage.removeEventListener('mousemove', onCapMouseMove);
+      capStickyStage.removeEventListener('mouseleave', onCapMouseLeave);
+    };
+  }
+
+  // ========================================================
+  // REGIMES SECTION: Premium Sine Wave Animation with Random Amplitude Variations
+  // ========================================================
+  if (window.__regimeSineCleanup) {
+    window.__regimeSineCleanup();
+    window.__regimeSineCleanup = null;
+  }
+
+  const sineCanvas = document.getElementById('regime-sine-wave-canvas');
+  if (sineCanvas) {
+    const ctx = sineCanvas.getContext('2d');
+    let sineRafId = null;
+    let phase = 0;
+    
+    // Perlin-like smooth random amplitude modulation using superimposed harmonics
+    let targetAmp = 8;
+    let currentAmp = 7;
+    let ampTimer = 0;
+
+    const renderSine = (timestamp) => {
+      if (!ctx || !sineCanvas) return;
+      const w = sineCanvas.width;
+      const h = sineCanvas.height;
+      const midY = h / 2;
+
+      // Check visibility optimization
+      const rect = sineCanvas.getBoundingClientRect();
+      const isVisible = rect.bottom > -50 && rect.top < window.innerHeight + 50;
+
+      if (isVisible) {
+        ctx.clearRect(0, 0, w, h);
+
+        // Slow, premium drift (not too fast)
+        phase += 0.024;
+        ampTimer += 0.009;
+
+        // Smoothly fluctuating subtle amplitude (between 4.5px and 9.5px) with layered sine harmonics
+        const randomFluctuation = Math.sin(ampTimer * 0.7) * 2.2 + Math.cos(ampTimer * 1.3) * 1.4 + Math.sin(ampTimer * 0.23) * 0.9;
+        targetAmp = 6.8 + randomFluctuation;
+        currentAmp += (targetAmp - currentAmp) * 0.04;
+
+        // Draw soft ambient baseline glow line
+        ctx.beginPath();
+        ctx.moveTo(0, midY);
+        ctx.lineTo(w, midY);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.07)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        // Draw animated sine wave with subtle tapered ends (fade to 0 at edges)
+        ctx.beginPath();
+        const cycles = 2.4; // 2.4 wavelengths across the line width
+        const totalPoints = 120;
+
+        for (let i = 0; i <= totalPoints; i++) {
+          const t = i / totalPoints;
+          const x = t * w;
+          
+          // Windowing envelope (sinusoidal taper at start & end so edges blend seamlessly into line)
+          const envelope = Math.sin(t * Math.PI);
+
+          // Subtle secondary harmonic for aerospace signal texture
+          const wave = Math.sin(t * Math.PI * 2 * cycles - phase) * 0.88 + Math.sin(t * Math.PI * 4 * cycles - phase * 1.25) * 0.12;
+          const y = midY + wave * currentAmp * envelope;
+
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+
+        // Premium gradient stroke (Teal / Emerald accent with soft glowing ends)
+        const grad = ctx.createLinearGradient(0, 0, w, 0);
+        grad.addColorStop(0, 'rgba(3, 188, 159, 0.1)');
+        grad.addColorStop(0.18, 'rgba(3, 188, 159, 0.8)');
+        grad.addColorStop(0.5, 'rgba(122, 245, 224, 1.0)');
+        grad.addColorStop(0.82, 'rgba(3, 188, 159, 0.8)');
+        grad.addColorStop(1, 'rgba(3, 188, 159, 0.1)');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 1.8;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.shadowColor = 'rgba(3, 188, 159, 0.45)';
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+
+      sineRafId = requestAnimationFrame(renderSine);
+    };
+
+    sineRafId = requestAnimationFrame(renderSine);
+
+    window.__regimeSineCleanup = () => {
+      if (sineRafId) cancelAnimationFrame(sineRafId);
+    };
+  }
 }
+
+// ========================================================
+// SYSTEM CAPABILITIES: Still Stage with Dynamic Content & Zoom Switching
+// ========================================================
+window.updateCapSlideshowProgress = function(progress) {
+  const slides = document.querySelectorAll('.cap-slide');
+  if (!slides || slides.length === 0) return;
+
+  const total = slides.length; // 4
+  const intervals = total - 1; // 3
+  const p = Math.max(0, Math.min(intervals, progress * intervals));
+
+  slides.forEach((slide, idx) => {
+    const bgImg = slide.querySelector('.cap-slide-bg');
+    const content = slide.querySelector('.cap-slide-content');
+    const dist = Math.abs(p - idx);
+
+    // Active crossfade range: each slide stays fully visible and still, with a smooth switch window
+    if (dist <= 0.65) {
+      // Easing curve for crossfade
+      const t = 1 - dist / 0.65;
+      const eased = t * t * (3 - 2 * t); // smoothstep 0..1
+      
+      slide.style.opacity = eased.toFixed(3);
+      slide.style.pointerEvents = eased > 0.4 ? 'auto' : 'none';
+      slide.style.zIndex = eased > 0.5 ? '2' : '1';
+
+      // Subtle zoom in / zoom out transition on background
+      // Active slide settles at scale 1.0, while entering/exiting slides have a subtle 4.5% zoom shift
+      const scale = 1.0 + (1 - eased) * 0.045;
+      if (bgImg) {
+        bgImg.style.setProperty('--cap-scale', scale.toFixed(3));
+      }
+
+      // Content stays centered/still with subtle gentle vertical float on transition
+      if (content) {
+        const dir = p < idx ? 1 : -1;
+        const translateY = (1 - eased) * 14 * dir;
+        content.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
+        content.style.opacity = eased.toFixed(3);
+      }
+    } else {
+      slide.style.opacity = '0';
+      slide.style.pointerEvents = 'none';
+      slide.style.zIndex = '0';
+      if (bgImg) {
+        bgImg.style.setProperty('--cap-scale', '1.045');
+      }
+      if (content) {
+        content.style.opacity = '0';
+      }
+    }
+  });
+};
+
+// ========================================================
+// NEWSROOM: Reimagined Horizontal Cards & Full Story Modal
+// ========================================================
+export const NEWS_ARTICLES = {
+  siati: {
+    id: 'siati',
+    title: 'SIATI Award for Aerospace Indigenisation',
+    date: '2001 & 2016',
+    category: 'DEFENCE RECOGNITION',
+    image: '/assets/award.jpeg',
+    summary: 'Conferred twice by Society of Indian Aerospace Technologies & Industries for critical airborne antennas and RF radomes on LCA Tejas and combat aircraft.',
+    body: [
+      'The Society of Indian Aerospace Technologies & Industries (SIATI) conferred its prestigious National Award for Aerospace Indigenisation upon Verdant Telemetry in both 2001 and 2016. The honor recognizes more than two decades of groundbreaking domestic self-reliance in aerospace RF engineering.',
+      'From custom C-Band telemetry apertures to high-G supersonic blade antennas, Verdant succeeded in engineering sovereign alternatives to critical imported avionics antennas. These systems have accumulated tens of thousands of incident-free flight hours across India\'s frontline fighter fleets and transport aircraft.',
+      '“Indigenous microwave hardware requires mastery across electromagnetic simulation, precision composite chemistry, and rigorous environmental stress screening,” remarked Verdant\'s leadership. “This recognition stands as a testament to our engineering team\'s relentless commitment to certified airworthiness.”'
+    ]
+  },
+  media: {
+    id: 'media',
+    title: 'Verdant Featured on National Television',
+    date: 'OCTOBER 2023',
+    category: 'MEDIA BROADCAST',
+    image: '/assets/collage.png',
+    summary: 'Television documentary showcasing Verdant\'s high-technology journey from Cochin to international defence supply chains and fighter jet integration.',
+    body: [
+      'In a special primetime documentary broadcast across national television, Verdant Telemetry was highlighted as one of India\'s quintessential aerospace success stories, tracing its roots from a small Cochin workshop in 1997 to a tier-1 defence supplier today.',
+      'The broadcast offered viewers rare behind-the-scenes access to Verdant\'s cleanroom composite fabrication suites, where autoclave-cured radomes are manufactured to sub-millimeter tolerances, alongside the microwave testing ranges in Cochin and the dedicated R&D Design Centre in Coimbatore.',
+      'Interviews with leading RF engineers underscored how Verdant supplies mission-critical apertures to HAL, ISRO, and DRDO, as well as international aerospace integrators such as Elbit Systems and Sierra Nevada Corporation.'
+    ]
+  },
+  as9100: {
+    id: 'as9100',
+    title: 'AS 9100 Rev D & ISO 9001:2015 Recertification',
+    date: 'JUNE 2024',
+    category: 'AEROSPACE QUALITY',
+    image: '/assets/as9100d-certified-logo.png',
+    summary: 'Continuous aerospace certification since June 2009 upholding stringent international defence quality standards across composites, RF metrology, and airworthiness.',
+    body: [
+      'Verdant Telemetry has successfully renewed its AS9100 Rev D and ISO 9001:2015 aerospace quality certifications, continuing a continuous certification record that began in June 2009.',
+      'AS9100 Rev D incorporates all requirements of ISO 9001 with comprehensive aerospace additions governing risk management, configuration control, traceability, and product safety throughout design and manufacturing cycles.',
+      'Combined with CEMILAC design and manufacturing approvals, this certification verifies that every antenna leaving the Cochin facility meets the exacting quality thresholds demanded by supersonic military aircraft and civil aviation regulators.'
+    ]
+  },
+  satcom: {
+    id: 'satcom',
+    title: 'Next-Gen Airborne Satcom & UAV Antennas',
+    date: 'JANUARY 2025',
+    category: 'R&D INNOVATION',
+    image: '/assets/hero/space.webp',
+    summary: 'Coimbatore R&D centre unveils ultra-low-profile conformal SATCOM apertures and lightweight UAV telemetry antennas entering flight qualification.',
+    body: [
+      'Engineers at Verdant\'s Coimbatore R&D Design Centre unveiled a new generation of conformal airborne SATCOM and ultra-lightweight UAV telemetry antenna systems designed for next-generation autonomous flight platforms.',
+      'Featuring microstrip patch arrays integrated flush into composite fuselage skins, these antennas eliminate parasitic aerodynamic drag while providing wideband satellite uplink channels in challenging operational environments.',
+      'The initial flight-test units have completed comprehensive vibration, shock, and thermal cycling tests in accordance with MIL-STD-810G, paving the way for customer platform integration trials in late 2025.'
+    ]
+  },
+  tejas: {
+    id: 'tejas',
+    title: 'Multiband Conformal Arrays for Fighter Aircraft',
+    date: 'NOVEMBER 2025',
+    category: 'AIRBORNE COMBAT',
+    image: '/assets/jet.webp',
+    summary: 'Flush-mounted composite antenna radomes successfully completing Mach 1.8 thermal shock and high-g aerodynamic flight validation trials.',
+    body: [
+      'Verdant Telemetry has completed supersonic qualification trials for its multiband conformal blade antenna suite engineered for high-performance combat airframes including the LCA Tejas Mk1A and future frontline platforms.',
+      'The consolidated multi-connector assembly allows multiple communication and electronic warfare radios to share a single aerodynamic airfoil, reducing total aircraft drag and weight while maintaining superior RF isolation between transceiver channels.',
+      'Environmental testing confirmed zero degradation under Mach 1.8 kinetic heating and high-g transonic buffeting, confirming full readiness for serial production delivery.'
+    ]
+  }
+};
+
+window.openNewsArticle = function(id) {
+  const article = NEWS_ARTICLES[id];
+  if (!article) return;
+  const modal = document.getElementById('news-article-modal');
+  const content = document.getElementById('news-article-content');
+  if (!modal || !content) return;
+
+  content.innerHTML = `
+    <div style="position: relative; height: 230px; overflow: hidden; border-radius: 12px 12px 0 0; background: #05090D;">
+      <img src="${article.image}" alt="${article.title}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.55;" />
+      <div style="position: absolute; inset: 0; background: linear-gradient(to top, #070D12 0%, rgba(7,13,18,0.4) 60%, transparent 100%);"></div>
+      <div style="position: absolute; bottom: 1.25rem; left: 1.5rem; right: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 600;">
+          <span>${article.category}</span>
+          <span>·</span>
+          <span>${article.date}</span>
+        </div>
+        <h2 style="font-size: clamp(1.3rem, 2.8vw, 1.75rem); font-weight: 700; color: #FFFFFF; line-height: 1.25; margin: 0; letter-spacing: -0.02em;">
+          ${article.title}
+        </h2>
+      </div>
+    </div>
+    <div style="padding: 1.75rem 1.5rem 2rem; color: #BACDC9; font-size: 0.95rem; line-height: 1.75; display: flex; flex-direction: column; gap: 1rem; max-height: calc(85vh - 230px); overflow-y: auto;">
+      ${article.body.map(p => `<p style="margin: 0;">${p}</p>`).join('')}
+      <div style="margin-top: 1rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-subtle);">Verdant Telemetry Corporate Archive</span>
+        <button onclick="window.closeNewsArticle()" class="btn-secondary" style="padding: 0.4rem 1.1rem; font-size: 0.8125rem; min-height: 36px;">Close Story</button>
+      </div>
+    </div>
+  `;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeNewsArticle = function() {
+  const modal = document.getElementById('news-article-modal');
+  if (modal) modal.style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+window.handleNewsCardHover = function(cardEl) {
+  const track = document.getElementById('news-horizontal-track');
+  if (!track) return;
+  const cards = track.querySelectorAll('.news-vertical-card');
+  cards.forEach(c => c.classList.remove('active'));
+  cardEl.classList.add('active');
+};
+
+window.handleNewsScroll = function(trackEl) {
+  if (!trackEl) return;
+  const cards = trackEl.querySelectorAll('.news-vertical-card');
+  const trackCenter = trackEl.scrollLeft + trackEl.clientWidth / 2;
+  let closestCard = null;
+  let minDiff = Infinity;
+  cards.forEach(c => {
+    const cardCenter = c.offsetLeft + c.offsetWidth / 2;
+    const diff = Math.abs(trackCenter - cardCenter);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closestCard = c;
+    }
+  });
+  if (closestCard && !closestCard.classList.contains('active')) {
+    cards.forEach(c => c.classList.remove('active'));
+    closestCard.classList.add('active');
+  }
+};
